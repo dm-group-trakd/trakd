@@ -12,9 +12,13 @@ export default class Login extends Component{
     }
     render(){
         return(
-            <div>
-                Login
-            </div>
+            <form>
+                <h1>Login</h1>
+                <label>Username</label>
+                <input></input>
+                <label>Password</label>
+                <input type="password"></input>
+            </form>
         )
     }
 
