@@ -1,6 +1,14 @@
 const bcrypt = require ('bcryptjs')
 
 module.exports = {
+
+
+    getUser: function(req,res) {
+        if(req.session.user) {
+            res.status(200).json(req.session.user)
+        }
+    },
+
     registerUser: function(req, res) {
         const {first_name, last_name, username, password, email, phone_number, avatar, weight} = req.body;
         const db = req.app.get("db");
