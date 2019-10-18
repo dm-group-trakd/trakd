@@ -4,7 +4,7 @@ const app = express()
 const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env
 const massive = require('massive')
 const session = require('express-session')
-const {registerUser, loginUser, logOut, getUser} = require('/Controllers/authController')
+const {registerUser, loginUser, logOut, getUser} = require('./Controllers/authController')
 
 app.use(express.json())
 
@@ -23,10 +23,11 @@ massive(CONNECTION_STRING).then(db => {
 })
 
 //Auth Controller
-app.post('auth/login', loginUser)
+app.post('/auth/login', loginUser)
 app.post('/auth/register', registerUser)
 app.post('/auth/logout', logOut)
 app.get('/auth/user', getUser)
+
 
 
 app.listen(SERVER_PORT, () => {

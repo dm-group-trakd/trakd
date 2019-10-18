@@ -12,10 +12,10 @@ module.exports = {
     registerUser: function(req, res) {
         const {first_name, last_name, username, password, email, phone_number, avatar, weight} = req.body;
         const db = req.app.get("db");
-        db.checkForUsername(username, email).then(count => {
+        db.auth.checkForUsername(username, email).then(count => {
             if(+count[0].count === 0) {
                 bcrypt.hash(password, 12).then(hash => {
-                    db.register(first_name, last_name, username, hash, email, phone_number, avatar, weight).then(() => {
+                    db.auth.register(first_name, last_name, username, hash, email, phone_number, avatar, weight).then(() => {
                         req.session.user = {
                             userid:userid[0].user_id,
                             first_name,
@@ -36,16 +36,18 @@ module.exports = {
     loginUser: function(req, res) {
         const {username, password} = req.body;
         const db = req.app.get("db");
-        db.getPasswordViaUsername(username).then(user => {
-            let hash = user[0].hash;
-            console.log(user[0]);
+        db.auth.getPasswordViaUsername(username).then(user => {
+            let hash = user[0].password;
+        
             bcrypt.compare(password, hash).then(areSame => {
+                console.log("Hiiit")
+                console.log(areSame)
                 if(areSame) {
                     req.session.user = {
                         id:user[0].id,
                         firsname:user[0].first_name,
                         lastname:user[0].last_name,
-                        username,
+                        username:user[0].username,
                         email: user[0].email,
                         phoneNumber:user[0].phone_number,
                         avatar:user[0].avatar,
