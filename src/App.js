@@ -1,25 +1,21 @@
-import React from 'react';
-import './App.css';
+import React, {Component} from 'react';
+import './src-styles/App/App.scss';
+import routes from './routes';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React s
-        </a>
-      </header>
-    </div>
-  );
+//components
+import Nav from '../src/components/Nav/Nav';
+
+
+
+class App extends Component{
+  render(){
+    return (
+      <div className="App">
+        <Nav/>
+        {routes}
+      </div>
+    );
+  }
 }
 
 export default App;
