@@ -19,11 +19,11 @@ export default class Register extends Component {
             <form>
                 <h1>Register</h1>
                 <label>First Name</label>
-                <input ></input>
+                <input></input>
                 <label>Last Name</label>
-                <input ></input>
+                <input></input>
                 <label>Username</label>
-                <input ></input>
+                <input></input>
                 <label>Password</label>
                 <input ></input>
                 <label>Email</label>
