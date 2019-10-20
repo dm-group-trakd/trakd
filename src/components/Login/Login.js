@@ -3,7 +3,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-import { Link, Redirect} from '@reach/router';
+import { Link, Redirect} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {loginUser, getSession} from '../../redux/reducers/userReducer';
 
@@ -16,6 +16,9 @@ class Login extends Component{
             username: '',
             password: ''
         }
+    }
+    componentDidMount(){
+        this.props.getSession()
     }
 
     handleSubmit = () => {

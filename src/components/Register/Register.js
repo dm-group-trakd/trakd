@@ -3,7 +3,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-import { Link, Redirect} from '@reach/router';
+import { Redirect, Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {registerUser, getSession} from '../../redux/reducers/userReducer';
 import './styles/Register.css';
@@ -37,7 +37,7 @@ class Register extends Component {
 
     render() {
         if(this.props.user_id){
-            return <Redirect  to="/add"/>
+            return <Redirect to="/add"/>
         }
         return (
             
@@ -125,7 +125,7 @@ class Register extends Component {
                                 color="primary"
                                 onClick={this.handleSubmit}
                             >Register</Button>
-                        <h1>Already have an account? Login <Link to="/login">here!</Link></h1>
+                        <h1>Already have an account? Login <Link to="/">here!</Link></h1>
                     </section>
                 </CardContent>
             </Card>
