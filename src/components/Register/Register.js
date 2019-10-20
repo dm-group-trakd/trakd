@@ -3,8 +3,12 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+import { Redirect, Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {registerUser, getSession} from '../../redux/reducers/userReducer';
+import './styles/Register.css';
 
-export default class Register extends Component {
+class Register extends Component {
     constructor(){
         super()
         this.state = {
@@ -17,25 +21,26 @@ export default class Register extends Component {
         }
     }
 
+    handleSubmit = () => {
+        const {first_name, last_name, username, email, password, phone_number} = this.state;
+        const {registerUser} = this.props;
+        registerUser({first_name, last_name, username, email, password, phone_number});
+    }
+
+    handleInput = e => {
+        console.log(e.target.value)
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
 
     render() {
+        if(this.props.user_id){
+            return <Redirect to="/add"/>
+        }
         return (
-            // <form>
-            //     <h1>Register</h1>
-            //     <label>First Name</label>
-            //     <input></input>
-            //     <label>Last Name</label>
-            //     <input></input>
-            //     <label>Username</label>
-            //     <input></input>
-            //     <label>Password</label>
-            //     <input ></input>
-            //     <label>Email</label>
-            //     <input ></input>
-            //     <label>Phone Number</label>
-            //     <input ></input>
-            //     <button>Register</button>
-            // </form>
+            
             <Card>
                 <CardContent>
                     <section>
@@ -46,42 +51,50 @@ export default class Register extends Component {
                     </section>
                     <section>
                         <TextField
-                            id="outlined-email-input"
+                            id="outlined-first_name-input"
                             label="First Name"
                             type="text"
                             name="first_name"
                             autoComplete="first_name"
                             margin="normal"
                             variant="outlined"
+                            onChange={this.handleInput}
+                            required
                         ></TextField>
                         <TextField
-                            id="outlined-email-input"
+                            id="outlined-last_name-input"
                             label="Last Name"
                             type="text"
                             name="last_name"
                             autoComplete="last_name"
                             margin="normal"
                             variant="outlined"
+                            onChange={this.handleInput}
+                            required
                         ></TextField>
                         <TextField
-                            id="outlined-email-input"
+                            id="outlined-username-input"
                             label="Username"
                             type="text"
                             name="username"
                             autoComplete="username"
                             margin="normal"
                             variant="outlined"
+                            onChange={this.handleInput}
+                            required
                         ></TextField>
                     </section>
                     <section>
                         <TextField
-                            id="outlined-email-input"
+                            id="outlined-password-input"
                             label="Password"
                             type="password"
                             name="password"
                             autoComplete="password"
                             margin="normal"
                             variant="outlined"
+                            onChange={this.handleInput}
+                            required
                         ></TextField>
                         <TextField
                             id="outlined-email-input"
@@ -91,26 +104,43 @@ export default class Register extends Component {
                             autoComplete="email"
                             margin="normal"
                             variant="outlined"
+                            onChange={this.handleInput}
+                            required
                         ></TextField>
                         <TextField
-                            id="outlined-email-input"
+                            id="outlined-phone_number-input"
                             label="Phone Number"
                             type="phone"
                             name="phone_number"
                             autoComplete="phone_number"
                             margin="normal"
                             variant="outlined"
+                            onChange={this.handleInput}
+                            required
                         ></TextField>
                     </section>
                     <section>
-                        <Button
-                            variant="contained" 
-                            color="primary"
-                        >Register</Button>
-                        <h1></h1>
+                            <Button
+                                variant="contained" 
+                                color="primary"
+                                onClick={this.handleSubmit}
+                            >Register</Button>
+                        <h1>Already have an account? Login <Link to="/">here!</Link></h1>
                     </section>
                 </CardContent>
             </Card>
         )
     }
 }
+
+const mapStateToProps = reduxState => {
+    return{
+        user_id: reduxState.userReducer.user_id
+    }
+}
+
+
+export default connect(mapStateToProps, {
+    registerUser,
+    getSession
+})(Register)

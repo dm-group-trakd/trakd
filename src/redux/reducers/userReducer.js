@@ -27,6 +27,7 @@ export function getSession() {
 }
 
 export function registerUser(newUser) {
+  console.log(newUser)
   return {
     type: REGISTER_USER,
     payload: axios.post("/auth/register", newUser)
@@ -50,11 +51,13 @@ export function logoutUser() {
 //reducer
 export default function reducer(state = initialState, action) {
   const { type, payload } = action;
+  console.log(payload)
 
   switch (type) {
     case `${GET_SESSION}_FULFILLED`:
       return {
         ...state,
+        user_id: payload.data.user_id,
         first_name: payload.data.first_name,
         last_name: payload.data.last_name,
         username: payload.data.username,
@@ -64,8 +67,10 @@ export default function reducer(state = initialState, action) {
         weight: payload.data.weight
       };
     case `${REGISTER_USER}_FULFILLED`:
+      console.log(payload.data)
       return {
         ...state,
+        user_id: payload.data.user_id,
         first_name: payload.data.first_name,
         last_name: payload.data.last_name,
         username: payload.data.username,
@@ -77,6 +82,7 @@ export default function reducer(state = initialState, action) {
     case `${LOGIN_USER}_FULFILLED`:
       return {
         ...state,
+        user_id: payload.data.user_id,
         first_name: payload.data.first_name,
         last_name: payload.data.last_name,
         username: payload.data.username,
