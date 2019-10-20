@@ -21,12 +21,7 @@ class Register extends Component {
         }
     }
 
-    componentDidMount(){
-        this.props.getSession()
-    }
-
-    handleSubmit = e => {
-        e.preventDefault();
+    handleSubmit = () => {
         const {first_name, last_name, username, email, password, phone_number} = this.state;
         const {registerUser} = this.props;
         registerUser({first_name, last_name, username, email, password, phone_number});
@@ -42,9 +37,10 @@ class Register extends Component {
 
     render() {
         if(this.props.user_id){
-            return <Redirect  to="/add_nutrition"/>
+            return <Redirect  to="/add"/>
         }
         return (
+            
             <Card>
                 <CardContent>
                     <section>

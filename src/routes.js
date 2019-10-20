@@ -11,7 +11,7 @@ export default(
     <Route path="/dashboard" component={Dashboard} ></Route>
     {/* <Route path="/login" component={Login} ></Route> */}
     <Route path="/register" component={Register} ></Route>
-    <Route path="/add_nutrition" component={AddNutrition}></Route>
+    <Route path="/add" component={AddNutrition}></Route>
     <Route exact path="/" component={Login} ></Route>
 </Switch>
 

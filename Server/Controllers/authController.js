@@ -2,69 +2,67 @@ const bcrypt = require ('bcryptjs')
 
 module.exports = {
 
-
     getUser: function(req,res) {
         console.log('hit getUser')
         if(req.session.user) {
             res.status(200).json(req.session.user)
         }
     },
-
-    registerUser: async function (req, res) {
+    registerUser: async (req, res) => {
         const {first_name, last_name, username, password, email, phone_number, avatar, weight} = req.body;
         const db = req.app.get("db");
-        db.auth.checkForUsername(username, email).then(count => {
-            if(+count[0].count === 0) {
-                bcrypt.hash(password, 12).then(hash => {
-                    db.auth.register(first_name, last_name, username, hash, email, phone_number, avatar, weight).then(newUser => {
-                        req.session.user = {
-                            user_id: newUser[0].user_id,
-                            first_name: newUser[0].first_name,
-                            last_name: newUser[0].last_name,
-                            username: newUser[0].username,
-                            email: newUser[0].email,
-                            phone_number: newUser[0].phone_number,
-                            avatar: newUser[0].avatar
-                        }
-                        res.status(200).json(req.session.user)
-                    })
-                })
-            }
-            else{
-                res.status(409).json({Error:"Username or Email already Exists."})
-            }
-        })
+
+        const foundUser = await db.auth.checkForUsername(username);
+
+        if (foundUser[0]) {
+            res.status(409).json("Username Taken");
+        } else {
+            const salt = bcrypt.genSaltSync(10);
+            const hash = bcrypt.hashSync(password, salt);
+            const newUser = await db.auth.register(first_name, last_name, username, hash, email, phone_number, avatar, weight);
+
+            req.session.user = {
+                user_id: newUser[0].user_id,
+                username: newUser[0].username,
+                first_name: newUser[0].first_name,
+                last_name: newUser[0].last_name,
+                phone_number: newUser[0].phone_number,
+                email: newUser[0].email,
+                avatar: newUser[0].avatar,
+                weight: newUser[0].weight
+            };
+            console.log(req.session.user)
+            res.status(200).json(req.session.user);
+        };
     },
-    
-    loginUser: function(req, res) {
+    loginUser: async (req, res) => {
         const {username, password} = req.body;
+        console.log(username)
         const db = req.app.get("db");
-        db.auth.getPasswordViaUsername(username).then(user => {
-            let hash = user[0].password;
-        
-            bcrypt.compare(password, hash).then(areSame => {
-                console.log("Hiiit")
-                console.log(areSame)
-                if(areSame) {
-                    req.session.user = {
-                        user_id:user[0].user_id,
-                        first_name:user[0].first_name,
-                        last_name:user[0].last_name,
-                        username:user[0].username,
-                        email: user[0].email,
-                        phone_number:user[0].phone_number,
-                        avatar:user[0].avatar,
-                        weight:user[0].weight
-                    }
-                    res.status(200).json(req.session.user);
-                    
-                } else {
-                    res.status(401).json({
-                        error: "Username or Password incorrect"
-                    })
+        const foundUser = await db.auth.getPasswordViaUsername(username);
+
+        if(!foundUser[0]){
+            res.status(403).json('Username or Password incorrect')
+        }else{
+            const isAuthenticated = bcrypt.compareSync(password, foundUser[0].password)
+            if(!isAuthenticated){
+                res.status(403).json('Username or Password Incorrect')
+            }else {
+                req.session.user = {
+                    first_name: foundUser[0].first_name,
+                    last_name: foundUser[0].last_name,
+                    email: foundUser[0].email,
+                    user_id: foundUser[0].user_id,
+                    username: foundUser[0].username,
+                    phone_number: foundUser[0].phone_number,
+                    avatar: foundUser[0].avatar,
+                    weight: foundUser[0].weight
+
                 }
-            })
-        })
+                console.log(req.session.user)
+                res.status(200).json(req.session.user);
+            }
+        }
     },
     logOut:function(req,res){
         req.session.destroy();

@@ -9,8 +9,7 @@ const initialState = {
   email: "",
   phone_number: 12223334444,
   avatar: "",
-  weight: null,
-  loading: false
+  weight: null
 };
 
 //const strings
@@ -67,11 +66,6 @@ export default function reducer(state = initialState, action) {
         avatar: payload.data.avatar,
         weight: payload.data.weight
       };
-    case `${REGISTER_USER}_PENDING`:
-      return {
-        ...state,
-        loading: true
-      }
     case `${REGISTER_USER}_FULFILLED`:
       console.log(payload.data)
       return {
