@@ -40,8 +40,8 @@ class Login extends Component{
         }
         return(
             <div className="Login-Container">
-                <div className="Login-Box">
             <Card>
+                <div className="Login-Box">
                 <CardContent>
                     
                     <section>
@@ -89,8 +89,8 @@ class Login extends Component{
                     </section>
                    
                 </CardContent>
-            </Card>
             </div>
+            </Card>
             </div>
         )
     }
