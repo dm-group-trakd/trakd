@@ -6,7 +6,7 @@ const massive = require('massive')
 const session = require('express-session')
 const {registerUser, loginUser, logOut, getUser} = require('./Controllers/authController')
 const {updateAvatar, updatePhoneNumber, updateUsername, updateEmail, updateWeight} = require('./Controllers/userController')
-const {updateWeightGoal, updateFatGoal, updateCarbsGoal, updateProteinGoal, updateCalorieGoal} = require('./Controllers/goalController')
+const {updateWeightGoal, updateFatGoal, updateCarbsGoal, updateProteinGoal, updateCalorieGoal, getGoals} = require('./Controllers/goalController')
 
 app.use(express.json())
 
@@ -38,11 +38,12 @@ app.put('/api/user/username', updateUsername)
 app.put('/api/user/weight', updateWeight)
 
 // GOAL SETTINGS
-app.put('api/goal/weight', updateWeightGoal)
-app.put('api/goal/calorie', updateCalorieGoal)
-app.put('api/goal/carbs', updateCarbsGoal)
-app.put('api/goal/fat', updateFatGoal)
-app.put('api/goal/protein', updateProteinGoal)
+app.get('/api/goals', getGoals)
+app.put('/api/goal/weight', updateWeightGoal)
+app.put('/api/goal/calorie', updateCalorieGoal)
+app.put('/api/goal/carbs', updateCarbsGoal)
+app.put('/api/goal/fat', updateFatGoal)
+app.put('/api/goal/protein', updateProteinGoal)
 
 
 app.listen(SERVER_PORT, () => {
