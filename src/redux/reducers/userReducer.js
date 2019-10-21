@@ -72,70 +72,70 @@ export function logoutUser() {
 export function updateUsername(username) {
   return {
     type: UPDATE_USERNAME,
-    payload: axios.put("/user/username", username)
+    payload: axios.put("/api/user/username", username)
   };
 }
 
 export function updateEmail(email) {
   return {
     type: UPDATE_EMAIL,
-    payload: axios.put("/user/username", email)
+    payload: axios.put("/api/user/username", email)
   };
 }
 
 export function updateAvatar(avatar) {
   return {
     type: UPDATE_AVATAR,
-    payload: axios.put("/user/avatar", avatar)
+    payload: axios.put("/api/user/avatar", avatar)
   };
 }
 
 export function updateWeight(weight) {
   return {
     type: UPDATE_WEIGHT,
-    payload: axios.put("/user/weight", weight)
+    payload: axios.put("/api/user/weight", weight)
   };
 }
 
 export function updatePhoneNumber(phone_number) {
   return {
     type: UPDATE_PHONE_NUMBER,
-    payload: axios.put("/user/phonenumber", phone_number)
+    payload: axios.put("/api/user/phonenumber", phone_number)
   };
 }
 
 export function updateWeightGoal(weight) {
   return {
     type: UPDATE_WEIGHT_GOAL,
-    payload: axios.put("/goal/weight", weight)
+    payload: axios.put("/api/goal/weight", weight)
   };
 }
 
 export function updateCarbGoal(carbs) {
   return {
     type: UPDATE_CARB_GOAL,
-    payload: axios.put("/goal/carbs", carbs)
+    payload: axios.put("/api/goal/carbs", carbs)
   };
 }
 
 export function updateCalorieGoal(calories) {
   return {
     type: UPDATE_CALORIE_GOAL,
-    payload: axios.put("/goal/calories", calories)
+    payload: axios.put("/api/goal/calories", calories)
   };
 }
 
 export function updateProteinGoal(protein) {
   return {
     type: UPDATE_PROTEIN_GOAL,
-    payload: axios.put("/goal/protein", protein)
+    payload: axios.put("/api/goal/protein", protein)
   };
 }
 
 export function updateFatGoal(fat) {
   return {
     type: UPDATE_FAT_GOAL,
-    payload: axios.put("/goal/fat", fat)
+    payload: axios.put("/api/goal/fat", fat)
   };
 }
 

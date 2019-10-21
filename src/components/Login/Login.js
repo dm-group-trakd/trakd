@@ -6,6 +6,7 @@ import TextField from '@material-ui/core/TextField';
 import { Link, Redirect} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {loginUser, getSession} from '../../redux/reducers/userReducer';
+import './Styles/Login.scss'
 
 
 
@@ -38,13 +39,18 @@ class Login extends Component{
             return <Redirect to="/dashboard"/>
         }
         return(
+            <div className="Login-Container">
+                <div className="Login-Box">
             <Card>
                 <CardContent>
+                    
                     <section>
                         {/* <img>Logo</img>
                          */}
-                        <h1>Logo</h1>
-                        <h1>Sign In</h1>
+                         <div className="Image-Container">
+                        <img src = "https://files.slack.com/files-pri/T039C2PUY-FP8DJ32Q2/cover.png" id="Logo"/>
+                        </div>
+                        <h1 id="Sign-In">Sign In</h1>
                     </section>
                     <section>
                         <TextField
@@ -77,11 +83,15 @@ class Login extends Component{
                                 variant="contained" 
                                 color="primary"
                                 onClick={this.handleSubmit}
+                                className = "Login-Button"
                             >Login</Button>
-                        <h1>Don't have an account? Register <Link to="/register">here!</Link></h1>
+                        <h1 className="Register-Link">Don't have an account? Register <Link to="/register">here!</Link></h1>
                     </section>
+                   
                 </CardContent>
             </Card>
+            </div>
+            </div>
         )
     }
 
