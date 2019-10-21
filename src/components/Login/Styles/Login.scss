@@ -1,0 +1,62 @@
+.Login-Container {
+   display: flex;
+   justify-content: space-evenly;
+   width: 100vw;
+   height: 100vh;
+   
+   
+   align-items: center;
+   
+}
+
+.Login-Box {
+    height: 50vh;
+    width: 40vw;
+    text-align: center;
+    justify-content: space-evenly;
+   
+    
+    
+
+    
+}
+
+#Logo {
+    height: 210px;
+    width: 350px;
+    display: flex;
+    align-self: center;
+    
+}
+
+.Image-Container {
+    display: flex;
+    justify-content: center;
+}
+
+#Sign-In {
+    font-size: 2.5em;
+}
+
+.Register-Link {
+    margin-top: 20px;
+}
+
+
+
+@media screen and (max-width :800px) {
+    .Login-Box {
+        height: 50vh;
+        width: 65vw;
+        
+    }
+
+    #Logo {
+        height: 150px;
+        width: 250px;
+        
+        
+    }
+
+    
+}
