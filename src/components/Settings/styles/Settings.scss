@@ -1,0 +1,31 @@
+
+.settings-page {
+    width: 90vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-card-1, .settings-card-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+
+}
+
+.settings-button-style {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30vw;
+}
+
+.settings-settings, .settings-goals {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
