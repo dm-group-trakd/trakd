@@ -3,7 +3,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-import { Redirect, Link} from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import {connect} from 'react-redux';
 import {registerUser, getSession} from '../../redux/reducers/userReducer';
 import './styles/Register.scss';
