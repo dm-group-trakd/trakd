@@ -7,7 +7,7 @@
 }
 .card-container{
     height:75vh;
-    width: 35vw;
+    width: 45vw;
     display: flex;
     justify-content: center;
     box-shadow:  20px 20px black;
@@ -30,6 +30,7 @@
     display: flex;
     justify-content: space-around;
     width: 35vw;
+    height: 25vh;
 }
 .first-row{
     display: flex;
@@ -51,7 +52,7 @@
     font-size: 35px;
 }
 .reg-btn{
-    width: 10vw
+    width: 150px
 }
 @media(max-width:950px){
     .card-container{
@@ -64,10 +65,11 @@
     }
     .inputs{
         width: 90vw;
+        height:40vh;
     }
-    .reg-btn{
-        width:20vw;
-    }
+    // .reg-btn{
+    //     width:20vw;
+    // }
     .inputs{
         flex-direction: column;
     }
