@@ -33,6 +33,7 @@ module.exports = {
             };
             console.log(req.session.user)
             res.status(200).json(req.session.user);
+            db.auth.goals(req.session.user.user_id)
         };
     },
     loginUser: async (req, res) => {
