@@ -21,3 +21,11 @@
     align-items: center;
     width: 30vw;
 }
+
+.settings-settings, .settings-goals {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+}

@@ -4,8 +4,9 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import TextField from "@material-ui/core/TextField";
 import { connect } from "react-redux";
-import { getSession } from "../../redux/reducers/userReducer";
+import { getSession, updateUsername, updateEmail, updateAvatar, updateWeight, updatePhoneNumber, updateWeightGoal, updateCarbGoal, updateCalorieGoal, updateProteinGoal, updateFatGoal } from "../../redux/reducers/userReducer";
 import "./styles/Settings.css"
+
 
 class Settings extends Component {
     constructor() {
@@ -30,12 +31,19 @@ class Settings extends Component {
         })
     }
 
+    handleUsernameUpdate=()=>{
+        this.props.updateUsername(this.state.username)
+    }
+    
+
+
     render() {
         return (
             <div className="settings-page">
                 <section className="settings-card-1">
                     <Card>
                         <CardContent>
+                            <h2 className="settings-settings">Settings</h2>
                             <div className="settings-button-style">
                                 <TextField
                                     id="outlined-Username-input"
@@ -50,7 +58,7 @@ class Settings extends Component {
                                 <Button
                                     variant="contained"
                                     color="primary"
-                                    onClick={this.handleSubmit}>
+                                    onClick={this.handleUsernameUpdate}>
                                     update</Button>
                             </div>
                             <div className="settings-button-style">
@@ -127,6 +135,7 @@ class Settings extends Component {
                 <section className="settings-card-2">
                     <Card>
                         <CardContent>
+                            <h2 className="settings-goals">Goals</h2>
                             <div className="settings-button-style">
                                 <TextField
                                     id="outlined-Weight_Goal-input"
@@ -227,5 +236,5 @@ const mapStateToProps = reduxState => {
 }
 
 export default connect(mapStateToProps, {
-    getSession
+    getSession, updateUsername, updateEmail, updateAvatar, updateWeight, updatePhoneNumber, updateWeightGoal, updateCarbGoal, updateCalorieGoal, updateProteinGoal, updateFatGoal
 })(Settings)
