@@ -18,7 +18,7 @@ class Settings extends Component {
             weight: 0,
             phone_number: 0,
             weight_goal: 0,
-            carb_goal: 0,
+            carbs_goal: 0,
             calorie_goal: 0,
             protein_goal: 0,
             fat_goal: 0
@@ -26,15 +26,60 @@ class Settings extends Component {
     }
 
     handleInput = (e) => {
+        console.log(e.target.value)
         this.setState({
             [e.target.name]: e.target.value
         })
     }
 
     handleUsernameUpdate=()=>{
-        this.props.updateUsername(this.state.username)
+        const {username}=this.state
+        this.props.updateUsername({username})
     }
     
+    handleEmailUpdate=()=>{
+        const {email}=this.state
+        this.props.updateEmail({email})
+    }
+
+    // handleAvatarUpdate=()=>{
+    // }    Kevin do cloudinary
+
+    handleWeightUpdate=()=>{
+        const {weight}=this.state
+        this.props.updateWeight({weight})
+    }
+
+    handlePhoneNumberUpdate=()=>{
+        const {phone_number}=this.state
+        this.props.updatePhoneNumber({phone_number})
+    }
+
+    handleWeightGoalUpdate=()=>{
+        const {weight_goal}=this.state
+        this.props.updateWeightGoal({weight_goal})
+    }
+
+    handleCalorieGoalUpdate=()=>{
+        const {calorie_goal}=this.state
+        this.props.updateCalorieGoal({calorie_goal})
+    }
+
+    handleProteinGoalUpdate=()=>{
+        const {protein_goal}=this.state
+        this.props.updateProteinGoal({protein_goal})
+    }
+
+    handleCarbGoalUpdate=()=>{
+        const {carbs_goal}=this.state
+        console.log(carbs_goal)
+        this.props.updateCarbGoal({carbs_goal})
+    }
+
+    handleFatGoalUpdate=()=>{
+        const {fat_goal}=this.state
+        this.props.updateFatGoal({fat_goal})
+    }
 
 
     render() {
@@ -75,7 +120,7 @@ class Settings extends Component {
                                 <Button
                                     variant="contained"
                                     color="primary"
-                                    onClick={this.handleSubmit}>
+                                    onClick={this.handleEmailUpdate}>
                                     update</Button>
                             </div>
                             <div className="settings-button-style">
@@ -109,7 +154,7 @@ class Settings extends Component {
                                 <Button
                                     variant="contained"
                                     color="primary"
-                                    onClick={this.handleSubmit}>
+                                    onClick={this.handleWeightUpdate}>
                                     update</Button>
                             </div>
                             <div className="settings-button-style">
@@ -126,7 +171,7 @@ class Settings extends Component {
                                 <Button
                                     variant="contained"
                                     color="primary"
-                                    onClick={this.handleSubmit}>
+                                    onClick={this.handlePhoneNumberUpdate}>
                                     update</Button>
                             </div>
                         </CardContent>
@@ -150,7 +195,7 @@ class Settings extends Component {
                                 <Button
                                     variant="contained"
                                     color="primary"
-                                    onClick={this.handleSubmit}>
+                                    onClick={this.handleWeightGoalUpdate}>
                                     update</Button>
                             </div>
                             <div className="settings-button-style">
@@ -167,7 +212,7 @@ class Settings extends Component {
                                 <Button
                                     variant="contained"
                                     color="primary"
-                                    onClick={this.handleSubmit}>
+                                    onClick={this.handleCalorieGoalUpdate}>
                                     update</Button>
                             </div>
                             <div className="settings-button-style">
@@ -184,16 +229,16 @@ class Settings extends Component {
                                 <Button
                                     variant="contained"
                                     color="primary"
-                                    onClick={this.handleSubmit}>
+                                    onClick={this.handleProteinGoalUpdate}>
                                     update</Button>
                             </div>
                             <div className="settings-button-style">
                                 <TextField
-                                    id="outlined-Carb_Goal-input"
-                                    label="Carb Goal"
+                                    id="outlined-Carbs_Goal-input"
+                                    label="Carbs Goal"
                                     type="text"
-                                    name="carb_goal"
-                                    autoComplete="carb_goal"
+                                    name="carbs_goal"
+                                    autoComplete="carbs_goal"
                                     margin="normal"
                                     variant="outlined"
                                     onChange={this.handleInput} >
@@ -201,7 +246,7 @@ class Settings extends Component {
                                 <Button
                                     variant="contained"
                                     color="primary"
-                                    onClick={this.handleSubmit}>
+                                    onClick={this.handleCarbGoalUpdate}>
                                     update</Button>
                             </div>
                             <div className="settings-button-style">
@@ -218,7 +263,7 @@ class Settings extends Component {
                                 <Button
                                     variant="contained"
                                     color="primary"
-                                    onClick={this.handleSubmit}>
+                                    onClick={this.handleFatGoalUpdate}>
                                     update</Button>
                             </div>
                         </CardContent>
