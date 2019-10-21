@@ -6,11 +6,11 @@
     align-items: center;
 }
 .card-container{
-    height:60vh;
-    width: 40vw;
+    height:75vh;
+    width: 35vw;
     display: flex;
     justify-content: center;
-    box-shadow:  5px 10px black;
+    box-shadow:  20px 20px black;
 }
 .card-content{
     display: flex;
@@ -29,7 +29,7 @@
 .inputs{
     display: flex;
     justify-content: space-around;
-    width: 40vw;
+    width: 35vw;
 }
 .first-row{
     display: flex;
@@ -40,7 +40,7 @@
     flex-direction: column;
 }
 .img{
-    width: 20vw;
+    width: 300px;
 }
 .head{
     display: flex;
@@ -49,9 +49,26 @@
 }
 .signUp{
     font-size: 35px;
-    // font-family: 'Roboto', sans-serif;
-
 }
 .reg-btn{
     width: 10vw
+}
+@media(max-width:950px){
+    .card-container{
+        background-color: transparent;
+        width: 100vw;
+        height:100vh;
+    }
+    .card-content{
+        width: 90vw;
+    }
+    .inputs{
+        width: 90vw;
+    }
+    .reg-btn{
+        width:20vw;
+    }
+    .inputs{
+        flex-direction: column;
+    }
 }
