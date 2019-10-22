@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-
+import Calories from "../calories/Calories"
 
 
 export default class Dashboard extends Component{
@@ -14,6 +14,7 @@ export default class Dashboard extends Component{
         return(
             <div>
                 <h1>Dashboard</h1>
+                <Calories/>
             </div>
         )
     }
