@@ -15,3 +15,7 @@ import { getSession, updateFatGoal, loginUser, registerUser } from "../redux/red
     test("updateFatGoal should change form the previous goal to the new goal", ()=>{
         expect(updateFatGoal(1).type).toBe("UPDATE_FAT_GOAL")
     })
+
+    
+    // Component Tests
+
