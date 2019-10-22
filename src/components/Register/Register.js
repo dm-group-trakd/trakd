@@ -48,7 +48,7 @@ class Register extends Component {
                             <section className = "head">
                                 {/* <img>Logo</img>
                                 */}
-                                <img  className = "img" src = 'https://files.slack.com/files-pri/T039C2PUY-FP8DJ32Q2/cover.png' alt =""/>
+                                <img  className = "img" src = 'https://i.imgur.com/2EJZHHT.png' alt =""/>
                                 <h1 className ="signUp">Sign Up</h1>
                             </section>
                             <div className = "inputs">
