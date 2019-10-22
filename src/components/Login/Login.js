@@ -48,7 +48,7 @@ class Login extends Component{
                         {/* <img>Logo</img>
                          */}
                          <div className="Image-Container">
-                        <img src = "https://files.slack.com/files-pri/T039C2PUY-FP8DJ32Q2/cover.png" id="Logo"/>
+                        <img src = "https://i.imgur.com/2EJZHHT.png" id="Logo"/>
                         </div>
                         <h1 id="Sign-In">Sign In</h1>
                     </section>
