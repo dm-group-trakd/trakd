@@ -70,6 +70,7 @@ export function logoutUser() {
 //settings functions
 
 export function updateUsername(username) {
+  console.log(username)
   return {
     type: UPDATE_USERNAME,
     payload: axios.put("/api/user/username", username)
@@ -79,7 +80,7 @@ export function updateUsername(username) {
 export function updateEmail(email) {
   return {
     type: UPDATE_EMAIL,
-    payload: axios.put("/api/user/username", email)
+    payload: axios.put("/api/user/email", email)
   };
 }
 
@@ -111,17 +112,18 @@ export function updateWeightGoal(weight) {
   };
 }
 
-export function updateCarbGoal(carbs) {
+export function updateCarbGoal(carbs_goal) {
+  console.log(carbs_goal)
   return {
     type: UPDATE_CARB_GOAL,
-    payload: axios.put("/api/goal/carbs", carbs)
+    payload: axios.put("/api/goal/carbs", carbs_goal)
   };
 }
 
 export function updateCalorieGoal(calories) {
   return {
     type: UPDATE_CALORIE_GOAL,
-    payload: axios.put("/api/goal/calories", calories)
+    payload: axios.put("/api/goal/calorie", calories)
   };
 }
 

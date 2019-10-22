@@ -113,7 +113,7 @@ class Register extends Component {
                                 <TextField
                                     id="outlined-phone_number-input"
                                     label="Phone Number"
-                                    type="phone"
+                                    type="number"
                                     name="phone_number"
                                     autoComplete="phone_number"
                                     margin="normal"

@@ -1,32 +1,32 @@
 .Login-Container {
-   display: flex;
-   justify-content: space-evenly;
-   width: 100vw;
-   height: 100vh;
-   
-   
-   align-items: center;
-   
+    display: flex;
+    justify-content: space-evenly;
+    width: 100vw;
+    height: 100vh;
+    
+    
+    align-items: center;
+    
 }
 
 .Login-Box {
-    height: 50vh;
+    height: 60vh;
     width: 40vw;
     text-align: center;
-    justify-content: space-evenly;
-
-    
-    
-
-    
+    justify-content: space-evenly; 
 }
 
 #Logo {
-    
+    // height: 210px;
     width: 350px;
     display: flex;
     align-self: center;
-    
+}
+.MuiCardContent-root{
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .Image-Container {
@@ -46,17 +46,12 @@
 
 @media screen and (max-width :800px) {
     .Login-Box {
-        height: 50vh;
-        width: 65vw;
+        height: 100vh;
+        width: 100vw;
         
     }
 
     #Logo {
-        height: 150px;
         width: 250px;
-        
-        
-    }
-
-    
+    }  
 }

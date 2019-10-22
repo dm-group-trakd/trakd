@@ -40,8 +40,8 @@ class Login extends Component{
         }
         return(
             <div className="Login-Container">
-                <div className="Login-Box">
             <Card>
+                <div className="Login-Box">
                 <CardContent>
                     
                     <section>
@@ -54,7 +54,7 @@ class Login extends Component{
                     </section>
                     <section>
                         <TextField
-                            id="outlined-first_name-input"
+                            id="outlined-Username-input"
                             label="Username"
                             type="text"
                             name="username"
@@ -67,7 +67,7 @@ class Login extends Component{
                     </section>
                     <section>
                         <TextField
-                            id="outlined-phone_number-input"
+                            id="outlined-Password-input"
                             label="Password"
                             type="password"
                             name="password"
@@ -89,8 +89,8 @@ class Login extends Component{
                     </section>
                    
                 </CardContent>
-            </Card>
             </div>
+            </Card>
             </div>
         )
     }
