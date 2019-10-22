@@ -13,16 +13,16 @@ class Calories extends React.Component{
             labels: ["", "calories"],
             datasets: [
               {
-                data: [100, 2000],
+                data: [1000, 2000],
                 backgroundColor: ["#36A2EB", "#dae0e6"]
               }
             ]
           };
         return(
-            <div>
+            <div className = 'calorie-container'>
                 <Card>
                     <CardContent>
-                        <Doughnut data={data} width ="600" height ="400" />
+                        <Doughnut data={data} width ="700" height ="600" />
                     </CardContent>
                 </Card>
             </div>
