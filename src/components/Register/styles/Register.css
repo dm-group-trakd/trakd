@@ -13,16 +13,26 @@
 }
 
 .card-container {
+<<<<<<< HEAD
   height: 60vh;
   width: 40vw;
+=======
+  height: 75vh;
+  width: 45vw;
+>>>>>>> master
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+<<<<<<< HEAD
   -webkit-box-shadow: 5px 10px black;
           box-shadow: 5px 10px black;
+=======
+  -webkit-box-shadow: 20px 20px black;
+          box-shadow: 20px 20px black;
+>>>>>>> master
 }
 
 .card-content {
@@ -64,7 +74,12 @@
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+<<<<<<< HEAD
   width: 40vw;
+=======
+  width: 35vw;
+  height: 25vh;
+>>>>>>> master
 }
 
 .first-row {
@@ -88,7 +103,11 @@
 }
 
 .img {
+<<<<<<< HEAD
   width: 20vw;
+=======
+  width: 300px;
+>>>>>>> master
 }
 
 .head {
@@ -109,6 +128,31 @@
 }
 
 .reg-btn {
+<<<<<<< HEAD
   width: 10vw;
+=======
+  width: 150px;
+}
+
+@media (max-width: 950px) {
+  .card-container {
+    background-color: transparent;
+    width: 100vw;
+    height: 100vh;
+  }
+  .card-content {
+    width: 90vw;
+  }
+  .inputs {
+    width: 90vw;
+    height: 40vh;
+  }
+  .inputs {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+>>>>>>> master
 }
 /*# sourceMappingURL=Register.css.map */
