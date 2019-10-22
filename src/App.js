@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './src-styles/App/App.scss';
 import {connect} from 'react-redux';
-import {getSession} from './redux/reducers/userReducer';
+import {getSession, registerUser} from './redux/reducers/userReducer';
 import routes from './routes';
 import {withRouter} from 'react-router-dom';
 
@@ -14,23 +14,18 @@ import Register from './components/Register/Register';
 
 
 class App extends Component{
-
-
   render(){
+    let content;
+    if(!this.props.user_id && this.props.location.pathname == "/"){
+      content = <Login />
+    }else if(!this.props.user_id && this.props.location.pathname == "/register"){
+      content = <Register/>
+    }else if(this.props.user_id){
+      content =<div><Nav/>{routes}</div>
+    }
     return (
       <div className="App">
-        {!this.props.user_id 
-        ?
-        this.props.location.pathname === "/" ?
-          <Login />
-        :
-        <Register />
-        :
-        <>
-          <Nav/>
-          {routes}
-        </>
-        }
+        <span>{content}</span>
       </div>
     );
   }
