@@ -171,7 +171,8 @@ class Settings extends Component {
                                 <Button
                                     variant="contained"
                                     color="primary"
-                                    onClick={this.handlePhoneNumberUpdate}>
+                                    onClick={this.handlePhoneNumberUpdate}
+                                    id="update-phone-number">
                                     update</Button>
                             </div>
                         </CardContent>
