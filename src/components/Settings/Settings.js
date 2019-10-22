@@ -49,17 +49,17 @@ class Settings extends Component {
         const {weight}=this.state
         this.props.updateWeight({weight})
     }
-
+    //*
     handlePhoneNumberUpdate=()=>{
         const {phone_number}=this.state
         this.props.updatePhoneNumber({phone_number})
     }
-
+    //*
     handleWeightGoalUpdate=()=>{
         const {weight_goal}=this.state
         this.props.updateWeightGoal({weight_goal})
     }
-
+    //*
     handleCalorieGoalUpdate=()=>{
         const {calorie_goal}=this.state
         this.props.updateCalorieGoal({calorie_goal})
