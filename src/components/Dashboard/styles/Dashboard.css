@@ -1,0 +1,9 @@
+.dashboard-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100vw;
+}
+/*# sourceMappingURL=Dashboard.css.map */
