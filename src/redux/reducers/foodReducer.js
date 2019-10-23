@@ -1,12 +1,7 @@
 import axios from 'axios';
 
 const initialState = {
-    nutrition_id: 0,
-    food: '',
-    calories: 0,
-    fat: 0,
-    carbs: 0,
-    protein: 0
+    food:[]
 }
 
 //string literals
@@ -45,22 +40,11 @@ export default function reducer(state = initialState, action) {
         case `${GET_FOOD}_FULFILLED`:
             return{
                 ...state,
-                nutrition_id: payload.data.nutrition_id,
-                food: payload.data.food,
-                calories: payload.data.calories,
-                fat: payload.data.fat,
-                carbs: payload.data.carbs,
-                protein: payload.data.protein
+                food: payload.data
             }
         case `${ADD_FOOD}_FULFILLED`:
             return{
-                ...state,
-                nutrition_id: payload.data.nutrition_id,
-                food: payload.data.food,
-                calories: payload.data.calories,
-                fat: payload.data.fat,
-                carbs: payload.data.carbs,
-                protein: payload.data.protein
+                ...state
             }
         case `${DELETE_FOOD}_FULFILLED`:
             return{
