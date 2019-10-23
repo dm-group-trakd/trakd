@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import Calories from "../calories/Calories"
-
+import Tips from "../tips/Tips"
 
 export default class Dashboard extends Component{
     constructor(){
@@ -15,6 +15,7 @@ export default class Dashboard extends Component{
             <div>
                 {/* <h1>Dashboard</h1> */}
                 <Calories/>
+                <Tips/>
             </div>
         )
     }
