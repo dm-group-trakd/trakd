@@ -7,7 +7,7 @@ import AddNutrition from "./components/AddNutrition/AddNutrition";
 import Settings from "./components/Settings/Settings";
 import Calories from "./components/calories/Calories";
 import About from "./components/About/About"
-import ProteinChart from "./components/ProteinChart/ProteinChart"
+
 
 
 
@@ -20,7 +20,7 @@ export default(
         <Route path="/settings" component={Settings} />
         <Route path = "/calories" component ={Calories}/>
         <Route path = "/about" component = {About}/>
-        <Route path = "/proteinchart" component = {ProteinChart}/>
+    
     
         <Route render={() => {
             return <h1>404 Not Found</h1>
