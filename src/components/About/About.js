@@ -18,8 +18,12 @@ export default function About() {
                             In qui audire alterum convenire, tale dicta sit cu. Et sea habemus indoctum. Ius cu malorum mediocritatem, et malis corrumpit per, ei tincidunt moderatius nam. Mei at error labitur, duo labitur vivendo in, ut ullum officiis pertinacia qui. Ad per audiam utamur nostrum, illum tacimates ius ei, lorem omnium duo ea.
                 </p>
                     <div className="Logos">
+                    <a href="https://github.com/freddyernst" target="_blank">
                         < img src="https://cdn.iconscout.com/icon/free/png-256/github-153-675523.png" id="Github" />
+                    </a>
+                    <a href="https://linkedin.com/in/freddyernst" target="_blank">
                         < img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" id="Linkedin" />
+                    </a>
                     </div>
                     </div>
                 </div>
@@ -34,8 +38,12 @@ export default function About() {
                         In qui audire alterum convenire, tale dicta sit cu. Et sea habemus indoctum. Ius cu malorum mediocritatem, et malis corrumpit per, ei tincidunt moderatius nam. Mei at error labitur, duo labitur vivendo in, ut ullum officiis pertinacia qui. Ad per audiam utamur nostrum, illum tacimates ius ei, lorem omnium duo ea.
                 </p>
                     <div className="Logos">
+                    <a href="https://github.com/Kevinkh14" target="_blank">
                         < img src="https://cdn.iconscout.com/icon/free/png-256/github-153-675523.png" id="Github" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/kevinhernandez14/" target="_blank">
                         < img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" id="Linkedin" />
+                    </a>
                     </div>
                 </div>
                 <div className="Jacob">
@@ -49,8 +57,12 @@ export default function About() {
                         In qui audire alterum convenire, tale dicta sit cu. Et sea habemus indoctum. Ius cu malorum mediocritatem, et malis corrumpit per, ei tincidunt moderatius nam. Mei at error labitur, duo labitur vivendo in, ut ullum officiis pertinacia qui. Ad per audiam utamur nostrum, illum tacimates ius ei, lorem omnium duo ea.
                 </p>
                     <div className="Logos">
+                         <a href="https://github.com/bxker" target="_blank">
                         < img src="https://cdn.iconscout.com/icon/free/png-256/github-153-675523.png" id="Github" />
+                         </a>
+                         <a href="https://www.linkedin.com/in/bxker/" target="_blank">
                         < img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" id="Linkedin" />
+                         </a>
                     </div>
                 </div>
                 <div className="Jamison">
@@ -64,8 +76,12 @@ export default function About() {
                         In qui audire alterum convenire, tale dicta sit cu. Et sea habemus indoctum. Ius cu malorum mediocritatem, et malis corrumpit per, ei tincidunt moderatius nam. Mei at error labitur, duo labitur vivendo in, ut ullum officiis pertinacia qui. Ad per audiam utamur nostrum, illum tacimates ius ei, lorem omnium duo ea.
                 </p>
                     <div className="Logos">
-                        < img src="https://cdn.iconscout.com/icon/free/png-256/github-153-675523.png" id="Github" />
+                        <a href="https://github.com/jensenjamison" target="_blank">
+                        < img src="https://cdn.iconscout.com/icon/free/png-256/github-153-675523.png" id="Github"  />
+                        </a>
+                        <a href="https://linkedin.com/in/jamison-jensen" target="_blank">
                         < img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" id="Linkedin" />
+                        </a>
                     </div>
                 </div>
             </div>
