@@ -1,5 +1,5 @@
 import React from 'react'
-import './styles/calories.scss'
+import './styles/Fat.scss'
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import { Doughnut } from 'react-chartjs-2'
@@ -33,15 +33,7 @@ class Fat extends React.Component {
     
         console.log(this.props.food)
     }
-    // setEaten = value => {
-    //     this.setState({ eatenHolder: +value})
-    // }
 
-    // setGoal = () => {
-    //     this.setState({
-    //         eaten: this.state.eaten + this.state.eatenHolder
-    //     })
-    // }
     render() {
         const data = {
             labels: ["", "fat"],
