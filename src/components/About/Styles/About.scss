@@ -20,9 +20,9 @@
 }
 
 
-.Freddy {
+.Freddy, .Kevin, .Jameson, .Jacob {
     margin-top: 50px;
-    height: 50vh;
+    height: 60vh;
     width: 40vw;
     display: flex;
     border: black 1px solid;
@@ -65,48 +65,11 @@
     font-size: 1em;
 }
 
-.Kevin {
-    margin-top: 50px;
-    height: 50vh;
-    width: 40vw;
-    display: flex;
-    border: black 1px solid;
-    flex-direction: column;
-    font-size: 2em;
-    margin-left: 200px;
-    background: grey;
-    float: right;
-    
-}
 
-
-.Jacob {
-    margin-top: 50px;
-    height: 50vh;
-    width: 40vw;
-    display: flex;
-    border: black 1px solid;
-    flex-direction: column;
-    font-size: 2em;
-    margin-left: 200px;
-    background: grey;
-}
-
-.Jameson {
-    margin-top: 50px;
-    height: 50vh;
-    width: 40vw;
-    display: flex;
-    border: black 1px solid;
-    flex-direction: column;
-    font-size: 2em;
-    margin-left: 200px;
-    background: grey;
-}
 
 #Freddy {
-    height: 150px;
-    width: 150px;
+    height: 200px;
+    width: 200px;
     border-radius:50%;
     margin-top: 20px;
     display: flex;
