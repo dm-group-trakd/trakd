@@ -21,11 +21,11 @@ class App extends Component{
     }else if(!this.props.user_id && this.props.location.pathname == "/register"){
       content = <Register/>
     }else if(this.props.user_id){
-      content =<div><Nav/>{routes}</div>
+      content =<div id ="nav-flex"><Nav/>{routes}</div>
     }
     return (
       <div className="App">
-        <span>{content}</span>
+      {content}
       </div>
     );
   }

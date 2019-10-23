@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-
+import React, {Component} from "react";
+import Calories from "../calories/Calories"
 
 
 export default class Dashboard extends Component {
@@ -15,7 +15,8 @@ export default class Dashboard extends Component {
     render() {
         return (
             <div>
-                <h1>Dashboard</h1>
+                {/* <h1>Dashboard</h1> */}
+                <Calories/>
             </div>
         )
     }
