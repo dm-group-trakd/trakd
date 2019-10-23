@@ -1,0 +1,30 @@
+.card {
+  height: 66vh;
+  width: 40vw;
+}
+
+.food-container {
+  margin-top: 50px;
+  position: relative;
+}
+
+.dashboard-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  height: 5vh;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  border-bottom: 1px solid black;
+}
+
+.add-button {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+/*# sourceMappingURL=Food.css.map */
