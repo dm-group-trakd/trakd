@@ -1,0 +1,79 @@
+
+
+.Trakd-Devs {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 4em;
+    margin-left: 200px;
+    border-bottom: 1px solid lightblue;
+}
+
+.About-Profiles{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    
+    
+    
+
+}
+
+
+.Freddy, .Kevin, .Jameson, .Jacob {
+    margin-top: 50px;
+    height: 60vh;
+    width: 40vw;
+    display: flex;
+    border: black 1px solid;
+    flex-direction: column;
+    font-size: 2em;
+    margin-left: 200px;
+    background: grey;
+
+}
+
+#Bio {
+    font-size: .4em;
+    display: flex;
+    
+    padding: 60px 60px;
+    margin-bottom: 50px;
+    
+}
+
+#Github, #Linkedin {
+    height: 50px;
+    width: 50px;
+    
+    
+
+
+}
+
+.Logos {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+    
+}
+
+.Name{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 1em;
+}
+
+
+
+#Freddy {
+    height: 200px;
+    width: 200px;
+    border-radius:50%;
+    margin-top: 20px;
+    display: flex;
+    align-self: center;
+    
+}
+
