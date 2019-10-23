@@ -70,7 +70,7 @@ export function logoutUser() {
 //settings functions
 
 export function updateUsername(username) {
-  console.log(username)
+
   return {
     type: UPDATE_USERNAME,
     payload: axios.put("/api/user/username", username)
