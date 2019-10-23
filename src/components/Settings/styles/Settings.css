@@ -1,5 +1,5 @@
 .settings-page {
-  width: 90vw;
+  width: 100vw;
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10,6 +10,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background: url("https://media.giphy.com/media/3mJyfDFH0BqgbdghWJ/giphy.gif");
 }
 
 .settings-card-1, .settings-card-2 {
@@ -22,6 +23,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-left: 120px;
   width: 90vw;
 }
 
