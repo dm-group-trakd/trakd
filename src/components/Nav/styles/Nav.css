@@ -5,25 +5,6 @@
   height: 100vh;
 }
 
-#cogwheel {
-  height: 30px;
-  width: 30px;
-}
-
-.Login-Button {
-  margin-bottom: 50px;
-}
-
-#dashboard-logo {
-  height: 40px;
-  width: 40px;
-}
-
-#about-logo {
-  height: 40px;
-  width: 40px;
-}
-
 .nav-container {
   width: 8vw;
   height: 100vh;
@@ -121,6 +102,21 @@ div.side-menu, .side-menu-open, .side-menu-close {
 .side-menu-close {
   -webkit-animation: close .7s forwards ease;
           animation: close .7s forwards ease;
+}
+
+#cogwheel {
+  height: 30px;
+  width: 30px;
+}
+
+#dashboard-logo {
+  height: 40px;
+  width: 40px;
+}
+
+#about-logo {
+  height: 40px;
+  width: 40px;
 }
 
 @-webkit-keyframes open {
