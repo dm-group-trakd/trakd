@@ -3,6 +3,8 @@ import { Card, CardContent } from '@material-ui/core'
 import Fab from '@material-ui/core/Fab';
 // import AddIcon from '@material-ui/icons/Add';
 import "./styles/Food.css"
+import {getFood} from '../../redux/reducers/foodReducer';
+import {connect} from 'react-redux';
 
 class Food extends Component {
     constructor() {
@@ -12,8 +14,12 @@ class Food extends Component {
         }
     }
 
+    componentDidMount(){
+        this.props.getFood()
+    }
 
     render() {
+        console.log(this.props.food)
         return (
             <div className="food-container">
                 <Card>
@@ -39,4 +45,14 @@ class Food extends Component {
     }
 }
 
-export default Food
+const mapStateToProps = reduxState => {
+    return{
+        user_id: reduxState.userReducer.user_id,
+        food: reduxState.foodReducer.food
+    }
+}
+
+
+export default connect(mapStateToProps, {
+    getFood
+})(Food)
