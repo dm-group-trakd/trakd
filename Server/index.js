@@ -49,7 +49,7 @@ app.put('/api/goal/protein', updateProteinGoal)
 // Food paths
 app.get('/api/food', getFood)
 app.post('/api/food', addFood)
-app.delete('/api/food/:food_id', deleteFood)
+app.delete('/api/food/:nutrition_id', deleteFood)
 
 
 app.listen(SERVER_PORT, () => {

@@ -8,19 +8,19 @@ module.exports = {
     },
 
     addFood: async (req, res) => {
-        const { food_name } = req.body
+        const { calories, protein, fat, carbs,food } = req.body
         const { user_id } = req.session.user
 
         const db = req.app.get('db')
-        const addedFood = await db.food.addFood(food_name, user_id)
+        const addedFood = await db.food.addFood(calories, protein, fat, carbs,food, user_id)
         res.status(200).json(addedFood)
     },
 
     deleteFood: async (req, res) => {
-        const { food_name } = req.body
+    
         const {nutrition_id} = req.params
         const db = req.app.get('db')
-        const deletedFood =  await db.food.deleteFood(food_name, nutrition_id)
+        const deletedFood =  await db.food.deleteFood(nutrition_id)
         res.status(200).json(deletedFood)
     }
 }
