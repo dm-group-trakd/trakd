@@ -2,78 +2,84 @@
 
 .Trakd-Devs {
     text-align: center;
-    margin-top: 10px;
+    height: 8vh;
     font-size: 4em;
-    margin-left: 200px;
     border-bottom: 1px solid lightblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8vw;
+    color: #268EE5;
 }
 
 .About-Profiles{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    
-    
-    
-    
+    justify-content: space-evenly;
+    height: 100vh;
+    width: 90vw;
+    margin-left: 8vw;
 
 }
 
-
-.Freddy, .Kevin, .Jameson, .Jacob {
-    margin-top: 50px;
-    height: 60vh;
-    width: 40vw;
+.Freddy, .Kevin, .Jamison, .Jacob {
+    margin-top: 8vh;
+    height: 650px;
+    width: 400px;
     display: flex;
     border: black 1px solid;
     flex-direction: column;
     font-size: 2em;
-    margin-left: 200px;
-    background: grey;
-
-}
-
-#Bio {
-    font-size: .4em;
-    display: flex;
-    
-    padding: 60px 60px;
-    margin-bottom: 50px;
-    
-}
-
-#Github, #Linkedin {
-    height: 50px;
-    width: 50px;
-    
-    
-
-
-}
-
-.Logos {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
+    background: white;
+    border-radius: 5px;
     
 }
 
 .Name{
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    height: 50px;
+    width: 400px;
     font-size: 1em;
+    align-items: center;
+    ;
 }
-
-
 
 #Freddy {
     height: 200px;
     width: 200px;
     border-radius:50%;
-    margin-top: 20px;
     display: flex;
     align-self: center;
+}
+
+#Freddy1 {
+    height: 200px;
+    width: 200px;
+    border-radius:50%;
+    display: flex;
+    align-self: center;
+    position: relative;
+    left: 100px;
+}
+
+#Bio {
+    font-size: .4em;
+    display: flex;
+    padding: 60px 60px;
+    
+}
+
+.Logos {
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    align-items: center;
+}
+
+#Github, #Linkedin {
+    height: 50px;
+    width: 50px;
     
 }
 
