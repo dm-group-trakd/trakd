@@ -1,4 +1,11 @@
 .nav-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+}
+
+.nav-container {
   width: 8vw;
   height: 100vh;
   background: white;
@@ -17,6 +24,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  position: fixed;
 }
 
 .nav-logo {
@@ -45,8 +53,101 @@
           align-items: center;
 }
 
+.ham {
+  display: none;
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+}
+
+.ham-btn {
+  background-color: transparent;
+  border-color: transparent;
+  position: absolute;
+  z-index: 1;
+  outline: none;
+}
+
 .avatar {
   max-width: 50%;
   border-radius: 50%;
+}
+
+div.side-menu, .side-menu-open, .side-menu-close {
+  height: 90vh;
+  width: 100vw;
+  background-color: white;
+  -webkit-transform: translateX(-700px);
+          transform: translateX(-700px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.side-menu-open {
+  -webkit-animation: open .9s forwards ease;
+          animation: open .9s forwards ease;
+}
+
+.side-menu-close {
+  -webkit-animation: close .7s forwards ease;
+          animation: close .7s forwards ease;
+}
+
+@-webkit-keyframes open {
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@keyframes open {
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@-webkit-keyframes close {
+  from {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  to {
+    -webkit-transform: translateX(-700px);
+            transform: translateX(-700px);
+  }
+}
+
+@keyframes close {
+  from {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  to {
+    -webkit-transform: translateX(-700px);
+            transform: translateX(-700px);
+  }
+}
+
+@media (max-width: 800px) {
+  .nav-container {
+    display: none;
+  }
+  .ham {
+    display: block;
+    width: 80px;
+  }
+}
+
+@media (min-width: 800px) {
+  div.side-menu, .side-menu-open, .side-menu-close {
+    display: none;
+  }
 }
 /*# sourceMappingURL=Nav.css.map */
