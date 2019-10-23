@@ -5,6 +5,7 @@ import Register from "./components/Register/Register";
 import Dashboard from "./components/Dashboard/Dashboard";
 import AddNutrition from "./components/AddNutrition/AddNutrition";
 import Settings from "./components/Settings/Settings";
+import Calories from "./components/calories/Calories";
 
 
 export default(
@@ -14,6 +15,7 @@ export default(
         <Route path="/dashboard" component={Dashboard} />
         <Route path="/add" component={AddNutrition} />
         <Route path="/settings" component={Settings} />
+        <Route path = "/calories" component ={Calories}/>
         <Route render={() => {
             return <h1>404 Not Found</h1>
         }}/>

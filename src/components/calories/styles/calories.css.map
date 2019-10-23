@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,kBAAkB,CAAA;EACd,WAAW,EAAC,KAAK;EACjB,UAAU,EAAC,IAAI;CAClB",
+    "sources": [
+        "calories.scss"
+    ],
+    "names": [],
+    "file": "calories.css"
+}
