@@ -2,11 +2,11 @@ import React from 'react'
 import './styles/calories.scss'
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import { Doughnut } from 'react-chartjs-2'
+import {Doughnut } from 'react-chartjs-2'
 import {connect} from 'react-redux'
 import {getFood} from '../../redux/reducers/foodReducer'
 
-class Calories extends React.Component {
+class Carbs extends React.Component {
     constructor() {
         super()
         this.state = {
@@ -17,34 +17,26 @@ class Calories extends React.Component {
     componentDidMount = () => {
         this.props.getFood().then(() => {
 
-            let calorieTotal = 0
+            let carbTotal = 0
             for (let i = 0; i < this.props.food.length; i++) {
 
-                calorieTotal += this.props.food[i].calories
+                carbTotal += this.props.food[i].carbs
                 
             }
             this.setState({
                 
             
-                    eaten: calorieTotal
+                    eaten: carbTotal
                 
             })
         })
     
         console.log(this.props.food)
     }
-    // setEaten = value => {
-    //     this.setState({ eatenHolder: +value})
-    // }
-
-    // setGoal = () => {
-    //     this.setState({
-    //         eaten: this.state.eaten + this.state.eatenHolder
-    //     })
-    // }
+  
     render() {
         const data = {
-            labels: ["", "calories"],
+            labels: ["", "Carbs"],
             datasets: [
                 {
                     data: [this.state.eaten, 2000 - this.state.eaten ],
@@ -53,7 +45,7 @@ class Calories extends React.Component {
             ]
         };
         return (
-            <div className='calorie-container'>
+            <div className='carb-container'>
                 <Card>
                     <CardContent>
                         <Doughnut data={data} width="700" height="600" />
@@ -70,4 +62,4 @@ const mapStateToProps = reduxState => {
 }
 export default connect(mapStateToProps, {
 getFood
-})(Calories);
+})(Carbs);
