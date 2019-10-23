@@ -8,6 +8,7 @@ const {registerUser, loginUser, logOut, getUser} = require('./Controllers/authCo
 const {updateAvatar, updatePhoneNumber, updateUsername, updateEmail, updateWeight} = require('./Controllers/userController')
 const {updateWeightGoal, updateFatGoal, updateCarbsGoal, updateProteinGoal, updateCalorieGoal, getGoals} = require('./Controllers/goalController')
 const {getFood, addFood, deleteFood} = require('./Controllers/foodController')
+const {getTips}  = require('./Controllers/tipsController')
 
 app.use(express.json())
 
@@ -50,6 +51,9 @@ app.put('/api/goal/protein', updateProteinGoal)
 app.get('/api/food', getFood)
 app.post('/api/food', addFood)
 app.delete('/api/food/:nutrition_id', deleteFood)
+
+//tips
+app.get('/api/tips',getTips)
 
 
 app.listen(SERVER_PORT, () => {
