@@ -1,11 +1,11 @@
-.card {
-  height: 66vh;
-  width: 40vw;
-}
-
 .food-container {
   margin-top: 50px;
   position: relative;
+}
+
+.card {
+  height: 66vh;
+  width: 40vw;
 }
 
 .dashboard-card {
@@ -26,5 +26,14 @@
   position: absolute;
   right: 10px;
   bottom: 10px;
+}
+
+.food-mapped {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 /*# sourceMappingURL=Food.css.map */
