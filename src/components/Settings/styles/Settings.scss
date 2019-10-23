@@ -1,17 +1,25 @@
 
 .settings-page {
-    width: 90vw;
+    width: 100vw;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: url("https://media.giphy.com/media/3mJyfDFH0BqgbdghWJ/giphy.gif");
+    
+    
+    
+    
 }
 
 .settings-card-1, .settings-card-2{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 120px;
     width: 90vw;
+
+
 
 }
 
