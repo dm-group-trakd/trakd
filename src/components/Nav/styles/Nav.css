@@ -5,25 +5,6 @@
   height: 100vh;
 }
 
-#cogwheel {
-  height: 30px;
-  width: 30px;
-}
-
-.Login-Button {
-  margin-bottom: 50px;
-}
-
-#dashboard-logo {
-  height: 40px;
-  width: 40px;
-}
-
-#about-logo {
-  height: 40px;
-  width: 40px;
-}
-
 .nav-container {
   width: 8vw;
   height: 100vh;
