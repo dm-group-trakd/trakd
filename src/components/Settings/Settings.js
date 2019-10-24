@@ -24,12 +24,12 @@ class Settings extends Component {
             fat_goal: 0
         }
     }
-    componentDidUpdate=()=>{
+    componentDidUpdate = () => {
         this.props.getSession()
         console.log(this.props.avatar)
-        
+
     }
-    componentDidMount(){
+    componentDidMount() {
         this.props.getSession()
     }
 
@@ -40,78 +40,78 @@ class Settings extends Component {
         })
     }
 
-    handleUsernameUpdate=()=>{
-        const {username}=this.state
-        this.props.updateUsername({username})
-    }
-    
-    handleEmailUpdate=()=>{
-        const {email}=this.state
-        this.props.updateEmail({email})
+    handleUsernameUpdate = () => {
+        const { username } = this.state
+        this.props.updateUsername({ username })
     }
 
-    handleAvatarUpdate=()=>{
-        const {avatar}=this.state
-        this.props.updateAvatar({avatar})
+    handleEmailUpdate = () => {
+        const { email } = this.state
+        this.props.updateEmail({ email })
+    }
+
+    handleAvatarUpdate = () => {
+        const { avatar } = this.state
+        this.props.updateAvatar({ avatar })
         console.log(avatar)
-    }    
-
-    handleWeightUpdate=()=>{
-        const {weight}=this.state
-        this.props.updateWeight({weight})
-    }
-    //*
-    handlePhoneNumberUpdate=()=>{
-        const {phone_number}=this.state
-        this.props.updatePhoneNumber({phone_number})
-    }
-    //*
-    handleWeightGoalUpdate=()=>{
-        const {weight_goal}=this.state
-        this.props.updateWeightGoal({weight_goal})
-    }
-    //*
-    handleCalorieGoalUpdate=()=>{
-        const {calorie_goal}=this.state
-        this.props.updateCalorieGoal({calorie_goal})
     }
 
-    handleProteinGoalUpdate=()=>{
-        const {protein_goal}=this.state
-        this.props.updateProteinGoal({protein_goal})
+    handleWeightUpdate = () => {
+        const { weight } = this.state
+        this.props.updateWeight({ weight })
+    }
+    //*
+    handlePhoneNumberUpdate = () => {
+        const { phone_number } = this.state
+        this.props.updatePhoneNumber({ phone_number })
+    }
+    //*
+    handleWeightGoalUpdate = () => {
+        const { weight_goal } = this.state
+        this.props.updateWeightGoal({ weight_goal })
+    }
+    //*
+    handleCalorieGoalUpdate = () => {
+        const { calorie_goal } = this.state
+        this.props.updateCalorieGoal({ calorie_goal })
     }
 
-    handleCarbGoalUpdate=()=>{
-        const {carbs_goal}=this.state
+    handleProteinGoalUpdate = () => {
+        const { protein_goal } = this.state
+        this.props.updateProteinGoal({ protein_goal })
+    }
+
+    handleCarbGoalUpdate = () => {
+        const { carbs_goal } = this.state
         console.log(carbs_goal)
-        this.props.updateCarbGoal({carbs_goal})
+        this.props.updateCarbGoal({ carbs_goal })
     }
 
-    handleFatGoalUpdate=()=>{
-        const {fat_goal}=this.state
-        this.props.updateFatGoal({fat_goal})
+    handleFatGoalUpdate = () => {
+        const { fat_goal } = this.state
+        this.props.updateFatGoal({ fat_goal })
     }
-    checkUploadResult = (error,resultEvent) => {
+    checkUploadResult = (error, resultEvent) => {
         if (resultEvent.event === "success") {
             console.log("Picture uploaded successfully")
             console.log(resultEvent.info.url);
-            this.setState({avatar: resultEvent.info.url});
+            this.setState({ avatar: resultEvent.info.url });
         }
     };
 
     render() {
         const widget = window.cloudinary.createUploadWidget(
             {
-            cloudName: "kevin14",
-            uploadPreset: "xoy9arl8",
-            sources: ["local", "url", "dropbox", "facebook", "instagram"],
-            cropping: true,
-            cropping_aspect_ratio : 1,
-            show_skip_crop_button: false,
-            Default: false
+                cloudName: "kevin14",
+                uploadPreset: "xoy9arl8",
+                sources: ["local", "url", "dropbox", "facebook", "instagram"],
+                cropping: true,
+                cropping_aspect_ratio: 1,
+                show_skip_crop_button: false,
+                Default: false
             },
             (error, result) => {
-            this.checkUploadResult(error, result);
+                this.checkUploadResult(error, result);
             })
         return (
             <div className="settings-page">
@@ -153,7 +153,7 @@ class Settings extends Component {
                                     onClick={this.handleEmailUpdate}>
                                     update</Button>
                             </div>
-                            
+
                             <div className="settings-button-style">
                                 <TextField
                                     id="outlined-Weight-input"
@@ -194,13 +194,13 @@ class Settings extends Component {
                                 <Button
                                     variant="contained"
                                     color="primary"
-                                    onClick={()=>widget.open()}>
+                                    onClick={() => widget.open()}>
                                     update</Button>
-                                    <Button
-                                     variant="contained"
-                                     color="primary"
-                                     onClick ={this.handleAvatarUpdate}
-                                    >Set</Button>
+                                <Button
+                                    variant="contained"
+                                    color="primary"
+                                    onClick={this.handleAvatarUpdate}
+                                >Set</Button>
                             </div>
                         </CardContent>
                     </Card>
@@ -305,7 +305,7 @@ class Settings extends Component {
 const mapStateToProps = reduxState => {
     return {
         user_id: reduxState.userReducer.user_id,
-        avatar:reduxState.userReducer.avatar
+        avatar: reduxState.userReducer.avatar
     }
 }
 
