@@ -5,6 +5,7 @@ import CardContent from '@material-ui/core/CardContent';
 import {Doughnut } from 'react-chartjs-2'
 import {connect} from 'react-redux'
 import {getFood} from '../../redux/reducers/foodReducer'
+import {getGoals} from '../../redux/reducers/userReducer'
 import Button from '@material-ui/core/Button';
 
 class Carbs extends React.Component {
@@ -24,7 +25,21 @@ class Carbs extends React.Component {
             }
             this.setState({eaten: carbTotal})
         })
-        console.log(this.props.food)
+        this.props.getGoals()
+    }
+
+    componentDidUpdate(prevProps) {
+        if(JSON.stringify(prevProps.food) !== JSON.stringify(this.props.food)) {
+            this.props.getFood().then(() => {
+                let calorieTotal = 0
+                for (let i = 0; i < this.props.food.length; i++) {
+                    calorieTotal += this.props.food[i].calories
+                }
+                this.setState({
+                        eaten: calorieTotal   
+                })
+            })
+        }
     }
 
     render() {
@@ -32,7 +47,7 @@ class Carbs extends React.Component {
             labels: ["", "Carbs"],
             datasets: [
                 {
-                    data: [this.state.eaten, 2000 - this.state.eaten ],
+                    data: [this.state.eaten, this.props.carbs_goal - this.state.eaten ],
                     backgroundColor: ["#36A2EB", "#dae0e6"]
                 }
             ]
@@ -59,9 +74,11 @@ class Carbs extends React.Component {
 }
 const mapStateToProps = reduxState => {
     return {
-        food: reduxState.foodReducer.food
+        food: reduxState.foodReducer.food,
+        carbs_goal: reduxState.userReducer.carbs_goal
     }
 }
 export default connect(mapStateToProps, {
-getFood
+getFood,
+getGoals
 })(Carbs);

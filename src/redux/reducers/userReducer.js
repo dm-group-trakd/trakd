@@ -252,13 +252,14 @@ export default function reducer(state = initialState, action) {
         fat_goal: payload.data.fat_goal
       }
     case `${GET_GOALS}_FULFILLED`:
+      console.log(payload.data[0])
       return{
         ...state,
-        weight_goal: payload.data.weight_goal,
-        carbs_goal: payload.data.carbs_goal,
-        calorie_goal: payload.data.calorie_goal,
-        protein_goal: payload.data.protein_goal,
-        fat_goal: payload.data.fat_goal
+        weight_goal: payload.data[0].weight_goal,
+        carbs_goal: payload.data[0].carbs_goal,
+        calorie_goal: payload.data[0].calorie_goal,
+        protein_goal: payload.data[0].protein_goal,
+        fat_goal: payload.data[0].fat_goal
       }
     default:
       return state;
