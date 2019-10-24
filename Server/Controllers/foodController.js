@@ -17,10 +17,10 @@ module.exports = {
     },
 
     deleteFood: async (req, res) => {
-    
+        const {user_id} = req.session;
         const {nutrition_id} = req.params
         const db = req.app.get('db')
-        const deletedFood =  await db.food.deleteFood(nutrition_id)
+        const deletedFood =  await db.food.deleteFood(nutrition_id, user_id)
         res.status(200).json(deletedFood)
     }
 }

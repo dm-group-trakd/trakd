@@ -60,7 +60,7 @@ class AddNutrition extends Component {
     handleAddFood = food => {
         console.log(food)
         this.props.addFood(food)
-        window.location.reload()
+        this.props.handleClose()
     }
 
     render() {

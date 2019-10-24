@@ -17,32 +17,32 @@ class Calories extends React.Component {
 
     componentDidMount = () => {
         this.props.getFood().then(() => {
-
             let calorieTotal = 0
             for (let i = 0; i < this.props.food.length; i++) {
-
                 calorieTotal += this.props.food[i].calories
-                
             }
             this.setState({
-                
-            
-                    eaten: calorieTotal
-                
+                    eaten: calorieTotal   
             })
         })
-    
-        console.log(this.props.food)
     }
-    // setEaten = value => {
-    //     this.setState({ eatenHolder: +value})
-    // }
 
-    // setGoal = () => {
-    //     this.setState({
-    //         eaten: this.state.eaten + this.state.eatenHolder
-    //     })
-    // }
+    componentDidUpdate(prevProps) {
+        console.log('hit calorie comp')
+        if(JSON.stringify(prevProps.food) !== JSON.stringify(this.props.food)) {
+            console.log('hit2')
+            this.props.getFood().then(() => {
+                let calorieTotal = 0
+                for (let i = 0; i < this.props.food.length; i++) {
+                    calorieTotal += this.props.food[i].calories
+                }
+                this.setState({
+                        eaten: calorieTotal   
+                })
+            })
+        }
+    } 
+
     render() {
         const data = {
             labels: ["", "calories"],
