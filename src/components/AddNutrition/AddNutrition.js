@@ -19,8 +19,19 @@ class AddNutrition extends Component {
     
     handleInput = e => {
         this.setState({
-            [e.target.name]: e.target.value
+            [e.target.name]: e.target.value,
+            searchResults1: [],
+            searchResults2: [],
+            searchResults3: [],
+            searchResults4: [],
+            searchResults5: [],
+            searchResults6: [],
+            searchResults7: [],
+            searchResults8: [],
+            searchResults9: [],
+            searchResults10: []
         })
+
     }
     
     handleSearchSubmit = () => {
@@ -30,7 +41,14 @@ class AddNutrition extends Component {
             this.setState({
                 searchResults1: [...this.state.searchResults1, res.data.hints[0].food],
                 searchResults2: [...this.state.searchResults1, res.data.hints[1].food],
-                searchResults3: [...this.state.searchResults1, res.data.hints[2].food]
+                searchResults3: [...this.state.searchResults1, res.data.hints[2].food],
+                searchResults4: [...this.state.searchResults1, res.data.hints[3].food],
+                searchResults5: [...this.state.searchResults1, res.data.hints[4].food],
+                searchResults6: [...this.state.searchResults1, res.data.hints[5].food],
+                searchResults7: [...this.state.searchResults1, res.data.hints[6].food],
+                searchResults8: [...this.state.searchResults1, res.data.hints[7].food],
+                searchResults9: [...this.state.searchResults1, res.data.hints[8].food],
+                searchResults10: [...this.state.searchResults1, res.data.hints[9].food]
             })
             console.log(this.state.searchResults1)
         })
@@ -75,6 +93,49 @@ class AddNutrition extends Component {
                             <div className="search-results" key={i}>
                                 <h1>{food.label}</h1>
                                 <h1>{food.nutrients.ENERC_KCAL}</h1>
+                            </div>
+                        )): null}
+                        {this.state.searchResults4 ? this.state.searchResults4.map((food, i) => (
+                            <div className="search-results" key={i}>
+                                <h1>{food.label}</h1>
+                                <h1>{food.nutrients.ENERC_KCAL}</h1>
+                            </div>
+                        )): null}
+                        {this.state.searchResults5 ? this.state.searchResults5.map((food, i) => (
+                            <div className="search-results" key={i}>
+                                <h1>{food.label}</h1>
+                                <h1>{food.nutrients.ENERC_KCAL}</h1>
+                            </div>
+                        )): null}
+                        {this.state.searchResults6 ? this.state.searchResults6.map((food, i) => (
+                            <div className="search-results" key={i}>
+                                <h1>{food.label}</h1>
+                                <h1>{food.nutrients.ENERC_KCAL}</h1>
+                            </div>
+                        )): null}
+                        {this.state.searchResults7 ? this.state.searchResults7.map((food, i) => (
+                            <div className="search-results" key={i}>
+                                <h1>{food.label}</h1>
+                                <h1>{food.nutrients.ENERC_KCAL}</h1>
+                            </div>
+                        )): null}
+                        {this.state.searchResults8 ? this.state.searchResults8.map((food, i) => (
+                            <div className="search-results" key={i}>
+                                <h1>{food.label}</h1>
+                                <h1>{food.nutrients.ENERC_KCAL}</h1>
+                            </div>
+                        )): null}
+                        {this.state.searchResults9 ? this.state.searchResults9.map((food, i) => (
+                            <div className="search-results" key={i}>
+                                <h1>{food.label}</h1>
+                                <h1>{food.nutrients.ENERC_KCAL}</h1>
+                            </div>
+                        )): null}
+                        {this.state.searchResults10 ? this.state.searchResults10.map((food, i) => (
+                            <div className="search-results" key={i}>
+                                <h1>{food.label}</h1>
+                                <h1>{food.nutrients.ENERC_KCAL}</h1>
+                                <Button>Add</Button>
                             </div>
                         )): null}
                     </CardContent>
