@@ -42,12 +42,12 @@ module.exports = {
 
     },
 
-    updateAvatar: (req, res) => {
+    updateAvatar: async (req, res) => {
         const { user_id } = req.session.user
         const { avatar } = req.body
 
         const db = req.app.get('db')
-        const updatedAvatar = db.user.updateAvatar(avatar, user_id)
+        const updatedAvatar = await db.user.updateAvatar(avatar, user_id)
         res.status(200).json(updatedAvatar)
     },
 
