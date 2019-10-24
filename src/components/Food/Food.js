@@ -45,8 +45,6 @@ class Food extends Component {
 
     deleteFood = (nutrition_id) => {
         this.props.deleteFood(nutrition_id)
-        this.props.getFood()
-        window.location.reload()
     }
 
     render() {
@@ -101,7 +99,7 @@ class Food extends Component {
             >
                 <Fade in={this.state.addFood}>
                 <div >
-                    <AddNutrition />
+                    <AddNutrition handleClose={this.handleClose}/>
                 </div>
                 </Fade>
             </Modal>

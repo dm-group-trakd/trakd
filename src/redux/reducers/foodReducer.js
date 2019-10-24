@@ -35,7 +35,6 @@ export function deleteFood(nutrition_id) {
 //reducer function
 export default function reducer(state = initialState, action) {
     const { type, payload } = action;
-    console.log(payload)
 
     switch(type){
         case `${GET_FOOD}_FULFILLED`:
@@ -45,11 +44,13 @@ export default function reducer(state = initialState, action) {
             }
         case `${ADD_FOOD}_FULFILLED`:
             return{
-                ...state
+                ...state,
+                food: payload.data
             }
         case `${DELETE_FOOD}_FULFILLED`:
             return{
-                ...state
+                ...state,
+                food: payload.data
             }
         default: return state
     }

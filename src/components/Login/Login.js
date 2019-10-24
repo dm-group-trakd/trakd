@@ -22,7 +22,8 @@ class Login extends Component{
         this.props.getSession()
     }
 
-    handleSubmit = () => {
+    handleSubmit = (e) => {
+        e.preventDefault()
         const {username, password} = this.state;
         const {loginUser} = this.props;
         loginUser({username, password});
@@ -41,9 +42,8 @@ class Login extends Component{
         return(
             <div className="Login-Container">
             <Card>
-                <div className="Login-Box">
-                <CardContent>
-                    
+                <form className="Login-Box" onSubmit={this.handleSubmit}>
+                <CardContent>    
                     <section>
                         {/* <img>Logo</img>
                          */}
@@ -88,7 +88,7 @@ class Login extends Component{
                         <h1 className="Register-Link">Don't have an account? Register <Link to="/register">here!</Link></h1>
                     </section>
                 </CardContent>
-            </div>
+                </form>
             </Card>
             </div>
         )
