@@ -1,6 +1,7 @@
 .nav-main{
     display: flex;
-    height:100vh;
+    // height:100vh;
+    width: 10vw;
 }
 .nav-container{
     width: 8vw;
@@ -37,7 +38,7 @@
     background-color: transparent;
     border-color: transparent;
     position: absolute;
-    z-index: 1;
+    // z-index: 1;
     outline: none;
 }
 .ham:active{
@@ -56,6 +57,7 @@ div.side-menu,.side-menu-open,.side-menu-close{
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    position:fixed;
 }
 .side-menu-open,.ham{
     animation: open .9s forwards ease;

@@ -5,6 +5,7 @@ import CardContent from '@material-ui/core/CardContent';
 import { Doughnut } from 'react-chartjs-2'
 import {connect} from 'react-redux'
 import {getFood} from '../../redux/reducers/foodReducer'
+import Button from '@material-ui/core/Button';
 
 class Calories extends React.Component {
     constructor() {
@@ -54,10 +55,20 @@ class Calories extends React.Component {
         };
         return (
             <div className='calorie-container'>
+                
                 <Card>
-                    <CardContent>
-                        <Doughnut data={data} width="700" height="600" />
-                    </CardContent>
+                    <section>
+                        <h1 id="Nutrient-Header">Calories</h1>
+                        <div className="Nutrients-Nav">
+                        <Button onClick = {this.props.showProtein}  color="primary"  variant="contained" >Protein</Button>
+                        <Button onClick = {this.props.showFat}  color="primary"  variant="contained" >Fat</Button>
+                        <Button onClick = {this.props.showCarbs} color="primary"  variant="contained" >Carbs</Button>
+                        </div>
+                            
+                            <CardContent>
+                                <Doughnut data={data} width="400" height="300" options={{responsive: false}}/>
+                            </CardContent>
+                    </section>
                 </Card>
             </div>
         )

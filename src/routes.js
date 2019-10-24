@@ -10,6 +10,7 @@ import About from "./components/About/About"
 
 
 
+
 export default(
     <Switch>
         <Route exact path="/" component={Login}/>
@@ -19,6 +20,7 @@ export default(
         <Route path="/settings" component={Settings} />
         <Route path = "/calories" component ={Calories}/>
         <Route path = "/about" component = {About}/>
+    
     
         <Route render={() => {
             return <h1>404 Not Found</h1>

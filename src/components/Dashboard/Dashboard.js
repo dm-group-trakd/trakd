@@ -1,32 +1,93 @@
 import React, { Component } from "react";
-import Calories from "../calories/Calories"
 import Food from "../Food/Food"
 import Tips from "../tips/Tips"
 import "./styles/Dashboard.css"
-import axios from 'axios'
+import Carbs from "../carbs/Carbs"
+import Calories from "../calories/Calories"
+import Fat from "../Fat/Fat"
+import ProteinChart from '../ProteinChart/ProteinChart'
 
 export default class Dashboard extends Component {
     constructor() {
         super();
         this.state = {
-           tips:""
+            tips: "",
+            switchCounter: 0
         }
     }
-   
+    showProtein = () => {
+        this.setState({
+            switchCounter: this.state.switchCounter = 1
+        })
+    }
+    showFat = () => {
+        this.setState({
+            switchCounter: this.state.switchCounter = 2
+        })
+    }
+    showCarbs = () => {
+        this.setState({
+            switchCounter: this.state.switchCounter = 3
+        })
+    }
+    showCalories = () => {
+        this.setState({
+            switchCounter: this.state.switchCounter = 0
+        })
+    }
+
     render() {
         return (
             <div className="dashboard-container">
-                {/* <h1>Dashboard</h1> */}
-                <div className ="right-components">
-                    <Calories />
-                <div>
-                    <Tips
-                    />
-                </div>
-                </div>
-                <div>
-                    <Food />
-                </div>
+                {(() => {
+                    
+                    switch (this.state.switchCounter) {
+                        case 0: return <div className="right-components"><Calories showCalories={this.showCalories} showProtein={this.showProtein} showFat={this.showFat} showCarbs={this.showCarbs} />
+                            
+                            <div>
+                                <Food />
+                            </div>
+                                <div>
+                                <Tips />
+                                </div>
+                            
+                        </div>
+
+
+                        case 1: return <div className="right-components">
+                            <ProteinChart showCalories={this.showCalories} showProtein={this.showProtein} showFat={this.showFat} showCarbs={this.showCarbs} />
+                            <div>
+                                <Food />
+                            </div>
+                            <div>
+                                <Tips />
+                                </div>
+                        </div>
+
+                        case 2: return <div className="right-components">
+                            <Fat showCalories={this.showCalories} showProtein={this.showProtein} showFat={this.showFat} showCarbs={this.showCarbs} />
+                            <div>
+                                <Food />
+                            </div>
+                            <div>
+                                <Tips />
+                                </div>
+                        </div>
+
+                        case 3: return <div className="right-components">
+                            <Carbs showCalories={this.showCalories} showProtein={this.showProtein} showFat={this.showFat} showCarbs={this.showCarbs} />
+                            <div>
+                                <Food />
+                            </div>
+                            <div>
+                                <Tips />
+                                </div>
+                        </div>
+
+                        default: return <h1>Chart</h1>
+                    }
+                })()}
+
             </div>
         )
     }

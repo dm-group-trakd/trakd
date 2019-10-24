@@ -2,7 +2,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 100vh;
+  width: 10vw;
 }
 
 .nav-container {
@@ -63,7 +63,6 @@
   background-color: transparent;
   border-color: transparent;
   position: absolute;
-  z-index: 1;
   outline: none;
 }
 
@@ -92,6 +91,7 @@ div.side-menu, .side-menu-open, .side-menu-close {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: fixed;
 }
 
 .side-menu-open, .ham {
