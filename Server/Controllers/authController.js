@@ -30,7 +30,7 @@ module.exports = {
             last_name: foundUser[0].last_name,
             phone_number: foundUser[0].phone_number,
             email: foundUser[0].email,
-            avatar: foundUser[0].avatar,
+            avatar: foundUser[0].avatar, 
             weight: foundUser[0].weight
         };
         res.status(200).json(req.session.user)
