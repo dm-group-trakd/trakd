@@ -11,7 +11,7 @@ export default function About() {
                         <h1>Frederik Ernst</h1>
                     </div>
                     <div>
-                        <img src="https://static1.squarespace.com/static/5da4bfaa55a9455e3f94fd6a/t/5da4c206fc61ce32822c8ee2/1571078685855/frederik_ernst1.jpg?format=2500w" id="Freddy1" />
+                        <img src="https://res.cloudinary.com/kevin14/image/upload/v1571935517/gtwtkeazpiexfjf9y0ca.jpg" id="Freddy1" />
                         <p id="Bio">
                             Lorem ipsum dolor sit amet, eius dicta epicurei vel in, pro saepe dolores ad. Ad dicant veritus has. Eu dictas dignissim eam, et maluisset consectetuer duo, te argumentum dissentiunt vix. Quo cetero civibus necessitatibus ut, mea et putent necessitatibus. Volutpat deterruisset interpretaris mei ne, ne aeque postea repudiare mel, ad vim wisi zril ceteros.
 
@@ -50,7 +50,7 @@ export default function About() {
                     <div className="Name">
                         <h1>Jacob Baker</h1>
                     </div>
-                    <img src="https://cdn.discordapp.com/attachments/618257954545860609/635955125382414346/Jacob_Baker1_50.jpg" id="Freddy" />
+                    <img src="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fres.cloudinary.com%2Fkevin14%2Fimage%2Fupload%2Fv1571935796%2Frs44ocuqkkt66iknozru.jpg" id="Freddy" />
                     <p id="Bio">
                         Lorem ipsum dolor sit amet, eius dicta epicurei vel in, pro saepe dolores ad. Ad dicant veritus has. Eu dictas dignissim eam, et maluisset consectetuer duo, te argumentum dissentiunt vix. Quo cetero civibus necessitatibus ut, mea et putent necessitatibus. Volutpat deterruisset interpretaris mei ne, ne aeque postea repudiare mel, ad vim wisi zril ceteros.
 
@@ -69,7 +69,7 @@ export default function About() {
                     <div className="Name">
                         <h1>Jamison Jensen</h1>
                     </div>
-                    <img src="https://i.imgur.com/3959q4t.jpg" id="Freddy" />
+                    <img src="https://res.cloudinary.com/kevin14/image/upload/v1571877561/ktzoig18im80ehoeuauz.jpg" id="Freddy" />
                     <p id="Bio">
                         Lorem ipsum dolor sit amet, eius dicta epicurei vel in, pro saepe dolores ad. Ad dicant veritus has. Eu dictas dignissim eam, et maluisset consectetuer duo, te argumentum dissentiunt vix. Quo cetero civibus necessitatibus ut, mea et putent necessitatibus. Volutpat deterruisset interpretaris mei ne, ne aeque postea repudiare mel, ad vim wisi zril ceteros.
 

@@ -53,7 +53,6 @@ export default class Dashboard extends Component {
                             
                         </div>
 
-
                         case 1: return <div className="right-components">
                             <ProteinChart showCalories={this.showCalories} showProtein={this.showProtein} showFat={this.showFat} showCarbs={this.showCarbs} />
                             <div>
@@ -83,7 +82,6 @@ export default class Dashboard extends Component {
                                 <Tips />
                                 </div>
                         </div>
-
                         default: return <h1>Chart</h1>
                     }
                 })()}
