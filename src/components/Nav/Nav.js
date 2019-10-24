@@ -19,7 +19,23 @@ class Nav extends Component{
             menuOpenStatus : "side-menu"
         }
     }
-    toggle=()=>{
+
+    componentDidMount(){
+        this.props.getSession()
+    }
+    
+    componentDidUpdate(prevProps){
+        console.log("hit1")
+        if(prevProps.avatar === this.props.avatar){
+            this.props.getSession()
+            console.log("hit2")
+        }
+    }
+    handleLogout = () =>{
+        this.props.logoutUser()
+        this.props.history.push('/')
+    }
+        toggle=()=>{
         if(this.state.menuOpenStatus ==="side-menu-close"|| this.state.menuOpenStatus ==="side-menu"){
             this.setState({menuOpenStatus: "side-menu-open"});
             console.log("open")
@@ -28,15 +44,6 @@ class Nav extends Component{
             this.setState({menuOpenStatus:"side-menu-close"})
             // console.log("close")
         }
-    }
-
-    componentDidMount(){
-        this.props.getSession()
-    }
-
-    handleLogout = () =>{
-        this.props.logoutUser()
-        this.props.history.push('/')
     }
 
     render(){
