@@ -4,7 +4,7 @@ import Fab from '@material-ui/core/Fab';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
-import "./styles/Food.css"
+import "./styles/Food.scss"
 import {getFood} from '../../redux/reducers/foodReducer';
 import {connect} from 'react-redux';
 import AddNutrition from '../AddNutrition/AddNutrition';
