@@ -1,4 +1,4 @@
-import { getSession, updateFatGoal, loginUser, registerUser } from "../redux/reducers/userReducer"
+import { getSession, updateFatGoal, loginUser, registerUser, getFood } from "../redux/reducers/userReducer"
 
     test("getSession should send a request and receive user", ()=>{
         expect(getSession().type).toBe( "GET_SESSION")
@@ -16,6 +16,9 @@ import { getSession, updateFatGoal, loginUser, registerUser } from "../redux/red
         expect(updateFatGoal(1).type).toBe("UPDATE_FAT_GOAL")
     })
 
+    test("getFood should send a request and receive food", ()=>{
+        expect(getFood().type).toBe("GET_FOOD")
+    })
     
     // Component Tests
 
