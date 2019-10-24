@@ -19,6 +19,7 @@ module.exports = {
         // }
         // console.log(req.session.user)
         const {user_id} = req.session.user;
+        console.log(user_id)
         const db = req.app.get("db");
 
         const foundUser = await db.auth.getUserData(user_id);
