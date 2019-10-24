@@ -33,12 +33,12 @@ class ProteinChart extends React.Component {
     componentDidUpdate(prevProps) {
         if(JSON.stringify(prevProps.food) !== JSON.stringify(this.props.food)) {
             this.props.getFood().then(() => {
-                let calorieTotal = 0
+                let proteinTotal = 0
                 for (let i = 0; i < this.props.food.length; i++) {
-                    calorieTotal += this.props.food[i].calories
+                    proteinTotal += this.props.food[i].protein
                 }
                 this.setState({
-                        eaten: calorieTotal   
+                        eaten: proteinTotal
                 })
             })
         }

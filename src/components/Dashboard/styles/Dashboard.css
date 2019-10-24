@@ -17,4 +17,10 @@
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
+
+#Arrows {
+  height: 120px;
+  width: 120px;
+  margin-right: 50px;
+}
 /*# sourceMappingURL=Dashboard.css.map */
