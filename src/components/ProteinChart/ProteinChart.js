@@ -54,7 +54,7 @@ class ProteinChart extends React.Component {
                 <Button onClick = {this.props.showCarbs}  color="primary"   variant="contained" >Carbs</Button>
                 </div>
                     <CardContent>
-                        <Doughnut data={data} width="700" height="600" />
+                        <Doughnut data={data} width="500" height="400" />
                     </CardContent>
                 </Card>
             </div>
