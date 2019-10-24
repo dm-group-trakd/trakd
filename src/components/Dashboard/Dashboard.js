@@ -43,10 +43,13 @@ export default class Dashboard extends Component {
                     
                     switch (this.state.switchCounter) {
                         case 0: return <div className="right-components"><Calories showCalories={this.showCalories} showProtein={this.showProtein} showFat={this.showFat} showCarbs={this.showCarbs} />
-                            
+                            <div>
+                            <img src = "https://files.slack.com/files-pri/T039C2PUY-FPDGQSN7L/clipart61677.png" className="right-components" id="Arrows"/>
+                            </div>
                             <div>
                                 <Food />
                             </div>
+                        
                                 <div>
                                 <Tips />
                                 </div>
@@ -55,6 +58,9 @@ export default class Dashboard extends Component {
 
                         case 1: return <div className="right-components">
                             <ProteinChart showCalories={this.showCalories} showProtein={this.showProtein} showFat={this.showFat} showCarbs={this.showCarbs} />
+                            <div>
+                            <img src = "https://files.slack.com/files-pri/T039C2PUY-FPDGQSN7L/clipart61677.png" className="right-components" id="Arrows"/>
+                            </div>
                             <div>
                                 <Food />
                             </div>
@@ -66,6 +72,9 @@ export default class Dashboard extends Component {
                         case 2: return <div className="right-components">
                             <Fat showCalories={this.showCalories} showProtein={this.showProtein} showFat={this.showFat} showCarbs={this.showCarbs} />
                             <div>
+                            <img src = "https://files.slack.com/files-pri/T039C2PUY-FPDGQSN7L/clipart61677.png" className="right-components" id="Arrows"/>
+                            </div>
+                            <div>
                                 <Food />
                             </div>
                             <div>
@@ -75,6 +84,9 @@ export default class Dashboard extends Component {
 
                         case 3: return <div className="right-components">
                             <Carbs showCalories={this.showCalories} showProtein={this.showProtein} showFat={this.showFat} showCarbs={this.showCarbs} />
+                            <div>
+                            <img src = "https://files.slack.com/files-pri/T039C2PUY-FPDGQSN7L/clipart61677.png" className="right-components" id="Arrows"/>
+                            </div>
                             <div>
                                 <Food />
                             </div>

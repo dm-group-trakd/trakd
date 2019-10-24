@@ -152,6 +152,10 @@ export function getGoals(){
 export default function reducer(state = initialState, action) {
   const { type, payload } = action;
 
+  // console.log(payload)
+
+
+
   switch (type) {
     case `${GET_SESSION}_FULFILLED`:
       return {

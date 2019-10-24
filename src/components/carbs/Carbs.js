@@ -19,11 +19,11 @@ class Carbs extends React.Component {
     componentDidMount = () => {
         this.props.getFood().then(() => {
 
-            let carbTotal = 0
+            let carbsTotal = 0
             for (let i = 0; i < this.props.food.length; i++) {
-                carbTotal += this.props.food[i].carbs
+                carbsTotal += this.props.food[i].carbs
             }
-            this.setState({eaten: carbTotal})
+            this.setState({eaten: carbsTotal})
         })
         this.props.getGoals()
     }
@@ -31,12 +31,12 @@ class Carbs extends React.Component {
     componentDidUpdate(prevProps) {
         if(JSON.stringify(prevProps.food) !== JSON.stringify(this.props.food)) {
             this.props.getFood().then(() => {
-                let calorieTotal = 0
+                let carbsTotal = 0
                 for (let i = 0; i < this.props.food.length; i++) {
-                    calorieTotal += this.props.food[i].calories
+                    carbsTotal += this.props.food[i].carbs
                 }
                 this.setState({
-                        eaten: calorieTotal   
+                        eaten: carbsTotal   
                 })
             })
         }

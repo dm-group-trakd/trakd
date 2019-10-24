@@ -1,5 +1,7 @@
 const {updateAvatar,updateWeight,updatePhoneNumber,updateProteinGoal} =require ("../redux/reducers/userReducer")
+const {addFood} = require ("../redux/reducers/foodReducer")
 
+//unit Test 
 describe ("goals should update correctly", ()=>{
     test("should return the type for avatar", ()=>{
         expect(updateAvatar("string").type).toBe("UPDATE_AVATAR")
@@ -13,4 +15,8 @@ describe ("goals should update correctly", ()=>{
     test("should return right type",()=>{
         expect(updateProteinGoal(123).type).toBe("UPDATE_PROTEIN_GOAL")
     })
+    test("should return right type ",()=>{
+        expect(addFood("bannana").type).toBe("ADD_FOOD")
+    })
 })
+
