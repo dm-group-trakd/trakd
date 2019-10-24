@@ -52,7 +52,7 @@ class Fat extends React.Component {
                 <h1 id="Nutrient-Header">Fat</h1>
                 
                 <div className="Nutrients-Nav">
-                <Button onClick={this.props.showCalories}  color="primary"  variant="contained" >Calories</Button>
+                <Button onClick={this.props.showCalories}  color="primary"  variant="contained" id="FatButton">Calories</Button>
                 <Button onClick = {this.props.showProtein}  color="primary"  variant="contained" >Protein</Button>
                 
                 <Button onClick = {this.props.showCarbs}  color="primary"  variant="contained" >Carbs</Button>
