@@ -37,14 +37,14 @@ class Settings extends Component {
     }
     componentDidUpdate = () => {
         this.props.getSession()
-<<<<<<< HEAD
+
         this.props.getGoals()
         // console.log(this.props.avatar)
         
-=======
+
         console.log(this.props.avatar)
 
->>>>>>> master
+
     }
     componentDidMount() {
         this.props.getSession()
@@ -57,7 +57,6 @@ class Settings extends Component {
         })
     }
 
-<<<<<<< HEAD
     handleUsernameUpdate=()=>{
         const {username}=this.state
         this.props.updateUsername({username})
@@ -74,7 +73,7 @@ class Settings extends Component {
         const {avatar}=this.state
         this.props.updateAvatar({avatar})
         this.setState({editProfilePic:false})
-=======
+    }
     handleUsernameUpdate = () => {
         const { username } = this.state
         this.props.updateUsername({ username })
@@ -88,11 +87,11 @@ class Settings extends Component {
     handleAvatarUpdate = () => {
         const { avatar } = this.state
         this.props.updateAvatar({ avatar })
->>>>>>> master
+
         console.log(avatar)
     }
 
-<<<<<<< HEAD
+
     handleWeightUpdate=()=>{
         const {weight}=this.state
         this.props.updateWeight({weight})
@@ -121,7 +120,7 @@ class Settings extends Component {
         const {protein_goal}=this.state
         this.props.updateProteinGoal({protein_goal})
         this.setState({editProteinGoal:false})
-=======
+    }
     handleWeightUpdate = () => {
         const { weight } = this.state
         this.props.updateWeight({ weight })
@@ -145,13 +144,12 @@ class Settings extends Component {
     handleProteinGoalUpdate = () => {
         const { protein_goal } = this.state
         this.props.updateProteinGoal({ protein_goal })
->>>>>>> master
+
     }
 
     handleCarbGoalUpdate = () => {
         const { carbs_goal } = this.state
         console.log(carbs_goal)
-<<<<<<< HEAD
         this.props.updateCarbGoal({carbs_goal})
         this.setState({editCarbGoal:false})
     }
@@ -160,25 +158,25 @@ class Settings extends Component {
         const {fat_goal}=this.state
         this.props.updateFatGoal({fat_goal})
         this.setState({editFatGoal:false})
-=======
+
         this.props.updateCarbGoal({ carbs_goal })
     }
 
     handleFatGoalUpdate = () => {
         const { fat_goal } = this.state
         this.props.updateFatGoal({ fat_goal })
->>>>>>> master
+
     }
     checkUploadResult = (error, resultEvent) => {
         if (resultEvent.event === "success") {
             console.log("Picture uploaded successfully")
             console.log(resultEvent.info.url);
-<<<<<<< HEAD
+
             this.setState({avatar: resultEvent.info.url});
             this.setState({editProfilePic:true})
-=======
+
             this.setState({ avatar: resultEvent.info.url });
->>>>>>> master
+
         }
     };
 
@@ -194,12 +192,12 @@ class Settings extends Component {
                 Default: false
             },
             (error, result) => {
-<<<<<<< HEAD
+
             this.checkUploadResult(error, result)
         
-=======
+
                 this.checkUploadResult(error, result);
->>>>>>> master
+
             })
         return (
             <div className="settings-page">
@@ -285,10 +283,10 @@ class Settings extends Component {
                                  }
                             </div>
 
-<<<<<<< HEAD
+
                             {/* weight */}
-=======
->>>>>>> master
+
+
                             <div className="settings-button-style">
                                  {this.state.editWeight === false?
                                 <>
@@ -374,7 +372,7 @@ class Settings extends Component {
                                     color="primary"
                                     onClick={() => widget.open()}>
                                     update</Button>
-<<<<<<< HEAD
+
                                 </>
                                 :
                                 <>
@@ -386,13 +384,13 @@ class Settings extends Component {
                                     >Set</Button>
                                 </>
                                 }
-=======
+
                                 <Button
                                     variant="contained"
                                     color="primary"
                                     onClick={this.handleAvatarUpdate}
                                 >Set</Button>
->>>>>>> master
+
                             </div>
                         </CardContent>
                         </div>
@@ -599,7 +597,6 @@ class Settings extends Component {
 const mapStateToProps = reduxState => {
     return {
         user_id: reduxState.userReducer.user_id,
-<<<<<<< HEAD
         avatar:reduxState.userReducer.avatar,
         email: reduxState.userReducer.email,
         phone_number: reduxState.userReducer.phone_number,
@@ -609,11 +606,9 @@ const mapStateToProps = reduxState => {
         calorie_goal:reduxState.userReducer.calorie_goal,
         protein_goal:reduxState.userReducer.protein_goal,
         carbs_goal:reduxState.userReducer.carbs_goal,
-        fat_goal:reduxState.userReducer.fat_goal
-       
-=======
+        fat_goal:reduxState.userReducer.fat_goal,
         avatar: reduxState.userReducer.avatar
->>>>>>> master
+
     }
 }
 
