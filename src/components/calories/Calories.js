@@ -66,7 +66,7 @@ class Calories extends React.Component {
                         <Button onClick = {this.props.showCarbs} color="primary"  variant="contained" >Carbs</Button>
                         </div>
                             <CardContent>
-                                <Doughnut data={data} width="400" height="300" options={{responsive: false}}/>
+                                <Doughnut data={data} width="400" height="300" options={{responsive: true}}/>
                             </CardContent>
                     </section>
                 </Card>
