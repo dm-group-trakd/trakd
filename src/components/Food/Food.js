@@ -5,7 +5,7 @@ import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import "./styles/Food.scss"
-import {getFood} from '../../redux/reducers/foodReducer';
+import {getFood, deleteFood} from '../../redux/reducers/foodReducer';
 import {connect} from 'react-redux';
 import AddNutrition from '../AddNutrition/AddNutrition';
 
@@ -20,7 +20,14 @@ class Food extends Component {
 
     componentDidMount(){
         this.props.getFood()
+        console.log(this.props.food)
     }
+
+    // componentDidUpdate(prevProps) {
+    //     if(prevProps.food !== this.props.food) {
+    //         this.props.getFood()
+    //     }
+    // }
 
     handleOpen = () => {
         console.log(true)
@@ -36,8 +43,15 @@ class Food extends Component {
         })
     }
 
+    deleteFood = (nutrition_id) => {
+        this.props.deleteFood(nutrition_id)
+        this.props.getFood()
+        window.location.reload()
+    }
+
     render() {
         const foodMapped = this.props.food.map((food, i) => {
+            console.log(food.nutrition_id)
             return (
                 <div className="food-mapped" key={i}>
                     <h1>{food.food}</h1>
@@ -45,6 +59,7 @@ class Food extends Component {
                     <h1>{food.fat}</h1>
                     <h1>{food.carbs}</h1>
                     <h1>{food.protein}</h1>
+                    <button onClick = {() => this.deleteFood(food.nutrition_id)}>-</button>
                 </div>
             )
         })
@@ -61,6 +76,7 @@ class Food extends Component {
                             <h1>Carbs</h1>
                             <h1>Protein</h1>                   
                         </div>
+                        
                         {foodMapped}
                         <CardContent>
                             <div className="add-button">
@@ -103,5 +119,5 @@ const mapStateToProps = reduxState => {
 
 
 export default connect(mapStateToProps, {
-    getFood
+    getFood, deleteFood
 })(Food)
