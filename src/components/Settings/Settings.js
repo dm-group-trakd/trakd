@@ -69,23 +69,6 @@ class Settings extends Component {
         this.props.updateAvatar({avatar})
         this.setState({editProfilePic:false})
     }
-    handleUsernameUpdate = () => {
-        const { username } = this.state
-        this.props.updateUsername({ username })
-    }
-
-    handleEmailUpdate = () => {
-        const { email } = this.state
-        this.props.updateEmail({ email })
-    }
-
-    handleAvatarUpdate = () => {
-        const { avatar } = this.state
-        this.props.updateAvatar({ avatar })
-
-        console.log(avatar)
-    }
-
 
     handleWeightUpdate=()=>{
         const {weight}=this.state
@@ -116,32 +99,7 @@ class Settings extends Component {
         this.props.updateProteinGoal({protein_goal})
         this.setState({editProteinGoal:false})
     }
-    handleWeightUpdate = () => {
-        const { weight } = this.state
-        this.props.updateWeight({ weight })
-    }
-    //*
-    handlePhoneNumberUpdate = () => {
-        const { phone_number } = this.state
-        this.props.updatePhoneNumber({ phone_number })
-    }
-    //*
-    handleWeightGoalUpdate = () => {
-        const { weight_goal } = this.state
-        this.props.updateWeightGoal({ weight_goal })
-    }
-    //*
-    handleCalorieGoalUpdate = () => {
-        const { calorie_goal } = this.state
-        this.props.updateCalorieGoal({ calorie_goal })
-    }
-
-    handleProteinGoalUpdate = () => {
-        const { protein_goal } = this.state
-        this.props.updateProteinGoal({ protein_goal })
-
-    }
-
+   
     handleCarbGoalUpdate = () => {
         const { carbs_goal } = this.state
         console.log(carbs_goal)
@@ -155,10 +113,6 @@ class Settings extends Component {
         this.setState({editFatGoal:false})
     }
 
-    handleFatGoalUpdate = () => {
-        const { fat_goal } = this.state
-        this.props.updateFatGoal({ fat_goal })
-    }
     checkUploadResult = (error, resultEvent) => {
         if (resultEvent.event === "success") {
             console.log("Picture uploaded successfully")
@@ -376,13 +330,6 @@ class Settings extends Component {
                                     >Set</Button>
                                 </>
                                 }
-
-                                <Button
-                                    variant="contained"
-                                    color="primary"
-                                    onClick={this.handleAvatarUpdate}
-                                >Set</Button>
-
                             </div>
                         </CardContent>
                         </div>
@@ -508,7 +455,7 @@ class Settings extends Component {
                             <div className="settings-button-style">
                                 {this.state.editCarbGoal === false?
                                 <>
-                                <h1>Carbs_Goal:<p>{this.props.carbs_goal}</p></h1>
+                                <h1 className = "settingH1">Carbs_Goal:<p className ="settingP">{this.props.carbs_goal}</p></h1>
                                 <Button
                                     variant="contained"
                                     color="primary"

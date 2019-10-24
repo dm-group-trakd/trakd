@@ -37,7 +37,7 @@ class Register extends Component {
 
     render() {
         if(this.props.user_id){
-            return <Redirect to="/add"/>
+            return <Redirect to="/"/>
         }
         return (
             <div className = "register-container">
