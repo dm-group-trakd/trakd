@@ -37,14 +37,9 @@ class Settings extends Component {
     }
     componentDidUpdate = () => {
         this.props.getSession()
-
         this.props.getGoals()
         // console.log(this.props.avatar)
-        
-
         console.log(this.props.avatar)
-
-
     }
     componentDidMount() {
         this.props.getSession()
@@ -158,14 +153,11 @@ class Settings extends Component {
         const {fat_goal}=this.state
         this.props.updateFatGoal({fat_goal})
         this.setState({editFatGoal:false})
-
-        this.props.updateCarbGoal({ carbs_goal })
     }
 
     handleFatGoalUpdate = () => {
         const { fat_goal } = this.state
         this.props.updateFatGoal({ fat_goal })
-
     }
     checkUploadResult = (error, resultEvent) => {
         if (resultEvent.event === "success") {
