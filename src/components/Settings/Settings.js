@@ -153,28 +153,7 @@ class Settings extends Component {
                                     onClick={this.handleEmailUpdate}>
                                     update</Button>
                             </div>
-                            <div className="settings-button-style">
-                                <TextField
-                                    id="outlined-Avatar-input"
-                                    label="Avatar"
-                                    type="text"
-                                    name="avatar"
-                                    autoComplete="avatar"
-                                    margin="normal"
-                                    variant="outlined"
-                                    onChange={this.handleInput} >
-                                </TextField>
-                                <Button
-                                    variant="contained"
-                                    color="primary"
-                                    onClick={()=>widget.open()}>
-                                    update</Button>
-                                    <Button
-                                     variant="contained"
-                                     color="primary"
-                                     onClick ={this.handleAvatarUpdate}
-                                    >Set</Button>
-                            </div>
+                            
                             <div className="settings-button-style">
                                 <TextField
                                     id="outlined-Weight-input"
@@ -209,6 +188,19 @@ class Settings extends Component {
                                     onClick={this.handlePhoneNumberUpdate}
                                     id="update-phone-number">
                                     update</Button>
+                            </div>
+                            <div className="settings-button-style">
+                                <h1>Add Profile Picture :</h1>
+                                <Button
+                                    variant="contained"
+                                    color="primary"
+                                    onClick={()=>widget.open()}>
+                                    update</Button>
+                                    <Button
+                                     variant="contained"
+                                     color="primary"
+                                     onClick ={this.handleAvatarUpdate}
+                                    >Set</Button>
                             </div>
                         </CardContent>
                     </Card>
