@@ -2,7 +2,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 0px;
+  width: 10vw;
 }
 
 .nav-container {
@@ -63,7 +63,6 @@
   background-color: transparent;
   border-color: transparent;
   position: absolute;
-  z-index: 1;
   outline: none;
 }
 
