@@ -43,12 +43,14 @@ export default class Dashboard extends Component {
                     
                     switch (this.state.switchCounter) {
                         case 0: return <div className="right-components"><Calories showCalories={this.showCalories} showProtein={this.showProtein} showFat={this.showFat} showCarbs={this.showCarbs} />
-                            <div>
-                                {/* <Tips /> */}
-                            </div>
+                            
                             <div>
                                 <Food />
                             </div>
+                                <div>
+                                <Tips />
+                                </div>
+                            
                         </div>
 
 
@@ -57,6 +59,9 @@ export default class Dashboard extends Component {
                             <div>
                                 <Food />
                             </div>
+                            <div>
+                                <Tips />
+                                </div>
                         </div>
 
                         case 2: return <div className="right-components">
@@ -64,6 +69,9 @@ export default class Dashboard extends Component {
                             <div>
                                 <Food />
                             </div>
+                            <div>
+                                <Tips />
+                                </div>
                         </div>
 
                         case 3: return <div className="right-components">
@@ -71,6 +79,9 @@ export default class Dashboard extends Component {
                             <div>
                                 <Food />
                             </div>
+                            <div>
+                                <Tips />
+                                </div>
                         </div>
 
                         default: return <h1>Chart</h1>

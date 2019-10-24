@@ -14,6 +14,9 @@ import Register from './components/Register/Register';
 
 
 class App extends Component{
+  componentDidMount(){
+   this.props.getSession()
+  }
   render(){
     let content;
     if(!this.props.user_id && this.props.location.pathname == "/"){
@@ -33,7 +36,8 @@ class App extends Component{
 
 const mapStateToProps = reduxState => {
   return{
-      user_id: reduxState.userReducer.user_id
+      user_id: reduxState.userReducer.user_id,
+      avatar: reduxState.userReducer.avatar
   }
 }
 

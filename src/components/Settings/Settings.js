@@ -24,6 +24,14 @@ class Settings extends Component {
             fat_goal: 0
         }
     }
+    componentDidUpdate=()=>{
+        this.props.getSession()
+        console.log(this.props.avatar)
+        
+    }
+    componentDidMount(){
+        this.props.getSession()
+    }
 
     handleInput = (e) => {
         console.log(e.target.value)
@@ -42,8 +50,11 @@ class Settings extends Component {
         this.props.updateEmail({email})
     }
 
-    // handleAvatarUpdate=()=>{
-    // }    Kevin do cloudinary
+    handleAvatarUpdate=()=>{
+        const {avatar}=this.state
+        this.props.updateAvatar({avatar})
+        console.log(avatar)
+    }    
 
     handleWeightUpdate=()=>{
         const {weight}=this.state
@@ -80,9 +91,28 @@ class Settings extends Component {
         const {fat_goal}=this.state
         this.props.updateFatGoal({fat_goal})
     }
-
+    checkUploadResult = (error,resultEvent) => {
+        if (resultEvent.event === "success") {
+            console.log("Picture uploaded successfully")
+            console.log(resultEvent.info.url);
+            this.setState({avatar: resultEvent.info.url});
+        }
+    };
 
     render() {
+        const widget = window.cloudinary.createUploadWidget(
+            {
+            cloudName: "kevin14",
+            uploadPreset: "xoy9arl8",
+            sources: ["local", "url", "dropbox", "facebook", "instagram"],
+            cropping: true,
+            cropping_aspect_ratio : 1,
+            show_skip_crop_button: false,
+            Default: false
+            },
+            (error, result) => {
+            this.checkUploadResult(error, result);
+            })
         return (
             <div className="settings-page">
                 <section className="settings-card-1">
@@ -123,23 +153,7 @@ class Settings extends Component {
                                     onClick={this.handleEmailUpdate}>
                                     update</Button>
                             </div>
-                            <div className="settings-button-style">
-                                <TextField
-                                    id="outlined-Avatar-input"
-                                    label="Avatar"
-                                    type="text"
-                                    name="avatar"
-                                    autoComplete="avatar"
-                                    margin="normal"
-                                    variant="outlined"
-                                    onChange={this.handleInput} >
-                                </TextField>
-                                <Button
-                                    variant="contained"
-                                    color="primary"
-                                    onClick={this.handleSubmit}>
-                                    update</Button>
-                            </div>
+                            
                             <div className="settings-button-style">
                                 <TextField
                                     id="outlined-Weight-input"
@@ -174,6 +188,19 @@ class Settings extends Component {
                                     onClick={this.handlePhoneNumberUpdate}
                                     id="update-phone-number">
                                     update</Button>
+                            </div>
+                            <div className="settings-button-style">
+                                <h1>Add Profile Picture :</h1>
+                                <Button
+                                    variant="contained"
+                                    color="primary"
+                                    onClick={()=>widget.open()}>
+                                    update</Button>
+                                    <Button
+                                     variant="contained"
+                                     color="primary"
+                                     onClick ={this.handleAvatarUpdate}
+                                    >Set</Button>
                             </div>
                         </CardContent>
                     </Card>
@@ -277,7 +304,8 @@ class Settings extends Component {
 }
 const mapStateToProps = reduxState => {
     return {
-        user_id: reduxState.userReducer.user_id
+        user_id: reduxState.userReducer.user_id,
+        avatar:reduxState.userReducer.avatar
     }
 }
 

@@ -47,8 +47,8 @@ class Login extends Component{
                     <section>
                         {/* <img>Logo</img>
                          */}
-                         <div className="Image-Container">
-                        <img src = "https://i.imgur.com/2EJZHHT.png" id="Logo"/>
+                        <div className="Image-Container">
+                            <img src = "https://i.imgur.com/2EJZHHT.png" id="Logo"/>
                         </div>
                         <h1 id="Sign-In">Sign In</h1>
                     </section>
@@ -87,7 +87,6 @@ class Login extends Component{
                             >Login</Button>
                         <h1 className="Register-Link">Don't have an account? Register <Link to="/register">here!</Link></h1>
                     </section>
-                   
                 </CardContent>
             </div>
             </Card>

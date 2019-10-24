@@ -20,18 +20,10 @@ class Carbs extends React.Component {
 
             let carbTotal = 0
             for (let i = 0; i < this.props.food.length; i++) {
-
                 carbTotal += this.props.food[i].carbs
-                
             }
-            this.setState({
-                
-            
-                    eaten: carbTotal
-                
-            })
+            this.setState({eaten: carbTotal})
         })
-    
         console.log(this.props.food)
     }
 

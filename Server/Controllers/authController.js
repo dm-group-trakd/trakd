@@ -1,12 +1,38 @@
 const bcrypt = require ('bcryptjs')
+const nodemailer = require('nodemailer')
+require('dotenv').config()
+
+let transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth:{
+        user:process.env.EMAIL,
+        pass:process.env.PASSWORD
+    }
+});
 
 module.exports = {
 
-    getUser: function(req,res) {
-        console.log('hit getUser')
-        if(req.session.user) {
-            res.status(200).json(req.session.user)
-        }
+    getUser: async (req,res) => {
+        // console.log('hit getUser')
+        // if(req.session.user) {
+        //     res.status(200).json(req.session.user)
+        // }
+        // console.log(req.session.user)
+        const {user_id} = req.session.user;
+        const db = req.app.get("db");
+
+        const foundUser = await db.auth.getUserData(user_id);
+        req.session.user = {
+            user_id: foundUser[0].user_id,
+            username: foundUser[0].username,
+            first_name: foundUser[0].first_name,
+            last_name: foundUser[0].last_name,
+            phone_number: foundUser[0].phone_number,
+            email: foundUser[0].email,
+            avatar: foundUser[0].avatar,
+            weight: foundUser[0].weight
+        };
+        res.status(200).json(req.session.user)
     },
     registerUser: async (req, res) => {
         const {first_name, last_name, username, password, email, phone_number, avatar, weight} = req.body;
@@ -20,7 +46,17 @@ module.exports = {
             const salt = bcrypt.genSaltSync(10);
             const hash = bcrypt.hashSync(password, salt);
             const newUser = await db.auth.register(first_name, last_name, username, hash, email, phone_number, avatar, weight);
-
+            let mailOptions ={
+                from: '"TrakD.com"<kevinsemail14@gmail.com>',
+                to: email,
+                subject:'Thanks For Registering On TrankD',
+                text:'TrakD',
+                html: `<b>
+                    <div>
+                        <h1>Thanks for Registering with TrakD </h1>
+                    </div>
+                </b>`
+            }
             req.session.user = {
                 user_id: newUser[0].user_id,
                 username: newUser[0].username,
@@ -31,6 +67,13 @@ module.exports = {
                 avatar: newUser[0].avatar,
                 weight: newUser[0].weight
             };
+            transporter.sendMail(mailOptions)
+            .then((response)=>{
+                console.log('email Sent')
+            })
+            .catch((err)=>{
+                console.log('error',err)
+            })
             console.log(req.session.user)
             res.status(200).json(req.session.user);
             db.auth.goals(req.session.user.user_id)
