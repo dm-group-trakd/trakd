@@ -56,7 +56,7 @@ class Calories extends React.Component {
             <div className='calorie-container'>
                 <Card>
                     <CardContent>
-                        <Doughnut data={data} width="700" height="600" />
+                        <Doughnut data={data} width="700" height="600" options ={{mantainAspectRatio :false}}/>
                     </CardContent>
                 </Card>
             </div>
