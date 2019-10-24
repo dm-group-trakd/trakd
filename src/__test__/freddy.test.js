@@ -1,5 +1,15 @@
-import {logoutUser, updateUsername, updateEmail, getGoals} from '../redux/reducers/userReducer'
-import {handleInput} from '../components/Settings'
+import React from 'react'
+import Enzyme, {shallow} from "enzyme"
+import {Provider} from "react-redux"
+import configureMockStore from "redux-mock-store"
+import Fat from "../../../trakd/src/components/Fat/Fat"
+import Adapter from "enzyme-adapter-react-16"
+
+Enzyme.configure({adapter: new Adapter() })
+
+import {logoutUser, updateUsername, updateEmail, getGoals, deleteUser} from '../redux/reducers/userReducer'
+import {deleteFood} from '../redux/reducers/foodReducer'
+
 
 // UNIT TESTS
 describe("Logging out user, should be functional", () => {
@@ -25,12 +35,53 @@ describe("Getting all goals, should be functional", () => {
         expect(getGoals().type).toBe("GET_GOALS")
     })
 })
-
-// COMPONENT TESTING
-describe("handleInput for username should function", () => {
-    test("Typing should update state for username", () => {
-        expect(handleInput()).toBe()
+describe("deleting user should return correct reducer type", () => {
+    test("deleting user should delete user", () => {
+        expect(deleteFood().type).toBe("DELETE_FOOD")
     })
 })
+
+// COMPONENT TESTING 
+
+const mockStore = configureMockStore();
+const store = mockStore({});
+const clickFn = jest.fn()
+
+describe("Fat Component", () => {
+    test("should render without throwing an error", () => {
+        expect(
+            shallow(
+                <Provider store={store}>
+                    <Fat />
+                </Provider>
+            ).exists()
+        ).toBe(true);
+    });
+});
+
+// test("eaten text is updated", () => {
+//     const wrapper = shallow(
+//         <Provider store={store}>
+//         <Fat />
+//     </Provider>)
+
+//     wrapper.find("input").simulate("change", {
+//         target: {value: "12"}
+//     })
+//     expect(wrapper.find("input").value).toEqual("12")
+// })
+
+describe('Fat', ()=> {
+    const component = shallow(
+        <Provider store={store}>
+            <Fat />
+        </Provider>)
+
+        component
+        .find('button#FatButton')
+        .simulate('click')
+        expect(clickFn).toHaveBeenCalled()
+})
+
 
 

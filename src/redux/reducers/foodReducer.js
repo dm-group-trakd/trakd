@@ -27,7 +27,7 @@ export function addFood(food) {
 export function deleteFood(nutrition_id) {
     return {
         type: DELETE_FOOD,
-        payload: axios.get(`/api/food/${nutrition_id}`)
+        payload: axios.delete(`/api/food/${nutrition_id}`)
     };
 }
 
@@ -35,7 +35,10 @@ export function deleteFood(nutrition_id) {
 //reducer function
 export default function reducer(state = initialState, action) {
     const { type, payload } = action;
+<<<<<<< HEAD
     // console.log(payload)
+=======
+>>>>>>> master
 
     switch(type){
         case `${GET_FOOD}_FULFILLED`:
@@ -45,11 +48,13 @@ export default function reducer(state = initialState, action) {
             }
         case `${ADD_FOOD}_FULFILLED`:
             return{
-                ...state
+                ...state,
+                food: payload.data
             }
         case `${DELETE_FOOD}_FULFILLED`:
             return{
-                ...state
+                ...state,
+                food: payload.data
             }
         default: return state
     }

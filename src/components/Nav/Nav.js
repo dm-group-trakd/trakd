@@ -24,13 +24,12 @@ class Nav extends Component{
         this.props.getSession()
     }
     
-    componentDidUpdate(prevProps){
-        console.log("hit1")
-        if(prevProps.avatar === this.props.avatar){
-            this.props.getSession()
-            console.log("hit2")
-        }
-    }
+    // componentDidUpdate(prevProps){
+    //     if(prevProps.avatar === this.props.avatar){
+    //         this.props.getSession()
+    //     }
+    // }
+
     handleLogout = () =>{
         this.props.logoutUser()
         this.props.history.push('/')
