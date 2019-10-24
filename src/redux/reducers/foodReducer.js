@@ -27,7 +27,7 @@ export function addFood(food) {
 export function deleteFood(nutrition_id) {
     return {
         type: DELETE_FOOD,
-        payload: axios.get(`/api/food/${nutrition_id}`)
+        payload: axios.delete(`/api/food/${nutrition_id}`)
     };
 }
 
