@@ -1,7 +1,7 @@
 .nav-main{
     display: flex;
     // height:100vh;
-    width:0px
+    width: 10vw;
 }
 .nav-container{
     width: 8vw;
@@ -38,7 +38,7 @@
     background-color: transparent;
     border-color: transparent;
     position: absolute;
-    z-index: 1;
+    // z-index: 1;
     outline: none;
 }
 .ham:active{

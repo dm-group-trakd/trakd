@@ -13,27 +13,23 @@ let transporter = nodemailer.createTransport({
 module.exports = {
 
     getUser: async (req,res) => {
-        // console.log('hit getUser')
-        // if(req.session.user) {
-        //     res.status(200).json(req.session.user)
-        // }
-        // console.log(req.session.user)
-        const {user_id} = req.session.user;
-        console.log(user_id)
-        const db = req.app.get("db");
-
-        const foundUser = await db.auth.getUserData(user_id);
-        req.session.user = {
-            user_id: foundUser[0].user_id,
-            username: foundUser[0].username,
-            first_name: foundUser[0].first_name,
-            last_name: foundUser[0].last_name,
-            phone_number: foundUser[0].phone_number,
-            email: foundUser[0].email,
-            avatar: foundUser[0].avatar, 
-            weight: foundUser[0].weight
-        };
-        res.status(200).json(req.session.user)
+        if(req.session.user){
+            const {user_id} = req.session.user;
+            const db = req.app.get("db");
+    
+            const foundUser = await db.auth.getUserData(user_id);
+            req.session.user = {
+                user_id: foundUser[0].user_id,
+                username: foundUser[0].username,
+                first_name: foundUser[0].first_name,
+                last_name: foundUser[0].last_name,
+                phone_number: foundUser[0].phone_number,
+                email: foundUser[0].email,
+                avatar: foundUser[0].avatar,
+                weight: foundUser[0].weight
+            };
+            res.status(200).json(req.session.user)
+        }
     },
     registerUser: async (req, res) => {
         const {first_name, last_name, username, password, email, phone_number, avatar, weight} = req.body;

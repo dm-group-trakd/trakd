@@ -50,7 +50,7 @@ class Carbs extends React.Component {
                 
                 </div>
                     <CardContent>
-                        <Doughnut data={data} width="700" height="600" />
+                        <Doughnut data={data} width="500" height="400" />
                     </CardContent>
                 </Card>
             </div>
