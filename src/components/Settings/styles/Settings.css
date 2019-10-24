@@ -31,13 +31,33 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   width: 30vw;
+  height: 8vh;
+}
+
+.settingH1 {
+  width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.settingP {
+  color: #9b9999;
+  font-size: 16px;
 }
 
 .settings-settings, .settings-goals {
@@ -52,5 +72,18 @@
           align-items: center;
   font-size: 1.25rem;
   font-weight: bold;
+}
+
+.update-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.profPic {
+  width: 80px;
+  border-radius: 5px;
+  position: static;
+  margin-left: 10px;
 }
 /*# sourceMappingURL=Settings.css.map */
