@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddNutrition activate button with click for handle-search button 1`] = `ReactWrapper {}`;
+
+exports[`activate button with click for handle-search button 1`] = `ReactWrapper {}`;
+
+exports[`should be possible to activate button with click 1`] = `ReactWrapper {}`;

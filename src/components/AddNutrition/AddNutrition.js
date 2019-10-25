@@ -71,7 +71,7 @@ class AddNutrition extends Component {
                     <CardContent>
                         <h1>Add Food</h1>
                         <TextField 
-                            id="outlined-Password-input"
+                            id="outlined-Search-Food-input"
                             label="Search"
                             type="text"
                             name="searchedFood"
@@ -85,6 +85,7 @@ class AddNutrition extends Component {
                             color="primary"
                             onClick={this.handleSearchSubmit}
                             className = "search-button"
+                            id="handle-search"
                         >Search</Button>
                         <div className="search-mapped">
                         {this.state.searchResults1 ? this.state.searchResults1.map((food, i) => (
