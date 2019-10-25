@@ -52,12 +52,22 @@ class Food extends Component {
             console.log(food.nutrition_id)
             return (
                 <div className="food-mapped" key={i}>
-                    <h1>{food.food}</h1>
-                    <h1>{food.calories}</h1>
-                    <h1>{food.fat}</h1>
-                    <h1>{food.carbs}</h1>
-                    <h1>{food.protein}</h1>
-                    <button className ="delete-btn" onClick = {() => this.deleteFood(food.nutrition_id)}><h1 className ="deleteh1">-</h1></button>
+                    <div className = 'food-name'>
+                        <h1>{food.food}</h1>  
+                    </div>
+                    <div className ='food-calories'>
+                        <h1>{food.calories}</h1>
+                    </div>
+                    <div className = 'food-fat'>
+                        <h1>{food.fat}</h1>
+                    </div>
+                    <div className = 'food-carbs'>
+                        <h1>{food.carbs}</h1>
+                    </div>
+                    <div className ='food-protein'>
+                        <h1>{food.protein}</h1>
+                    </div>
+                    <button className ="delete-btn" onClick = {() => this.deleteFood(food.nutrition_id)}><img src ='https://cdn2.iconfinder.com/data/icons/cleaning-19/30/30x30-10-512.png' id = 'trash'></img></button>
                 </div>
             )
         })

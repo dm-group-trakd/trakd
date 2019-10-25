@@ -49,9 +49,6 @@
   #Arrows {
     display: none;
   }
-}
-
-@media (max-width: 800px) {
   .dash-components {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -77,6 +74,11 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+}
+
+@media (max-width: 800px) {
+  .dashboard-container {
     margin-top: 10vh;
   }
 }

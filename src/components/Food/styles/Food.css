@@ -5,9 +5,8 @@
 }
 
 .card {
-  height: 56vh;
-  width: 35vw;
-  margin-top: 50px;
+  height: 600px;
+  width: 700px;
 }
 
 .dashboard-card {
@@ -37,35 +36,33 @@
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  margin-top: 5px;
+}
+
+.food-name, .food-calories, .food-fat, .food-carbs, .food-protein {
+  width: 30px;
 }
 
 .delete-btn {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   cursor: pointer;
   background-color: transparent;
   border-color: transparent;
-  font-size: 20px;
-  height: 20px;
-  width: 30px;
   border-radius: 10px;
+  position: absolute;
+  left: 1px;
 }
 
-.delete-btn:hover {
-  background-color: #c21616;
+#trash {
+  width: 15px;
 }
 
 @media (max-width: 800px) {
   .card {
     height: 30vh;
     width: 75vw;
+  }
+  .add-button {
+    position: fixed;
   }
 }
 /*# sourceMappingURL=Food.css.map */
