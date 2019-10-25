@@ -55,18 +55,14 @@ class Nav extends Component{
                     <div className="Nav-Links">
                         <Link to ="/dashboard">
                         <img src = "https://icon-library.net/images/pie-chart-icon-png/pie-chart-icon-png-23.jpg" id="dashboard-logo"/>
-                        </Link>
-                    </div>
-                    <div>
+                        </Link> 
                         <Link to="/settings">
                     <img src = "https://cdn1.iconfinder.com/data/icons/internet-28/48/16-512.png" id="cogwheel"/>
                     </Link>
-                </div>
-                <div>
                     <Link to ="/about">
                         <img src = "https://pngimage.net/wp-content/uploads/2018/05/about-png-7.png" id="about-logo"/>
                     </Link>
-                </div>
+                    </div>
                     <section className="nav-bottom">
                         <img src={this.props.avatar} alt="avatar" className="avatar"/>
                         <Button
