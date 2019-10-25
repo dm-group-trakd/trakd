@@ -424,7 +424,7 @@ class Settings extends Component {
                             <div className="settings-button-style">
                                          {this.state.editProteinGoal === false?
                                 <>
-                                <h1 className = "settingH1">Protein Goal:<p className ="settingP">{this.props.protein_goal}</p></h1>
+                                <h1 className = "settingH1">Protein Goal:<p className ="settingP">{this.props.protein_goal}g</p></h1>
                                 <Button
                                     variant="contained"
                                     color="primary"
@@ -462,7 +462,7 @@ class Settings extends Component {
                             <div className="settings-button-style">
                                 {this.state.editCarbGoal === false?
                                 <>
-                                <h1 className = "settingH1">Carbs Goal:<p className ="settingP">{this.props.carbs_goal}</p></h1>
+                                <h1 className = "settingH1">Carbs Goal:<p className ="settingP">{this.props.carbs_goal}g</p></h1>
                                 <Button
                                     variant="contained"
                                     color="primary"
@@ -500,7 +500,7 @@ class Settings extends Component {
                             <div className="settings-button-style">
                                 {this.state.editFatGoal === false?
                                 <>
-                                <h1 className = 'settingH1'>Fat Goal:<p className ='settingP'>{this.props.fat_goal}</p></h1>
+                                <h1 className = 'settingH1'>Fat Goal:<p className ='settingP'>{this.props.fat_goal}g</p></h1>
                                 <Button
                                     variant="contained"
                                     color="primary"

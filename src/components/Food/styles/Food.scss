@@ -3,9 +3,9 @@
 }
 
 .card {
-    height: 55vh;
-    width: 35vw;
-    margin-top: 50px;  
+    height: 600px;
+    width: 700px;
+    // margin-top: 50px;  
 }
 
 .dashboard-card {
@@ -14,6 +14,7 @@
     height: 5vh;
     align-items: flex-end;
     border-bottom: 1px solid black;
+    // margin-right: 100px;
 }
 
 .add-button {
@@ -25,25 +26,31 @@
 .food-mapped {
     display: flex;
     justify-content: space-evenly;
+    margin-top: 5px;
+}
+.food-name,.food-calories,.food-fat,.food-carbs,.food-protein{
+    width: 30px;
+   
 }
 .delete-btn{
-    display:flex;
-    align-items: flex-start;
-    justify-content: center;
     cursor: pointer;
     background-color: transparent;
     border-color: transparent;
-    font-size: 20px;
-    height: 20px;
-    width: 30px;
     border-radius: 10px;
-}
-.delete-btn:hover{
-    background-color: rgb(194, 22, 22);
+    position:absolute;
+    left:1px;
+
+}  
+#trash{
+    width:15px;
 }
 @media (max-width:800px){
     .card{
         height: 30vh;
         width: 75vw;
     }
+    .add-button{
+        position: fixed;
+    }
+   
 }
