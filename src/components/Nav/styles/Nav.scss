@@ -111,3 +111,48 @@ div.side-menu,.side-menu-open,.side-menu-close{
         display: none;
     }
 }
+
+@media(max-width: 800px) {
+    .nav-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100vw;
+        height: 8vh;
+        background: white;
+        
+      }
+    
+      .nav-main {
+        display: flex;
+        width: 100vw;
+       
+      }
+
+      .Nav-Links {
+          display: flex;
+          align-items: space-evenly;
+      }
+    
+      .nav-bottom {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .nav-logo{
+        max-width: 30%;
+        display: flex;
+        margin-right: 100px;
+    }
+
+    .avatar{
+        max-width: 30%;
+        border-radius: 50%;
+    }
+
+    .Login-Button {
+        height: 25px;
+        width: 25px;
+        
+    }
+}
