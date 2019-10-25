@@ -1,5 +1,6 @@
 .food-container {
     position: relative;
+    box-shadow: 10px 10px 10px -3px rgba(0,0,0,0.75);
 }
 
 .card {
@@ -14,7 +15,7 @@
     height: 5vh;
     align-items: flex-end;
     border-bottom: 1px solid black;
-    // margin-right: 100px;
+    
 }
 
 .add-button {
