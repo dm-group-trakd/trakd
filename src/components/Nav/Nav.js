@@ -48,6 +48,7 @@ class Nav extends Component{
     render(){
         return(
             <div className="nav-main">
+
                 <div className ="nav-container">
                     <section className="nav-logo-top">
                         <img className="nav-logo" src="https://i.imgur.com/oUglC7p.png" alt="Logo"/>

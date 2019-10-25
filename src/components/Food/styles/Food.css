@@ -1,11 +1,9 @@
 .food-container {
   position: relative;
-  margin-top: 27px;
-  margin-right: 55px;
 }
 
 .card {
-  height: 53vh;
+  height: 55vh;
   width: 35vw;
   margin-top: 50px;
 }
@@ -60,5 +58,12 @@
 
 .delete-btn:hover {
   background-color: #c21616;
+}
+
+@media (max-width: 800px) {
+  .card {
+    height: 30vh;
+    width: 75vw;
+  }
 }
 /*# sourceMappingURL=Food.css.map */

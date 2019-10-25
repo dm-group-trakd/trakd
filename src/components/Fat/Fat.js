@@ -55,20 +55,15 @@ class Fat extends React.Component {
         };
         return (
             <div className='calorie-container'>
-                
                 <Card>
                 <h1 id="Nutrient-Header">Fat</h1>
-                
                 <div className="Nutrients-Nav">
                 <Button onClick={this.props.showCalories}  color="primary"  variant="contained" id="FatButton">Calories</Button>
                 <Button onClick = {this.props.showProtein}  color="primary"  variant="contained" >Protein</Button>
-                
                 <Button onClick = {this.props.showCarbs}  color="primary"  variant="contained" >Carbs</Button>
-
-                
                 </div>
                     <CardContent>
-                        <Doughnut data={data} width="500" height="400" />
+                        <Doughnut data={data} width="400" height="300" options={{responsive: true}}/>
                     </CardContent>
                 </Card>
             </div>
