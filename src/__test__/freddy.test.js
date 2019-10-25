@@ -6,12 +6,10 @@ import Fat from "../../../trakd/src/components/Fat/Fat"
 import Adapter from "enzyme-adapter-react-16"
 import Register from "../../../trakd/components/Register/Register"
 import About from "../../../trakd/components/About/About"
-
-Enzyme.configure({adapter: new Adapter() })
-
-import {logoutUser, updateUsername, updateEmail, getGoals, deleteUser} from '../redux/reducers/userReducer'
+import {logoutUser, updateUsername, updateEmail, getGoals} from '../redux/reducers/userReducer'
 import {deleteFood} from '../redux/reducers/foodReducer'
 
+Enzyme.configure({adapter: new Adapter() })
 
 // UNIT TESTS
 describe("Logging out user, should be functional", () => {
