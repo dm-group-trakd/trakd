@@ -170,4 +170,60 @@ div.side-menu, .side-menu-open, .side-menu-close {
     display: none;
   }
 }
+
+@media (max-width: 800px) {
+  .nav-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    width: 100vw;
+    height: 8vh;
+    background: white;
+  }
+  .nav-main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100vw;
+  }
+  .Nav-Links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: space-evenly;
+        -ms-flex-align: space-evenly;
+            align-items: space-evenly;
+  }
+  .nav-bottom {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .nav-logo {
+    max-width: 30%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-right: 100px;
+  }
+  .avatar {
+    max-width: 30%;
+    border-radius: 50%;
+  }
+  .Login-Button {
+    height: 25px;
+    width: 25px;
+  }
+}
 /*# sourceMappingURL=Nav.css.map */

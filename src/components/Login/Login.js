@@ -84,6 +84,7 @@ class Login extends Component{
                                 color="primary"
                                 onClick={this.handleSubmit}
                                 className = "Login-Button"
+                                id="login-button"
                             >Login</Button>
                         <h1 className="Register-Link">Don't have an account? Register <Link to="/register">here!</Link></h1>
                     </section>
