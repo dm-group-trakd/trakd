@@ -31,7 +31,7 @@ export default function About() {
                     <div className="Name">
                         <h1>Kevin Hernandez</h1>
                     </div>
-                    <img src="https://i.imgur.com/6X95vdr.jpg" id="Freddy" />
+                    <img src="https://res.cloudinary.com/kevin14/image/upload/v1571960540/wr5g6zwiivj7jqultcrs.jpg" id="Freddy" />
                     <p id="Bio">
                         Lorem ipsum dolor sit amet, eius dicta epicurei vel in, pro saepe dolores ad. Ad dicant veritus has. Eu dictas dignissim eam, et maluisset consectetuer duo, te argumentum dissentiunt vix. Quo cetero civibus necessitatibus ut, mea et putent necessitatibus. Volutpat deterruisset interpretaris mei ne, ne aeque postea repudiare mel, ad vim wisi zril ceteros.
 
