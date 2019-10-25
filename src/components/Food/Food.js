@@ -57,7 +57,7 @@ class Food extends Component {
                     <h1>{food.fat}</h1>
                     <h1>{food.carbs}</h1>
                     <h1>{food.protein}</h1>
-                    <button onClick = {() => this.deleteFood(food.nutrition_id)}>-</button>
+                    <button className ="delete-btn" onClick = {() => this.deleteFood(food.nutrition_id)}><h1 className ="deleteh1">-</h1></button>
                 </div>
             )
         })

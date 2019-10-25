@@ -6,6 +6,7 @@ import TextField from "@material-ui/core/TextField";
 import { connect } from "react-redux";
 import { getSession, getGoals, updateUsername, updateEmail, updateAvatar, updateWeight, updatePhoneNumber, updateWeightGoal, updateCarbGoal, updateCalorieGoal, updateProteinGoal, updateFatGoal } from "../../redux/reducers/userReducer";
 import "./styles/Settings.css"
+import axios from 'axios'
 
 
 class Settings extends Component {
@@ -38,8 +39,6 @@ class Settings extends Component {
     componentDidUpdate = () => {
         this.props.getSession()
         this.props.getGoals()
-        // console.log(this.props.avatar)
-        console.log(this.props.avatar)
     }
     componentDidMount() {
         this.props.getSession()
@@ -56,6 +55,7 @@ class Settings extends Component {
         const {username}=this.state
         this.props.updateUsername({username})
         this.setState({editUsername:false})
+        console.log(this.state.avatar)
     }
     
     handleEmailUpdate=()=>{
@@ -171,6 +171,7 @@ class Settings extends Component {
                                     label="Username"
                                     type="text"
                                     name="username"
+                                    defaultValue ={this.props.username}
                                     autoComplete="username"
                                     margin="normal"
                                     variant="outlined"
@@ -210,6 +211,7 @@ class Settings extends Component {
                                     label="Email"
                                     type="text"
                                     name="email"
+                                    defaultValue = {this.props.email}
                                     autoComplete="email"
                                     margin="normal"
                                     variant="outlined"
@@ -236,7 +238,7 @@ class Settings extends Component {
                             <div className="settings-button-style">
                                  {this.state.editWeight === false?
                                 <>
-                                <h1 className ="settingH1">Weight: <p className ="settingP">{this.props.weight}</p></h1>
+                                <h1 className ="settingH1">Weight: <p className ="settingP">{this.props.weight}lbs</p></h1>
                                 <Button
                                     variant="contained"
                                     color="primary"
@@ -251,6 +253,7 @@ class Settings extends Component {
                                     label="Weight"
                                     type="text"
                                     name="weight"
+                                    defaultValue ={this.props.weight}
                                     autoComplete="weight"
                                     margin="normal"
                                     variant="outlined"
@@ -289,6 +292,7 @@ class Settings extends Component {
                                     label="Phone Number"
                                     type="text"
                                     name="phone_number"
+                                    defaultValue ={this.props.phone_number}
                                     autoComplete="phone_number"
                                     margin="normal"
                                     variant="outlined"
@@ -312,7 +316,7 @@ class Settings extends Component {
                             <div className="settings-button-style">
                                 {this.state.editProfilePic === false?
                                 <>
-                                <h1 className ="settingH1">Edit Profile Picture<img className = "profPic" src ={this.props.avatar}/> </h1>
+                                <h1 className ="settingH1">Edit Profile Picture<img className = "profPic" src ={this.state.avatar}/> </h1>
                                 <Button
                                     variant="contained"
                                     color="primary"
@@ -322,7 +326,7 @@ class Settings extends Component {
                                 </>
                                 :
                                 <>
-                                <h1>Add Profile Picture :</h1>
+                                <h1 className = "settingH1">Edit Profile Picture </h1>
                                 <Button
                                      variant="contained"
                                      color="primary"
@@ -344,7 +348,7 @@ class Settings extends Component {
                             <div className="settings-button-style">
                                    {this.state.editWeightGoal === false?
                                 <>
-                                <h1 className ="settingH1">Weight Goal:<p className ="settingP">{this.props.weight_goal}</p></h1>
+                                <h1 className ="settingH1">Weight Goal:<p className ="settingP">{this.props.weight_goal}lbs</p></h1>
                                 <Button
                                     variant="contained"
                                     color="primary"
@@ -360,6 +364,7 @@ class Settings extends Component {
                                     type="text"
                                     name="weight_goal"
                                     autoComplete="weight_goal"
+                                    defaultValue ={this.props.weight_goal}
                                     margin="normal"
                                     variant="outlined"
                                     onChange={this.handleInput} >
@@ -397,6 +402,7 @@ class Settings extends Component {
                                     type="text"
                                     name="calorie_goal"
                                     autoComplete="calorie_goal"
+                                    defaultValue ={this.props.calorie_goal}
                                     margin="normal"
                                     variant="outlined"
                                     onChange={this.handleInput} >
@@ -418,7 +424,7 @@ class Settings extends Component {
                             <div className="settings-button-style">
                                          {this.state.editProteinGoal === false?
                                 <>
-                                <h1 className = "settingH1">protein:<p className ="settingP">{this.props.protein_goal}</p></h1>
+                                <h1 className = "settingH1">Protein Goal:<p className ="settingP">{this.props.protein_goal}</p></h1>
                                 <Button
                                     variant="contained"
                                     color="primary"
@@ -434,6 +440,7 @@ class Settings extends Component {
                                     type="text"
                                     name="protein_goal"
                                     autoComplete="protein_goal"
+                                    defaultValue ={this.props.protein_goal}
                                     margin="normal"
                                     variant="outlined"
                                     onChange={this.handleInput} >
@@ -455,7 +462,7 @@ class Settings extends Component {
                             <div className="settings-button-style">
                                 {this.state.editCarbGoal === false?
                                 <>
-                                <h1 className = "settingH1">Carbs_Goal:<p className ="settingP">{this.props.carbs_goal}</p></h1>
+                                <h1 className = "settingH1">Carbs Goal:<p className ="settingP">{this.props.carbs_goal}</p></h1>
                                 <Button
                                     variant="contained"
                                     color="primary"
@@ -471,6 +478,7 @@ class Settings extends Component {
                                     type="text"
                                     name="carbs_goal"
                                     autoComplete="carbs_goal"
+                                    defaultValue ={this.props.carbs_goal}
                                     margin="normal"
                                     variant="outlined"
                                     onChange={this.handleInput} >
@@ -492,7 +500,7 @@ class Settings extends Component {
                             <div className="settings-button-style">
                                 {this.state.editFatGoal === false?
                                 <>
-                                <h1 className = 'settingH1'>Fat:<p className ='settingP'>{this.props.fat_goal}</p></h1>
+                                <h1 className = 'settingH1'>Fat Goal:<p className ='settingP'>{this.props.fat_goal}</p></h1>
                                 <Button
                                     variant="contained"
                                     color="primary"
@@ -508,6 +516,7 @@ class Settings extends Component {
                                     type="text"
                                     name="fat_goal"
                                     autoComplete="fat_goal"
+                                    defaultValue ={this.props.fat_goal}
                                     margin="normal"
                                     variant="outlined"
                                     onChange={this.handleInput} >
