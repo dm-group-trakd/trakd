@@ -32,12 +32,12 @@ class Fat extends React.Component {
     componentDidUpdate(prevProps) {
         if(JSON.stringify(prevProps.food) !== JSON.stringify(this.props.food)) {
             this.props.getFood().then(() => {
-                let calorieTotal = 0
+                let FatTotal = 0
                 for (let i = 0; i < this.props.food.length; i++) {
-                    calorieTotal += this.props.food[i].calories
+                    FatTotal += this.props.food[i].fat
                 }
                 this.setState({
-                    eaten: calorieTotal   
+                    eaten: FatTotal  
                 })
             })
         }
