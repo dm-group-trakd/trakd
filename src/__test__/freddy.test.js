@@ -4,6 +4,8 @@ import {Provider} from "react-redux"
 import configureMockStore from "redux-mock-store"
 import Fat from "../../../trakd/src/components/Fat/Fat"
 import Adapter from "enzyme-adapter-react-16"
+import Register from "../../../trakd/components/Register/Register"
+import About from "../../../trakd/components/About/About"
 
 Enzyme.configure({adapter: new Adapter() })
 
@@ -45,7 +47,7 @@ describe("deleting user should return correct reducer type", () => {
 
 const mockStore = configureMockStore();
 const store = mockStore({});
-const clickFn = jest.fn()
+
 
 describe("Fat Component", () => {
     test("should render without throwing an error", () => {
@@ -57,6 +59,46 @@ describe("Fat Component", () => {
             ).exists()
         ).toBe(true);
     });
+});
+describe("Register Component", () => {
+    test("should render without throwing an error", () => {
+        expect(
+            shallow(
+                <Provider store={store}>
+                    <Register />
+                </Provider>
+            ).exists()
+        ).toBe(true);
+    });
+});
+describe("About Component", () => {
+    test("should render without throwing an error", () => {
+        expect(
+            shallow(
+                <Provider store={store}>
+                    <About />
+                </Provider>
+            ).exists()
+        ).toBe(true);
+    });
+});
+
+it('should be possible to activate button with click', () => {
+    const component = mount(<ProteinChart.WrappedComponent />);
+    component
+        .find('button#showCalories')
+        .simulate('click', null);
+    expect(component).toMatchSnapshot();
+    component.unmount();
+});
+
+it('should be possible to activate button with click', () => {
+    const component = mount(<Login.WrappedComponent />);
+    component
+        .find('button#login-button')
+        .simulate('click', null);
+    expect(component).toMatchSnapshot();
+    component.unmount();
 });
 
 // test("eaten text is updated", () => {
@@ -71,17 +113,17 @@ describe("Fat Component", () => {
 //     expect(wrapper.find("input").value).toEqual("12")
 // })
 
-describe('Fat', ()=> {
-    const component = shallow(
-        <Provider store={store}>
-            <Fat />
-        </Provider>)
+// describe('Fat', ()=> {
+//     const component = shallow(
+//         <Provider store={store}>
+//             <Fat />
+//         </Provider>)
 
-        component
-        .find('button#FatButton')
-        .simulate('click')
-        expect(clickFn).toHaveBeenCalled()
-})
+//         component
+//         .find('button#FatButton')
+//         .simulate('click')
+//         expect(clickFn).toHaveBeenCalled()
+// })
 
 
 
