@@ -73,7 +73,8 @@
 }
 
 .avatar {
-  max-width: 50%;
+  height: 15px;
+  width: 15px;
   border-radius: 50%;
 }
 
@@ -223,6 +224,7 @@ div.side-menu, .side-menu-open, .side-menu-close {
             justify-content: center;
     width: 40vw;
     height: 8vh;
+    margin-left: 10px;
   }
   .nav-logo {
     display: -webkit-box;
@@ -230,7 +232,8 @@ div.side-menu, .side-menu-open, .side-menu-close {
     display: flex;
   }
   .avatar {
-    max-width: 30%;
+    height: 15px;
+    width: 15px;
     border-radius: 50%;
   }
   .Login-Button {

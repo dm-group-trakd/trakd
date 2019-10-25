@@ -94,4 +94,18 @@
         flex-wrap: wrap;
   }
 }
+
+@media screen and (max-width: 801px) {
+  .settings-card-1 {
+    margin-top: 100px;
+    margin-right: 100px;
+  }
+  .settings-card-2 {
+    margin-top: 20px;
+    margin-right: 100px;
+  }
+  .settings-page {
+    height: 108vh;
+  }
+}
 /*# sourceMappingURL=Settings.css.map */

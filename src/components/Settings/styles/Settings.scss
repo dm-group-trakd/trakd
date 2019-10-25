@@ -6,6 +6,7 @@
     align-items: center;
     justify-content: center;
     background: url("https://media.giphy.com/media/3mJyfDFH0BqgbdghWJ/giphy.gif");
+    
 }
 
 .settings-card-1, .settings-card-2{
@@ -23,7 +24,7 @@
     align-items: center;
     width: 450px;
     height: 8vh;
-  
+
 }
 .settingH1{
     width:500px;
@@ -59,4 +60,22 @@
     .settings-page{
         flex-wrap: wrap;
     }
+}
+
+@media screen and (max-width: 801px) {
+    .settings-card-1 {
+        margin-top: 100px;
+        margin-right: 100px;
+        
+    }
+    .settings-card-2 {
+        margin-top: 20px;
+        margin-right: 100px;
+    }
+
+    .settings-page{
+        height: 108vh;
+    }
+
+    
 }
