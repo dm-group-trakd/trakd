@@ -1,11 +1,18 @@
 .tips-main{
-    //  width: 20vw;
-    //  margin-left:200px;
+     width: 20vw;
 }
 .tips-container{
-    // width: 20vw;
-    // margin-left:30px;
+    width: 20vw;   
 }
 .tips{
-    font-size:20px;
+    font-size:1vw;
+}
+@media(max-width:800px) {
+    .tips{
+        font-size: 2vw;
+    }
+    .tips-main{
+        width: 75vw;
+        margin-bottom: 2px;   
+    }
 }

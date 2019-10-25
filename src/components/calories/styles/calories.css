@@ -1,6 +1,5 @@
 .calorie-container {
-  width: 35vw;
-  height: 55vh;
+  width: 38vw;
   margin: 50px;
 }
 
@@ -30,5 +29,11 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+@media (max-width: 800px) {
+  .calorie-container {
+    width: 75vw;
+  }
 }
 /*# sourceMappingURL=calories.css.map */

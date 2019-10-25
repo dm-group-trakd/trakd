@@ -48,7 +48,7 @@ class Nav extends Component{
     render(){
         return(
             <div className="nav-main">
-                <button className = "ham-btn" onClick ={this.toggle}>
+                {/* <button className = "ham-btn" onClick ={this.toggle}>
                     <img className ="ham" src="https://img.icons8.com/material-rounded/192/000000/menu.png"/>
                 </button>
                 
@@ -59,7 +59,7 @@ class Nav extends Component{
                             onClick={this.handleLogout}
                             className = "Login-Button"
                     >Logout</Button>
-                </div>
+                </div> */}
                 <div className ="nav-container">
                     <section className="nav-logo-top">
                         <img className="nav-logo" src="https://i.imgur.com/oUglC7p.png" alt="Logo"/>

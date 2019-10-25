@@ -68,7 +68,7 @@ class Fat extends React.Component {
                 
                 </div>
                     <CardContent>
-                        <Doughnut data={data} width="500" height="400" />
+                        <Doughnut data={data} width="400" height="300" options={{responsive: true}}/>
                     </CardContent>
                 </Card>
             </div>

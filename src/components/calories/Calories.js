@@ -58,7 +58,7 @@ class Calories extends React.Component {
             <div className='calorie-container'>
                 
                 <Card>
-                    <section>
+                    <section className ="calories">
                         <h1 id="Nutrient-Header">Calories</h1>
                         <h1>{this.state.eaten}</h1>
                         <div className="Nutrients-Nav">

@@ -1,11 +1,9 @@
 .food-container {
     position: relative;
-    margin-top: 27px;
-    margin-right: 55px;
 }
 
 .card {
-    height: 53vh;
+    height: 55vh;
     width: 35vw;
     margin-top: 50px;  
 }
@@ -42,4 +40,10 @@
 }
 .delete-btn:hover{
     background-color: rgb(194, 22, 22);
+}
+@media (max-width:800px){
+    .card{
+        height: 35vh;
+        width: 75vw;
+    }
 }

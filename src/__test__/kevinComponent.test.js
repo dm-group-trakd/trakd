@@ -1,26 +1,25 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-// import {act, Simulate} from "react-dom/test-utils"
 import Calories from "../components/calories/Calories"
+import Food from "../components/Food/Food"
+import Login from "../components/Login/Login"
 import Enzyme, {shallow} from "enzyme"
 import {Provider} from "react-redux"
 import configureMockStore from "redux-mock-store"
 import Adapter from 'enzyme-adapter-react-16'
-// import Adapter from 'enzyme-adapter-react-15';
+import {getFood} from '../redux/reducers/foodReducer';
+import {getGoals} from '../redux/reducers/userReducer';
+import {deleteFood} from '../redux/reducers/foodReducer';
+import {loginUser, getSession} from '../redux/reducers/userReducer';
 
-// let container = null
+Enzyme.configure({adapter: new Adapter() })
+
+
 const mockStore = configureMockStore();
 const store = mockStore({});
 
-// beforeEach(()=>{
-//     container = document.createElement("div")
-//     document.body.appendChild(container)
-// })
-// afterEach(()=>{
-//     document.body.removeChild(container)
-//     container =null
-// })
-describe("calorie component",()=>{
+
+
+describe("component",()=>{
     test("can render properly", ()=>{
         expect(
             shallow(
@@ -29,5 +28,23 @@ describe("calorie component",()=>{
                 </Provider>
             ).exists()
         ).toBe(true)
+    })
+    test("can render properly", ()=>{
+        expect(
+            shallow(
+                <Provider store ={store}>
+                    <Food/>
+                </Provider>
+            )
+        )
+    })
+    test("can render ",()=>{
+        expect(
+            shallow(
+                <Provider store ={store}>
+                    <Login/>
+                </Provider>
+            )
+        )
     })
 })

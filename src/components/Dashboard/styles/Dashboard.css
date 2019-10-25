@@ -1,12 +1,20 @@
-.right-components {
-  width: 100%;
+.dashboard-container {
+  width: 90vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.dash-components {
+  width: 90%;
   height: 80vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -14,13 +22,55 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+}
+
+.right-components {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.tips {
+  position: static;
 }
 
 #Arrows {
   height: 120px;
   width: 120px;
   margin-right: 50px;
+}
+
+@media (max-width: 1400px) {
+  #Arrows {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .dash-components {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: none;
+        -ms-flex-align: none;
+            align-items: none;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .food {
+    margin-top: 50px;
+  }
+  .right-components {
+    -webkit-box-align: none;
+        -ms-flex-align: none;
+            align-items: none;
+  }
 }
 /*# sourceMappingURL=Dashboard.css.map */

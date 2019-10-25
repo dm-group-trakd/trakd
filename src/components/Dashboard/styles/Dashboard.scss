@@ -1,24 +1,50 @@
-// .dashboard-container {
-//     width:90vw;
-//     display: flex;
-//     justify-content: space-around;
-// }
+.dashboard-container {
+    width:90vw;
+    display: flex;
+    justify-content: space-around;
+}
 
-.right-components{
-    width: 100%;
+.dash-components{
+    width: 90%;
     height: 80vh;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     flex-direction: row;
     align-items: center;
-    flex-wrap: wrap;
 } 
+.right-components{
+    display: flex;
+    // justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tips{
+    position: static;
+}
 
 #Arrows {
     height: 120px;
     width: 120px;
     // transform: rotate(90deg) scaleX(-.4) ;
-
     margin-right: 50px;
+}
+@media(max-width:1400px){
+    #Arrows{
+        display:none;
+    }
+}
+@media (max-width:800px){
+    .dash-components{
+        justify-content: center;
+        align-items: none;
+        flex-wrap: wrap;
+    }
+    .food{
+        margin-top: 50px;
+    }
+    .right-components{
+        align-items: none;
+    }
 
 }
