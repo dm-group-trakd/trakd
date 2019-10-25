@@ -3,8 +3,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .dash-components {
@@ -28,6 +29,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -37,14 +41,8 @@
           align-items: center;
 }
 
-.tips {
-  position: static;
-}
-
 #Arrows {
-  height: 120px;
   width: 120px;
-  margin-right: 50px;
 }
 
 @media (max-width: 1400px) {
@@ -64,13 +62,22 @@
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
-  .food {
-    margin-top: 50px;
-  }
   .right-components {
-    -webkit-box-align: none;
-        -ms-flex-align: none;
-            align-items: none;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .dashboard-container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 10vh;
   }
 }
 /*# sourceMappingURL=Dashboard.css.map */

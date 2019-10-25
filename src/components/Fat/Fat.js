@@ -63,7 +63,7 @@ class Fat extends React.Component {
                 <Button onClick = {this.props.showCarbs}  color="primary"  variant="contained" >Carbs</Button>
                 </div>
                     <CardContent>
-                        <Doughnut data={data} width="400" height="400" options={{responsive: true}}/>
+                        <Doughnut data={data} width="400" height="300" options={{responsive: true}}/>
                     </CardContent>
                 </Card>
             </div>

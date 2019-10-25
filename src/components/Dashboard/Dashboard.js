@@ -42,21 +42,17 @@ export default class Dashboard extends Component {
                 {(() => {
 
                     switch (this.state.switchCounter) {
-                        case 0: return <div className="right-components"><Calories showCalories={this.showCalories} showProtein={this.showProtein} showFat={this.showFat} showCarbs={this.showCarbs} />
-                            <div>
-                                <img src="https://files.slack.com/files-pri/T039C2PUY-FPDGQSN7L/clipart61677.png" className="right-components" id="Arrows" />
+                        case 0: return <div className="dash-components">
+                            <div className ='right-components' >
+                                <Calories showCalories={this.showCalories} showProtein={this.showProtein} showFat={this.showFat} showCarbs={this.showCarbs} />
+                                <div className = 'tips'>
+                                    <Tips />
+                                </div>
                             </div>
-                            <div>
-                                <img src = "https://files.slack.com/files-pri/T039C2PUY-FPDGQSN7L/clipart61677.png" className="right-components" id="Arrows"/>
-                            </div>
+                                <img src="https://i.imgur.com/sB0O2aP.png" className="right-components" id="Arrows" />
                             <div className = "food">
                                 <Food />
                             </div>
-
-                            <div>
-                                <Tips />
-                            </div>
-
                         </div>
 
                         case 1: return <div className="dash-components">
@@ -67,13 +63,10 @@ export default class Dashboard extends Component {
                                 </div>
                             </div>
                             <div>
-                                <img src="https://files.slack.com/files-pri/T039C2PUY-FPDGQSN7L/clipart61677.png" className="right-components" id="Arrows" />
+                                <img src="https://i.imgur.com/sB0O2aP.png" className="right-components" id="Arrows" />
                             </div>
                             <div>
                                 <Food />
-                            </div>
-                            <div>
-                                <Tips />
                             </div>
                         </div>
 
@@ -85,13 +78,10 @@ export default class Dashboard extends Component {
                                 </div>
                             </div>    
                             <div>
-                                <img src="https://files.slack.com/files-pri/T039C2PUY-FPDGQSN7L/clipart61677.png" className="right-components" id="Arrows" />
+                                <img src="https://i.imgur.com/sB0O2aP.png" className="right-components" id="Arrows" />
                             </div>
                             <div>
                                 <Food />
-                            </div>
-                            <div>
-                                <Tips />
                             </div>
                         </div>
 
@@ -103,13 +93,10 @@ export default class Dashboard extends Component {
                                 </div>   
                             </div> 
                             <div>
-                                <img src="https://files.slack.com/files-pri/T039C2PUY-FPDGQSN7L/clipart61677.png" className="right-components" id="Arrows" />
+                                <img src="https://i.imgur.com/sB0O2aP.png" className="right-components" id="Arrows" />
                             </div>
                             <div>
                                 <Food />
-                            </div>
-                            <div>
-                                <Tips />
                             </div>
                         </div>
                         default: return <h1>Chart</h1>

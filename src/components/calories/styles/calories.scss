@@ -1,7 +1,7 @@
 .calorie-container{
     width: 38vw;
     // height: 55vh;
-    margin: 50px;
+    // margin: 50px;
 }
 
 #calorie-card{
@@ -23,7 +23,7 @@
 
 @media(max-width:800px){
     .calorie-container{
-       
+        margin:none;
         width: 75vw;
     }
 }

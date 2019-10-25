@@ -1,5 +1,6 @@
 .tips-main {
   width: 20vw;
+  margin-top: 20px;
 }
 
 .tips-container {
@@ -17,6 +18,13 @@
   .tips-main {
     width: 75vw;
     margin-bottom: 2px;
+    margin-top: 2px;
+  }
+}
+
+@media (max-width: 500px) {
+  .tips {
+    font-size: 3vw;
   }
 }
 /*# sourceMappingURL=tips.css.map */

@@ -1,7 +1,7 @@
 .dashboard-container {
     width:90vw;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .dash-components{
@@ -14,20 +14,14 @@
 } 
 .right-components{
     display: flex;
-    // justify-content: space-between;
+    justify-content: space-between;
     flex-direction: column;
-    align-items: center;
-}
-
-.tips{
-    position: static;
+    align-items:center;
 }
 
 #Arrows {
-    height: 120px;
     width: 120px;
-    // transform: rotate(90deg) scaleX(-.4) ;
-    margin-right: 50px;
+    
 }
 @media(max-width:1400px){
     #Arrows{
@@ -40,11 +34,14 @@
         align-items: none;
         flex-wrap: wrap;
     }
-    .food{
-        margin-top: 50px;
-    }
     .right-components{
-        align-items: none;
+        align-items: center;
+        justify-content: center;
+    }
+    .dashboard-container{
+        justify-content: center;
+        align-items: center;
+        margin-top: 10vh;
     }
 
 }
