@@ -2,6 +2,7 @@
     display: flex;
     // height:100vh;
     width: 10vw;
+    z-index: 100;
 }
 
 .nav-container{
@@ -14,6 +15,7 @@
     align-items: center;
     justify-content: space-between;
     position: fixed;
+    
 }
 
 .nav-logo{
@@ -50,8 +52,7 @@
 }
 
 .avatar{
-    height: 15px;
-    width: 15px;
+    width: 50%;
     border-radius: 50%;
 }
 div.side-menu,.side-menu-open,.side-menu-close{
@@ -128,7 +129,7 @@ div.side-menu,.side-menu-open,.side-menu-close{
     
       .nav-main {
         display: flex;
-        width: 100vw;
+        width: 6vw;
        
       }
 
@@ -156,14 +157,13 @@ div.side-menu,.side-menu-open,.side-menu-close{
     }
 
     .avatar{
-        height: 15px;
-        width: 15px;
+       
+        width: 40%;
         border-radius: 50%;
     }
 
     .Login-Button {
         height: 25px;
-        width: 25px;
-        
+        width: 25px; 
     }
 }

@@ -1,7 +1,5 @@
 .calorie-container {
-  width: 35vw;
-  height: 55vh;
-  margin: 50px;
+  width: 38vw;
 }
 
 #calorie-card {
@@ -30,5 +28,12 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+@media (max-width: 800px) {
+  .calorie-container {
+    margin: none;
+    width: 75vw;
+  }
 }
 /*# sourceMappingURL=calories.css.map */

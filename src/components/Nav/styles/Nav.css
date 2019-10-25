@@ -3,6 +3,7 @@
   display: -ms-flexbox;
   display: flex;
   width: 10vw;
+  z-index: 100;
 }
 
 .nav-container {
@@ -73,7 +74,7 @@
 }
 
 .avatar {
-  max-width: 50%;
+  width: 50%;
   border-radius: 50%;
 }
 
@@ -195,7 +196,7 @@ div.side-menu, .side-menu-open, .side-menu-close {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: 100vw;
+    width: 6vw;
   }
   .Nav-Links {
     display: -webkit-box;
@@ -223,6 +224,7 @@ div.side-menu, .side-menu-open, .side-menu-close {
             justify-content: center;
     width: 40vw;
     height: 8vh;
+    margin-left: 10px;
   }
   .nav-logo {
     display: -webkit-box;
@@ -230,7 +232,7 @@ div.side-menu, .side-menu-open, .side-menu-close {
     display: flex;
   }
   .avatar {
-    max-width: 30%;
+    width: 40%;
     border-radius: 50%;
   }
   .Login-Button {
