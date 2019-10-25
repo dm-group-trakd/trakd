@@ -21,7 +21,7 @@
     justify-content: flex-start;
     justify-content: space-between;
     align-items: center;
-    width: 30vw;
+    width: 450px;
     height: 8vh;
   
 }
@@ -30,6 +30,7 @@
     display:flex;
     font-size: 20px;
     align-items: center;
+
 }
 .settingP{
     color: rgb(155, 153, 153);
@@ -44,10 +45,18 @@
 }
 .update-content{
     display: flex;
+    min-width: 450px;
+
 }
 .profPic{
     width: 80px;
     border-radius: 5px;
     position: static;
     margin-left: 10px;
+}
+
+@media screen and (max-width: 1300px ){
+    .settings-page{
+        flex-wrap: wrap;
+    }
 }

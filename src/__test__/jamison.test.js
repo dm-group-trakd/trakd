@@ -20,5 +20,5 @@ import { getSession, updateFatGoal, loginUser, registerUser, getFood } from "../
         expect(getFood().type).toBe("GET_FOOD")
     })
     
-    // Component Tests
 
+    

@@ -60,7 +60,7 @@ class ProteinChart extends React.Component {
                 <Card>
                 <h1 id="Nutrient-Header">Protein</h1>
                 <div className="Nutrients-Nav">
-                <Button onClick={this.props.showCalories}  color="primary"  variant="contained" >Calories</Button>
+                <Button onClick={this.props.showCalories}  color="primary"  variant="contained" id="showCalories">Calories</Button>
                 <Button onClick = {this.props.showFat}  color="primary"  variant="contained" >Fat</Button>
                 <Button onClick = {this.props.showCarbs}  color="primary"   variant="contained" >Carbs</Button>
                 </div>
