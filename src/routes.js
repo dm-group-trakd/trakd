@@ -7,6 +7,7 @@ import AddNutrition from "./components/AddNutrition/AddNutrition";
 import Settings from "./components/Settings/Settings";
 import Calories from "./components/calories/Calories";
 import About from "./components/About/About"
+import Calculator from "./components/Calculator/Calculator"
 
 
 
@@ -19,6 +20,7 @@ export default(
         <Route path="/add" component={AddNutrition} />
         <Route path="/settings" component={Settings} />
         <Route path = "/calories" component ={Calories}/>
+        <Route path = "/calculator" component={Calculator}/>
         <Route path = "/about" component = {About}/>
     
     
