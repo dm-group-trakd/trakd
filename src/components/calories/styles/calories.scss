@@ -6,7 +6,6 @@
 
 #calorie-card{
     min-width: 400px;
-    
     height: 600px;
 }
 
@@ -14,6 +13,12 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+}
+.eaten{
+    position: absolute;
+    font-size: 30px;
+    color: #a5a9ac;
+    margin-left: 264px;
 }
 
 #Nutrient-Header{
@@ -30,6 +35,10 @@
 @media(max-width:800px){
     .calorie-container{
         margin:none;
-        width: 75vw;
+        width: 85vw;
+    }
+    .eaten{
+        font-size: 3vw;
+        margin-left: 32vw;
     }
 }

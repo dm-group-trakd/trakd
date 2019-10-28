@@ -10,7 +10,7 @@ import {getFood} from '../redux/reducers/foodReducer';
 import {getGoals, updateUsername} from '../redux/reducers/userReducer';
 import {deleteFood} from '../redux/reducers/foodReducer';
 import {loginUser, getSession} from '../redux/reducers/userReducer';
-import Settings from '../components/Settings/Settings'
+import Register from '../components/Register/Register'
 
 Enzyme.configure({adapter: new Adapter() })
 
@@ -49,21 +49,13 @@ describe("component",()=>{
         )
     })
 })
-
-const clickFn = jest.fn()
-it('activate button with click for handle-updateUsername button', () => {
-    const component = shallow(<Provider store = {store}><Settings onClick ={clickFn}/></Provider>);
-    component
-        .find('button#updateUsername')
-        .simulate('click');
-        expect(clickFn).toHaveBeenCalled();
-})
-
+describe('AddNutrition', () => {   
     it('setState of searchedFood when value ', () => {
-        const component = mount(<Provider store ={store}><Settings/></Provider>);  
+        const component = mount(<Register.WrappedComponent />);
         component
-            .find('input#outlined-Username-input')
+            .find('input#outlined-email-input')
             .simulate('change', {target: {value: 'Test'}});
-        expect.setState({username: 'Test'});
+        expect.setState({email: 'Test'});
         component.unmount();
     });
+});

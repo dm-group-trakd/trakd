@@ -66,6 +66,7 @@ class ProteinChart extends React.Component {
                 </div>
                     <CardContent>
                         <Doughnut data={data} width="400" height="300" options={{responsive: true}}/>
+                        <h1 className ="eaten">{this.state.eaten}/{this.props.protein_goal}</h1>
                     </CardContent>
                 </Card>
             </div>
