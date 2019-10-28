@@ -60,7 +60,7 @@ class Calories extends React.Component {
                 <Card>
                     <section className ="calories">
                         <h1 id="Nutrient-Header">Calories</h1>
-                        <h1>{this.state.eaten}</h1>
+                        
                         <div className="Nutrients-Nav">
                         <Button onClick = {this.props.showProtein}  color="primary"  variant="contained" >Protein</Button>
                         <Button onClick = {this.props.showFat}  color="primary"  variant="contained" >Fat</Button>
@@ -68,6 +68,7 @@ class Calories extends React.Component {
                         </div>
                             <CardContent>
                                 <Doughnut data={data} width="400" height="275" options={{responsive: true}}/>
+                                <h1 className = "eaten">{this.state.eaten}/{this.props.calorie_goal}</h1>
                             </CardContent>
                     </section>
                 </Card>

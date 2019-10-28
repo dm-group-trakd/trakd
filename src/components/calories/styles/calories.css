@@ -23,6 +23,13 @@
           justify-content: space-evenly;
 }
 
+.eaten {
+  position: absolute;
+  font-size: 30px;
+  color: #a5a9ac;
+  margin-left: 264px;
+}
+
 #Nutrient-Header {
   font-size: 3em;
   display: -webkit-box;
@@ -42,7 +49,11 @@
 @media (max-width: 800px) {
   .calorie-container {
     margin: none;
-    width: 75vw;
+    width: 85vw;
+  }
+  .eaten {
+    font-size: 3vw;
+    margin-left: 32vw;
   }
 }
 /*# sourceMappingURL=calories.css.map */

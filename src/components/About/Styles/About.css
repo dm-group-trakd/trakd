@@ -1,3 +1,7 @@
+.About-Container {
+  margin-top: 50px;
+}
+
 .Trakd-Devs {
   text-align: center;
   height: 8vh;
@@ -112,5 +116,17 @@
 #Github, #Linkedin {
   height: 50px;
   width: 50px;
+}
+
+@media (max-width: 800px) {
+  .Trakd-Devs {
+    font-size: 2em;
+  }
+  .Freddy {
+    margin-top: 10px;
+  }
+  .About-Container {
+    margin-top: 60px;
+  }
 }
 /*# sourceMappingURL=About.css.map */
