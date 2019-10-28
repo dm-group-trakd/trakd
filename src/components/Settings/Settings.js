@@ -122,8 +122,8 @@ class Settings extends Component {
         if(window.cloudinary) {
             widget = window.cloudinary.createUploadWidget(
                 {
-                    cloudName: "kevin14",
-                    uploadPreset: "xoy9arl8",
+                    cloudName: `${process.env.REACT_APP_cloudName}`,
+                    uploadPreset: `${process.env.REACT_APP_uploadPreset}`,
                     sources: ["local", "url", "dropbox", "facebook", "instagram"],
                     cropping: true,
                     cropping_aspect_ratio: 1,
