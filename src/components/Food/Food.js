@@ -20,7 +20,6 @@ class Food extends Component {
 
     componentDidMount(){
         this.props.getFood()
-        console.log(this.props.food)
     }
 
     // componentDidUpdate(prevProps) {
@@ -30,14 +29,12 @@ class Food extends Component {
     // }
 
     handleOpen = () => {
-        console.log(true)
         this.setState({
             addFood: true
         })
     }
 
     handleClose = () => {
-        console.log(false)
         this.setState({
             addFood: false
         })
@@ -53,7 +50,6 @@ class Food extends Component {
 
     render() {
         const foodMapped = this.props.food.map((food, i) => {
-            console.log(food.nutrition_id)
             return (
                 <div className="food-mapped" key={i}>
                     <div className = 'food-name'>
@@ -71,11 +67,10 @@ class Food extends Component {
                     <div className ='food-protein'>
                         <h1>{food.protein}</h1>
                     </div>
-                    <button className ="delete-btn" onClick = {() => this.deleteFood(food.nutrition_id)}><img src ='https://cdn2.iconfinder.com/data/icons/cleaning-19/30/30x30-10-512.png' id = 'trash'></img></button>
+                    <button id="deleteButtonFood" className ="delete-btn" onClick = {() => this.deleteFood(food.nutrition_id)}><img src ='https://cdn2.iconfinder.com/data/icons/cleaning-19/30/30x30-10-512.png' id = 'trash'></img></button>
                 </div>
             )
         })
-        console.log(this.props.food)
         return (
             <>
             <div className="food-container">

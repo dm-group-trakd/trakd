@@ -41,7 +41,6 @@ class AddNutrition extends Component {
         e.preventDefault()
         axios.get(`https://api.edamam.com/api/food-database/parser?ingr=${this.state.searchedFood}&app_id=${process.env.REACT_APP_app_id}&app_key=${process.env.REACT_APP_app_key}`)
         .then(res => {
-            console.log(res.data.hints[0])
             this.setState({
                 searchResults1: [...this.state.searchResults1, res.data.hints[0].food],
                 searchResults2: [...this.state.searchResults2, res.data.hints[1].food],
@@ -58,7 +57,6 @@ class AddNutrition extends Component {
     }
 
     handleAddFood = food => {
-        console.log(food)
         this.props.addFood(food)
         this.props.handleClose()
     }

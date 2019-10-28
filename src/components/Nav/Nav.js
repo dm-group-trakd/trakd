@@ -37,11 +37,9 @@ class Nav extends Component{
         toggle=()=>{
         if(this.state.menuOpenStatus ==="side-menu-close"|| this.state.menuOpenStatus ==="side-menu"){
             this.setState({menuOpenStatus: "side-menu-open"});
-            console.log("open")
         }
         else if(this.state.menuOpenStatus ==="side-menu-open"){
             this.setState({menuOpenStatus:"side-menu-close"})
-            // console.log("close")
         }
     }
 
