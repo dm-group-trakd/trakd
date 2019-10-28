@@ -14,8 +14,8 @@ class Login extends Component{
     constructor(){
         super();
         this.state = {
-            username: 'kevin',
-            password: 'password'
+            username: '',
+            password: ''
         }
     }
     componentDidMount(){
