@@ -3,6 +3,16 @@
   margin-top: 50px;
 }
 
+iframe {
+  width: 50vw;
+  -webkit-box-shadow: 10px 10px 10px -3px rgba(0, 0, 0, 0.75);
+          box-shadow: 10px 10px 10px -3px rgba(0, 0, 0, 0.75);
+}
+
+#bmiCalc {
+  height: 50vh;
+}
+
 .Calculator-Container {
   height: 100vh;
   width: 100vw;
@@ -14,5 +24,16 @@
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+@media (max-width: 800px) {
+  iframe {
+    width: 90vw;
+    height: 100vh;
+  }
+  .Calculator-Container {
+    margin-top: 50px;
+    margin-right: 20px;
+  }
 }
 /*# sourceMappingURL=Calculator.css.map */

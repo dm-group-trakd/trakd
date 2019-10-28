@@ -59,10 +59,13 @@
 @media (max-width: 800px) {
   .card {
     height: 30vh;
-    width: 75vw;
+    width: 85vw;
   }
   .add-button {
     position: fixed;
+  }
+  .food-mapped {
+    font-size: 13px;
   }
 }
 /*# sourceMappingURL=Food.css.map */
