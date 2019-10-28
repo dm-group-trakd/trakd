@@ -92,7 +92,7 @@ class AddNutrition extends Component {
                             <section className="search-results-p">
                                 <h2>{food.label}</h2>
                                 <div className="search-results" key={i}>
-                                    <h1>Calories: {parseInt(food.nutrients.ENERC_KCAL)} </h1>
+                                    <h1 id="Calories-H1">Calories: {parseInt(food.nutrients.ENERC_KCAL)} </h1>
                                     <h1>Carbs: {parseInt(food.nutrients.CHOCDF)} </h1>
                                     <h1>Fat: {parseInt(food.nutrients.FAT)} </h1>
                                     <h1>Protein: {parseInt(food.nutrients.PROCNT)} </h1>

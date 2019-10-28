@@ -1,22 +1,27 @@
 import React from 'react'
-import Enzyme, {shallow, mount} from "enzyme"
-import {Provider} from "react-redux"
+import Enzyme, { shallow, mount } from "enzyme"
+import { Provider } from "react-redux"
 import configureMockStore from "redux-mock-store"
 import Fat from "../../../trakd/src/components/Fat/Fat"
-import ProteinChart from "../../../trakd/src/components/ProteinChart/ProteinChart"
-import Login from "../../../trakd/src/components/Login/Login"
+import ReactDOM from 'react-dom';
+import { act, Simulate } from 'react-dom/test-utils';
+
+// import ProteinChart from "../../../trakd/src/components/ProteinChart/ProteinChart"
+// import Login from "../../../trakd/src/components/Login/Login"
 import Adapter from "enzyme-adapter-react-16"
 import Register from "../../../trakd/src/components/Register/Register"
 import About from "../../../trakd/src/components/About/About"
-import {logoutUser, updateUsername, updateEmail, getGoals} from '../redux/reducers/userReducer'
-import {deleteFood} from '../redux/reducers/foodReducer'
+import { logoutUser, updateUsername, updateEmail, getGoals } from '../redux/reducers/userReducer'
+import { deleteFood } from '../redux/reducers/foodReducer'
+import Calculator from '../../../trakd/src/components/Calculator/Calculator'
+import AddNutrition from '../../../trakd/src/components/AddNutrition/AddNutrition'
 
-Enzyme.configure({adapter: new Adapter() })
+Enzyme.configure({ adapter: new Adapter() })
 
 // UNIT TESTS
 describe("Logging out user, should be functional", () => {
     test("Logging out a user should return an empty object", () => {
-        expect(logoutUser()).toEqual({"type": "LOGOUT_USER"})
+        expect(logoutUser()).toEqual({ "type": "LOGOUT_USER" })
     })
 })
 
@@ -83,47 +88,37 @@ describe("About Component", () => {
     });
 });
 
-it('should be possible to activate button with click', () => {
-    const component = mount(<ProteinChart.WrappedComponent />);
-    component
-        .find('button#showCalories')
-        .simulate('click', null);
-    expect(component).toMatchSnapshot();
-    component.unmount();
+describe("Calculator Component", () => {
+    test("should render without throwing an error", () => {
+        expect(
+            shallow(
+                <Provider store={store}>
+                    <Calculator />
+                </Provider>
+            ).exists()
+        ).toBe(true);
+    });
 });
 
-it('should be possible to activate button with click', () => {
-    const component = mount(<Login.WrappedComponent />);
-    component
-        .find('button#login-button')
-        .simulate('click', null);
-    expect(component).toMatchSnapshot();
-    component.unmount();
-});
 
-// test("eaten text is updated", () => {
-//     const wrapper = shallow(
-//         <Provider store={store}>
-//         <Fat />
-//     </Provider>)
+let container = null;
 
-//     wrapper.find("input").simulate("change", {
-//         target: {value: "12"}
-//     })
-//     expect(wrapper.find("input").value).toEqual("12")
-// })
+beforeEach(() => {
+    container = document.createElement('div');
+    document.body.appendChild(container);
+})
+afterEach(() => {
+    ReactDOM.unmountComponentAtNode(container);
+    document.body.removeChild(container);
+    container = null;
+})
 
-// describe('Fat', ()=> {
-//     const component = shallow(
-//         <Provider store={store}>
-//             <Fat />
-//         </Provider>)
-
-//         component
-//         .find('button#FatButton')
-//         .simulate('click')
-//         expect(clickFn).toHaveBeenCalled()
-// })
-
+test("StudentQuestions should render properly", () => {
+    act(() => {
+        ReactDOM.render(<AddNutrition.WrappedComponent />, container)
+    })
+    const firstH1 = document.querySelector('h1:nth-child(1)');
+    expect(firstH1.textContent).toBe('Add Food')
+})
 
 
