@@ -44,7 +44,7 @@ module.exports = {
             const hash = bcrypt.hashSync(password, salt);
             const newUser = await db.auth.register(first_name, last_name, username, hash, email, phone_number, avatar, weight);
             let mailOptions ={
-                from: '"TrakD.com"<kevinsemail14@gmail.com>',
+                from: '"TrakD.com"<trakdemail@gmail.com@gmail.com>',
                 to: email,
                 subject:'Thanks For Registering On TrankD',
                 text:'TrakD',

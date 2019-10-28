@@ -179,6 +179,7 @@ class Settings extends Component {
                                 <Button
                                     variant="contained"
                                     color="primary"
+                                    id = "updateUsername"
                                     onClick={this.handleUsernameUpdate}>
                                     set
                                 </Button>
@@ -554,8 +555,6 @@ const mapStateToProps = reduxState => {
         protein_goal:reduxState.userReducer.protein_goal,
         carbs_goal:reduxState.userReducer.carbs_goal,
         fat_goal:reduxState.userReducer.fat_goal,
-        avatar: reduxState.userReducer.avatar
-
     }
 }
 
