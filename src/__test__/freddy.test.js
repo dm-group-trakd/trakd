@@ -3,9 +3,11 @@ import Enzyme, {shallow, mount} from "enzyme"
 import {Provider} from "react-redux"
 import configureMockStore from "redux-mock-store"
 import Fat from "../../../trakd/src/components/Fat/Fat"
+import ProteinChart from "../../../trakd/src/components/ProteinChart/ProteinChart"
+import Login from "../../../trakd/src/components/Login/Login"
 import Adapter from "enzyme-adapter-react-16"
-import Register from "../../../trakd/components/Register/Register"
-import About from "../../../trakd/components/About/About"
+import Register from "../../../trakd/src/components/Register/Register"
+import About from "../../../trakd/src/components/About/About"
 import {logoutUser, updateUsername, updateEmail, getGoals} from '../redux/reducers/userReducer'
 import {deleteFood} from '../redux/reducers/foodReducer'
 
