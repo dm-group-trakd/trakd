@@ -33,6 +33,7 @@ const UPDATE_CARB_GOAL = 'UPDATE_CARB_GOAL';
 const UPDATE_CALORIE_GOAL = 'UPDATE_CALORIE_GOAL';
 const UPDATE_PROTEIN_GOAL = 'UPDATE_PROTEIN_GOAL';
 const UPDATE_FAT_GOAL = 'UPDATE_FAT_GOAL';
+const UPDATE_USER_ID = "UPDATE_USER_ID"
 //goals
 const GET_GOALS = 'GET_GOALS';
 
@@ -46,7 +47,6 @@ export function getSession() {
 }
 
 export function registerUser(newUser) {
-  console.log(newUser)
   return {
     type: REGISTER_USER,
     payload: axios.post("/auth/register", newUser)
@@ -113,7 +113,6 @@ export function updateWeightGoal(weight) {
 }
 
 export function updateCarbGoal(carbs_goal) {
-  console.log(carbs_goal)
   return {
     type: UPDATE_CARB_GOAL,
     payload: axios.put("/api/goal/carbs", carbs_goal)
@@ -152,11 +151,13 @@ export function getGoals(){
 export default function reducer(state = initialState, action) {
   const { type, payload } = action;
 
-  // console.log(payload)
-
 
 
   switch (type) {
+    case UPDATE_USER_ID:
+      return {
+        user_id: payload
+      }
     case `${GET_SESSION}_FULFILLED`:
       return {
         ...state,
@@ -170,7 +171,6 @@ export default function reducer(state = initialState, action) {
         weight: payload.data.weight
       };
     case `${REGISTER_USER}_FULFILLED`:
-      console.log(payload.data)
       return {
         ...state,
         user_id: payload.data.user_id,
@@ -256,7 +256,6 @@ export default function reducer(state = initialState, action) {
         fat_goal: payload.data.fat_goal
       }
     case `${GET_GOALS}_FULFILLED`:
-      console.log(payload.data[0])
       return{
         ...state,
         weight_goal: payload.data[0].weight_goal,
