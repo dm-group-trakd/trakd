@@ -9,14 +9,19 @@
 .tips{
     font-size:1vw;
 }
-@media(max-width:800px) {
+@media(max-width:1300px) {
     .tips{
         font-size: 2vw;
     }
     .tips-main{
-        width: 75vw;
+        width: 700px;
         margin-bottom: 2px; 
         margin-top:2px  
+    }
+}
+@media(max-width:800px){
+    .tips-main{
+        width: 75vw;
     }
 }
 @media(max-width:500px){

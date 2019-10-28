@@ -1,16 +1,13 @@
 .calorie-container{
-    width: 38vw;
-    // height: 55vh;
-    // margin: 50px;
-    margin-top: 65px;
+    width: 700px;
+    margin-top: 104px;
     box-shadow: 10px 10px 10px -3px rgba(0,0,0,0.75);
 }
 
 #calorie-card{
-    width: 35vw;
-    height: 70vh;
+    min-width: 400px;
     
-    
+    height: 600px;
 }
 
 .Nutrients-Nav {
@@ -23,6 +20,11 @@
     font-size: 3em;
     display: flex;
     justify-content: center;
+}
+@media(max-width:1300px){
+    .calorie-container{
+        margin-top: 20px;
+    }
 }
 
 @media(max-width:800px){

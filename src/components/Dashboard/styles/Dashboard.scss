@@ -27,8 +27,6 @@
     #Arrows{
         display:none;
     }
-}
-@media (max-width:800px){
     .dash-components{
         justify-content: center;
         align-items: none;
@@ -41,7 +39,12 @@
     .dashboard-container{
         justify-content: center;
         align-items: center;
+    }
+}
+@media (max-width:800px){
+    .dashboard-container{
         margin-top: 10vh;
+
     }
 
 }
