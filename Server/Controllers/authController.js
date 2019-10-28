@@ -44,7 +44,7 @@ module.exports = {
             const hash = bcrypt.hashSync(password, salt);
             const newUser = await db.auth.register(first_name, last_name, username, hash, email, phone_number, avatar, weight);
             let mailOptions ={
-                from: '"TrakD.com"<kevinsemail14@gmail.com>',
+                from: '"TrakD.com"<trakdemail@gmail.com@gmail.com>',
                 to: email,
                 subject:'Thanks For Registering On TrankD',
                 text:'TrakD',
@@ -71,14 +71,12 @@ module.exports = {
             .catch((err)=>{
                 console.log('error',err)
             })
-            console.log(req.session.user)
             res.status(200).json(req.session.user);
             db.auth.goals(req.session.user.user_id)
         };
     },
     loginUser: async (req, res) => {
         const {username, password} = req.body;
-        console.log(username)
         const db = req.app.get("db");
         const foundUser = await db.auth.getPasswordViaUsername(username);
 
@@ -100,7 +98,6 @@ module.exports = {
                     weight: foundUser[0].weight
 
                 }
-                console.log(req.session.user)
                 res.status(200).json(req.session.user);
             }
         }

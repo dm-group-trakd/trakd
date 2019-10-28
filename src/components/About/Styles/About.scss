@@ -1,4 +1,6 @@
-
+.About-Container{
+    margin-top :50px;
+}
 
 .Trakd-Devs {
     text-align: center;
@@ -18,9 +20,7 @@
     justify-content: space-evenly;
     height: 100vh;
     width: 90vw;
-    margin-left: 8vw;
-
-
+    margin-left: 8vw
 }
 
 .Freddy, .Kevin, .Jamison, .Jacob {
@@ -82,5 +82,16 @@
     height: 50px;
     width: 50px;
     
+}
+@media(max-width:800px){
+    .Trakd-Devs{
+        font-size: 2em; 
+    }
+    .Freddy{
+        margin-top:10px;
+    }
+    .About-Container{
+        margin-top: 60px;
+    }
 }
 

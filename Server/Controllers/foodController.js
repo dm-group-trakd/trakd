@@ -26,7 +26,6 @@ module.exports = {
 
     deleteAllFood: async (req, res) => {
         const {user_id} = req.session.user;
-        console.log(user_id)
         const db = req.app.get('db');
         const deletedFood = await db.food.deleteAllFood(user_id);
         res.status(200).json(deletedFood);

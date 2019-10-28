@@ -6,7 +6,6 @@ import TextField from "@material-ui/core/TextField";
 import { connect } from "react-redux";
 import { getSession, getGoals, updateUsername, updateEmail, updateAvatar, updateWeight, updatePhoneNumber, updateWeightGoal, updateCarbGoal, updateCalorieGoal, updateProteinGoal, updateFatGoal } from "../../redux/reducers/userReducer";
 import "./styles/Settings.css"
-import axios from 'axios'
 
 
 class Settings extends Component {
@@ -45,7 +44,6 @@ class Settings extends Component {
     }
 
     handleInput = (e) => {
-        console.log(e.target.value)
         this.setState({
             [e.target.name]: e.target.value
         })
@@ -55,7 +53,6 @@ class Settings extends Component {
         const {username}=this.state
         this.props.updateUsername({username})
         this.setState({editUsername:false})
-        console.log(this.state.avatar)
     }
     
     handleEmailUpdate=()=>{
@@ -102,7 +99,6 @@ class Settings extends Component {
    
     handleCarbGoalUpdate = () => {
         const { carbs_goal } = this.state
-        console.log(carbs_goal)
         this.props.updateCarbGoal({carbs_goal})
         this.setState({editCarbGoal:false})
     }
@@ -115,14 +111,9 @@ class Settings extends Component {
 
     checkUploadResult = (error, resultEvent) => {
         if (resultEvent.event === "success") {
-            console.log("Picture uploaded successfully")
-            console.log(resultEvent.info.url);
-
             this.setState({avatar: resultEvent.info.url});
             this.setState({editProfilePic:true})
-
             this.setState({ avatar: resultEvent.info.url });
-
         }
     };
 
@@ -183,6 +174,7 @@ class Settings extends Component {
                                 <Button
                                     variant="contained"
                                     color="primary"
+                                    id = "updateUsername"
                                     onClick={this.handleUsernameUpdate}>
                                     set
                                 </Button>
