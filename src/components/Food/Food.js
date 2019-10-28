@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import { Card, CardContent } from '@material-ui/core'
+import { Card, CardContent, Button } from '@material-ui/core'
 import Fab from '@material-ui/core/Fab';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import "./styles/Food.scss"
-import {getFood, deleteFood} from '../../redux/reducers/foodReducer';
+import {getFood, deleteFood, deleteAllFood} from '../../redux/reducers/foodReducer';
 import {connect} from 'react-redux';
 import AddNutrition from '../AddNutrition/AddNutrition';
 
@@ -47,6 +47,10 @@ class Food extends Component {
         this.props.deleteFood(nutrition_id)
     }
 
+    deleteAllFood = () => {
+        this.props.deleteAllFood();
+    }
+
     render() {
         const foodMapped = this.props.food.map((food, i) => {
             console.log(food.nutrition_id)
@@ -77,6 +81,7 @@ class Food extends Component {
             <div className="food-container">
                 <Card>
                     <div className="card">
+                        <Button onClick={this.deleteAllFood}>Reset All Food</Button>
                         <div className="dashboard-card">
                             <h1>Food Name</h1>
                             <h1>Calories</h1>
@@ -113,6 +118,7 @@ class Food extends Component {
                 </div>
                 </Fade>
             </Modal>
+            
         </>
         )
     }
@@ -127,5 +133,5 @@ const mapStateToProps = reduxState => {
 
 
 export default connect(mapStateToProps, {
-    getFood, deleteFood
+    getFood, deleteFood, deleteAllFood
 })(Food)
