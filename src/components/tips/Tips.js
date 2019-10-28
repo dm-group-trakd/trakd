@@ -19,7 +19,7 @@ export default class Tips extends Component{
             console.log(response)
         })
     }
-  
+
     render(){
         return(
             <div className = "tips-main">

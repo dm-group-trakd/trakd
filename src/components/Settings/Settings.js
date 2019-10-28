@@ -6,7 +6,6 @@ import TextField from "@material-ui/core/TextField";
 import { connect } from "react-redux";
 import { getSession, getGoals, updateUsername, updateEmail, updateAvatar, updateWeight, updatePhoneNumber, updateWeightGoal, updateCarbGoal, updateCalorieGoal, updateProteinGoal, updateFatGoal } from "../../redux/reducers/userReducer";
 import "./styles/Settings.css"
-import axios from 'axios'
 
 
 class Settings extends Component {
