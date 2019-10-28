@@ -46,7 +46,6 @@ export function getSession() {
 }
 
 export function registerUser(newUser) {
-  console.log(newUser)
   return {
     type: REGISTER_USER,
     payload: axios.post("/auth/register", newUser)
@@ -113,7 +112,6 @@ export function updateWeightGoal(weight) {
 }
 
 export function updateCarbGoal(carbs_goal) {
-  console.log(carbs_goal)
   return {
     type: UPDATE_CARB_GOAL,
     payload: axios.put("/api/goal/carbs", carbs_goal)
@@ -152,8 +150,6 @@ export function getGoals(){
 export default function reducer(state = initialState, action) {
   const { type, payload } = action;
 
-  // console.log(payload)
-
 
 
   switch (type) {
@@ -170,7 +166,6 @@ export default function reducer(state = initialState, action) {
         weight: payload.data.weight
       };
     case `${REGISTER_USER}_FULFILLED`:
-      console.log(payload.data)
       return {
         ...state,
         user_id: payload.data.user_id,
@@ -256,7 +251,6 @@ export default function reducer(state = initialState, action) {
         fat_goal: payload.data.fat_goal
       }
     case `${GET_GOALS}_FULFILLED`:
-      console.log(payload.data[0])
       return{
         ...state,
         weight_goal: payload.data[0].weight_goal,

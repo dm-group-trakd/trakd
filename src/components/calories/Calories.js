@@ -44,7 +44,6 @@ class Calories extends React.Component {
     } 
 
     render() {
-        console.log(this.props.calorie_goal)
         const data = {
             labels: ["", "calories"],
             datasets: [

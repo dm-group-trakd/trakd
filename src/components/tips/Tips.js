@@ -16,7 +16,6 @@ export default class Tips extends Component{
         axios.get('/api/tips').then(response =>{
             let randomNum = Math.floor(Math.random() * 9)+1 
             this.setState({tips:response.data[randomNum].tips})
-            console.log(response)
         })
     }
 

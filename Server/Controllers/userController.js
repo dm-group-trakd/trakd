@@ -1,7 +1,6 @@
 module.exports = {
     updateUsername: (req, res) => {
         const { user_id } = req.session.user
-        console.log(req.session.user)
         const { username } = req.body
 
         const db = req.app.get("db")
