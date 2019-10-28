@@ -8,7 +8,6 @@ import { getSession, getGoals, updateUsername, updateEmail, updateAvatar, update
 import "./styles/Settings.css"
 
 
-
 class Settings extends Component {
     constructor() {
         super()

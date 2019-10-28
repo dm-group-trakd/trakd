@@ -71,7 +71,7 @@ class Food extends Component {
                     <div className ='food-protein'>
                         <h1>{food.protein}</h1>
                     </div>
-                    <button className ="delete-btn" onClick = {() => this.deleteFood(food.nutrition_id)}><img src ='https://cdn2.iconfinder.com/data/icons/cleaning-19/30/30x30-10-512.png' id = 'trash'></img></button>
+                    <button id="deleteButtonFood" className ="delete-btn" onClick = {() => this.deleteFood(food.nutrition_id)}><img src ='https://cdn2.iconfinder.com/data/icons/cleaning-19/30/30x30-10-512.png' id = 'trash'></img></button>
                 </div>
             )
         })
