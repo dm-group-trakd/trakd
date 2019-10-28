@@ -1,5 +1,5 @@
 import React from 'react'
-import Enzyme, {shallow} from "enzyme"
+import Enzyme, {shallow, mount} from "enzyme"
 import {Provider} from "react-redux"
 import configureMockStore from "redux-mock-store"
 import ProteinChart from '../components/ProteinChart/ProteinChart'
@@ -24,18 +24,10 @@ describe("ProteinChart Component", () => {
         });
     });
     
-    it('should be possible to activate button with click', () => {
-        const component = mount(<ProteinChart.WrappedComponent />);
-        component
-            .find('button#handle-search')
-            .simulate('click', null);
-        expect(component).toMatchSnapshot();
-        component.unmount();
-    });
-
-describe("Settings Component", () => {
-    test("should render without throwing an error", () => {
-        expect(
+    
+    describe("Settings Component", () => {
+        test("should render without throwing an error", () => {
+            expect(
             shallow(
                 <Provider store={store}>
                     <Settings /> 
@@ -56,5 +48,12 @@ describe("Settings Component", () => {
             ).toBe(true);
         });
     });
-
     
+    it('should be possible to activate button with click', () => {
+        const component = mount(<ProteinChart.WrappedComponent />);
+        component
+            .find('button#handle-search')
+            .simulate('click', null);
+        expect(component).toMatchSnapshot();
+        component.unmount();
+    });
