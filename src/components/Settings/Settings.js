@@ -118,8 +118,9 @@ class Settings extends Component {
     };
 
     render() {
+        let widget
         if(window.cloudinary) {
-            const widget = window.cloudinary.createUploadWidget(
+            widget = window.cloudinary.createUploadWidget(
                 {
                     cloudName: "kevin14",
                     uploadPreset: "xoy9arl8",
