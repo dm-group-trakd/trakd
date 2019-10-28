@@ -20,7 +20,6 @@ class Food extends Component {
 
     componentDidMount(){
         this.props.getFood()
-        console.log(this.props.food)
     }
 
     // componentDidUpdate(prevProps) {
@@ -30,14 +29,12 @@ class Food extends Component {
     // }
 
     handleOpen = () => {
-        console.log(true)
         this.setState({
             addFood: true
         })
     }
 
     handleClose = () => {
-        console.log(false)
         this.setState({
             addFood: false
         })
@@ -53,7 +50,6 @@ class Food extends Component {
 
     render() {
         const foodMapped = this.props.food.map((food, i) => {
-            console.log(food.nutrition_id)
             return (
                 <div className="food-mapped" key={i}>
                     <div className = 'food-name'>
@@ -75,7 +71,6 @@ class Food extends Component {
                 </div>
             )
         })
-        console.log(this.props.food)
         return (
             <>
             <div className="food-container">
