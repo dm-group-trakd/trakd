@@ -17,10 +17,18 @@ module.exports = {
     },
 
     deleteFood: async (req, res) => {
-        const {user_id} = req.session;
+        const {user_id} = req.session.user;
         const {nutrition_id} = req.params
         const db = req.app.get('db')
         const deletedFood =  await db.food.deleteFood(nutrition_id, user_id)
         res.status(200).json(deletedFood)
+    },
+
+    deleteAllFood: async (req, res) => {
+        const {user_id} = req.session.user;
+        console.log(user_id)
+        const db = req.app.get('db');
+        const deletedFood = await db.food.deleteAllFood(user_id);
+        res.status(200).json(deletedFood);
     }
 }
