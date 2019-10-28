@@ -127,24 +127,27 @@ class Settings extends Component {
     };
 
     render() {
-        const widget = window.cloudinary.createUploadWidget(
-            {
-                cloudName: "kevin14",
-                uploadPreset: "xoy9arl8",
-                sources: ["local", "url", "dropbox", "facebook", "instagram"],
-                cropping: true,
-                cropping_aspect_ratio: 1,
-                show_skip_crop_button: false,
-                Default: false
-            },
-            (error, result) => {
+        if(window.cloudinary) {
+            const widget = window.cloudinary.createUploadWidget(
+                {
+                    cloudName: "kevin14",
+                    uploadPreset: "xoy9arl8",
+                    sources: ["local", "url", "dropbox", "facebook", "instagram"],
+                    cropping: true,
+                    cropping_aspect_ratio: 1,
+                    show_skip_crop_button: false,
+                    Default: false
+                },
+                (error, result) => {
+    
+                this.checkUploadResult(error, result)
+            
+    
+                    this.checkUploadResult(error, result);
+    
+                })
 
-            this.checkUploadResult(error, result)
-        
-
-                this.checkUploadResult(error, result);
-
-            })
+        }
         return (
             <div className="settings-page">
         {/* username */}
@@ -239,7 +242,7 @@ class Settings extends Component {
                                  {this.state.editWeight === false?
                                 <>
                                 <h1 className ="settingH1">Weight: <p className ="settingP">{this.props.weight}lbs</p></h1>
-                                <Button
+                                <Button id="update-weight-button"
                                     variant="contained"
                                     color="primary"
                                     onClick={()=>this.setState({editWeight:true})}>
@@ -344,7 +347,7 @@ class Settings extends Component {
                 {/* {weightgoal} */}
                     <Card>
                         <CardContent>
-                            <h2 className="settings-goals">Goals</h2>
+                            <h2 className="settings-goals" id="goals-text-settings">Goals</h2>
                             <div className="settings-button-style">
                                    {this.state.editWeightGoal === false?
                                 <>
@@ -543,21 +546,25 @@ class Settings extends Component {
 
 }
 const mapStateToProps = reduxState => {
-    return {
-        user_id: reduxState.userReducer.user_id,
-        avatar:reduxState.userReducer.avatar,
-        email: reduxState.userReducer.email,
-        phone_number: reduxState.userReducer.phone_number,
-        username: reduxState.userReducer.username,
-        weight: reduxState.userReducer.weight,
-        weight_goal:reduxState.userReducer.weight_goal,
-        calorie_goal:reduxState.userReducer.calorie_goal,
-        protein_goal:reduxState.userReducer.protein_goal,
-        carbs_goal:reduxState.userReducer.carbs_goal,
-        fat_goal:reduxState.userReducer.fat_goal,
-        avatar: reduxState.userReducer.avatar
+    console.log("REDUX_STATE", reduxState);
+    if(reduxState.userReducer) {
 
-    }
+        return {
+            user_id: reduxState.userReducer.user_id,
+            avatar:reduxState.userReducer.avatar,
+            email: reduxState.userReducer.email,
+            phone_number: reduxState.userReducer.phone_number,
+            username: reduxState.userReducer.username,
+            weight: reduxState.userReducer.weight,
+            weight_goal:reduxState.userReducer.weight_goal,
+            calorie_goal:reduxState.userReducer.calorie_goal,
+            protein_goal:reduxState.userReducer.protein_goal,
+            carbs_goal:reduxState.userReducer.carbs_goal,
+            fat_goal:reduxState.userReducer.fat_goal,
+            avatar: reduxState.userReducer.avatar
+    
+        }
+    } return {}
 }
 
 export default connect(mapStateToProps, {

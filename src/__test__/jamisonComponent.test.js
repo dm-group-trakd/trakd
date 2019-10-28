@@ -1,17 +1,36 @@
-import React from 'react'
-import Enzyme, {shallow, mount} from "enzyme"
-import {Provider} from "react-redux"
-import configureMockStore from "redux-mock-store"
-import ProteinChart from '../components/ProteinChart/ProteinChart'
-import Settings from "../components/Settings/Settings"
-import Nav from "../components/Nav/Nav"
-import Adapter from "enzyme-adapter-react-16"
+import React from 'react';
+import Enzyme, {shallow, mount, unmount} from "enzyme";
+import {Provider} from "react-redux";
+import configureMockStore from "redux-mock-store";
+import ProteinChart from "../components/ProteinChart/ProteinChart";
+import Settings from "../components/Settings/Settings";
+import Nav from "../components/Nav/Nav";
+// import Register from "../components/Register/Register";
+import Adapter from "enzyme-adapter-react-16";
+import ReactDOM from 'react-dom';
+import {act, Simulate} from 'react-dom/test-utils';
+
+let container = null;
 
 Enzyme.configure({adapter: new Adapter() })
 
 const mockStore = configureMockStore();
-const store = mockStore({});
-const clickFn = jest.fn()
+const store = mockStore({
+    userReducer: {}
+});
+// const clickFn = jest.fn()
+
+beforeEach(()=> {
+    container = document.createElement('div');
+    document.body.appendChild(container);
+})
+
+afterEach(()=> {
+    ReactDOM.unmountComponentAtNode(container);
+    document.body.removeChild(container);
+    container = null;
+})
+
 describe("ProteinChart Component", () => {
     test("should render without throwing an error", () => {
         expect(
@@ -22,10 +41,6 @@ describe("ProteinChart Component", () => {
           ).exists()
           ).toBe(true);
         });
-    });
-    
-    
-    describe("Settings Component", () => {
         test("should render without throwing an error", () => {
             expect(
             shallow(
@@ -35,9 +50,8 @@ describe("ProteinChart Component", () => {
             ).exists()
             ).toBe(true);
         });
-    });
     
-    describe("Nav Component", () => {
+    
         test("should render without throwing an error", () => {
             expect(
                 shallow(
@@ -48,12 +62,49 @@ describe("ProteinChart Component", () => {
             ).toBe(true);
         });
     });
-    
-    it('should be possible to activate button with click', () => {
-        const component = mount(<ProteinChart.WrappedComponent />);
-        component
-            .find('button#handle-search')
-            .simulate('click', null);
-        expect(component).toMatchSnapshot();
-        component.unmount();
-    });
+
+//     it('should be possible to activate button with click', () => {
+//         const component = mount(<Provider store={store}><Settings /></Provider>);
+//         component
+//             .find('button#update-weight-button')
+//             .simulate('click', null);
+//         expect(component).toMatchSnapshot();
+//         component.unmount();
+//     });
+//     it('setState of searchedFood when value ', () => {
+//         const component = mount(<Register.WrappedComponent />);
+//         component
+//             .find('input#outlined-Search-Food-input')
+//             .simulate('change', {target: {value: 'Test'}});
+//         expect.setState({searchedFood: 'Test'});
+//         component.unmount();
+//     });
+// });
+
+test(`Settings should render properly`, () => {
+    act(() => {
+        ReactDOM.render(
+        <Provider store={store}>
+            <Settings/>
+        </Provider>
+        , container)
+    })
+
+    const firstH2 = document.querySelector('h2:nth-child(1)');
+    expect(firstH2.textContent).toBe('Settings');
+
+})
+
+test(`Goals should render properly`, () => {
+    act(() => {
+        ReactDOM.render(
+        <Provider store={store}>
+            <Settings/>
+        </Provider>
+        , container)
+    })
+
+    const secondH2 = document.getElementById('goals-text-settings');
+    expect(secondH2.textContent).toBe('Goals');
+
+})
