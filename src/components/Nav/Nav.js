@@ -57,6 +57,9 @@ class Nav extends Component{
                         <Link to ="/dashboard">
                         <img src = "https://icon-library.net/images/pie-chart-icon-png/pie-chart-icon-png-23.jpg" id="dashboard-logo"/>
                         </Link> 
+                        <Link to = "/calculator">
+                            <img src = "http://pngriver.com/wp-content/uploads/2017/11/calculator-PNG-transparent-images-free-download-clipart-pics-calculator-2478633_960_720.png" id="dashboard-logo"/>
+                        </Link>
                         <Link to="/settings">
                     <img src = "https://cdn1.iconfinder.com/data/icons/internet-28/48/16-512.png" id="cogwheel"/>
                     </Link>

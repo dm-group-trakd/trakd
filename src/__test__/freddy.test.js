@@ -1,5 +1,5 @@
 import React from 'react'
-import Enzyme, {shallow} from "enzyme"
+import Enzyme, {shallow, mount} from "enzyme"
 import {Provider} from "react-redux"
 import configureMockStore from "redux-mock-store"
 import Fat from "../../../trakd/src/components/Fat/Fat"
