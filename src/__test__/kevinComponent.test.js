@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDOM from "react-dom";
 import Calories from "../components/calories/Calories"
 import Food from "../components/Food/Food"
 import Login from "../components/Login/Login"
@@ -10,14 +11,30 @@ import {getFood} from '../redux/reducers/foodReducer';
 import {getGoals, updateUsername} from '../redux/reducers/userReducer';
 import {deleteFood} from '../redux/reducers/foodReducer';
 import {loginUser, getSession} from '../redux/reducers/userReducer';
-import Register from '../components/Register/Register'
+import { act, Simulate } from "react-dom/test-utils"
+import About from "../components/About/About"
 
 Enzyme.configure({adapter: new Adapter() })
 
 
 const mockStore = configureMockStore();
-const store = mockStore({});
+const store = mockStore({
+    userReducer:{},
+    foodReducer:{}
+});
 
+
+let container = null;
+
+beforeEach(() => {
+  container = document.createElement("div");
+  document.body.appendChild(container);
+})
+
+afterEach(() => {
+  document.body.removeChild(container);
+  container = null;
+})
 
 
 describe("component",()=>{
@@ -49,13 +66,24 @@ describe("component",()=>{
         )
     })
 })
-describe('AddNutrition', () => {   
-    it('setState of searchedFood when value ', () => {
-        const component = mount(<Register.WrappedComponent />);
-        component
-            .find('input#outlined-email-input')
-            .simulate('change', {target: {value: 'Test'}});
-        expect.setState({email: 'Test'});
-        component.unmount();
-    });
+describe('calories', () => {   
+    test(`calories should render properly`, () => {
+        act(() => {
+            ReactDOM.render(
+                <About/>
+            , container)
+        })
+        const firsth1 = document.querySelector('h1:nth-child(1)');
+        expect(firsth1.textContent).toBe('Trakd Developers');
+    
+    })
+    test(`calories should render properly`, () => {
+        act(() => {
+            ReactDOM.render(
+                <About/>
+            , container)
+        })
+        const secondh1 = document.getElementById('kevin-hernandez');
+        expect(secondh1.textContent).toBe('Kevin Hernandez');
+    })
 });

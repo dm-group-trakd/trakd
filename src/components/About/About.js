@@ -29,7 +29,7 @@ export default function About() {
                 </div>
                 <div className="Kevin">
                     <div className="Name">
-                        <h1>Kevin Hernandez</h1>
+                        <h1 id ="kevin-hernandez">Kevin Hernandez</h1>
                     </div>
                     <img src="https://res.cloudinary.com/kevin14/image/upload/v1571960540/wr5g6zwiivj7jqultcrs.jpg" id="Freddy" />
                     <p id="Bio">

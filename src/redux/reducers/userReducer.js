@@ -33,6 +33,7 @@ const UPDATE_CARB_GOAL = 'UPDATE_CARB_GOAL';
 const UPDATE_CALORIE_GOAL = 'UPDATE_CALORIE_GOAL';
 const UPDATE_PROTEIN_GOAL = 'UPDATE_PROTEIN_GOAL';
 const UPDATE_FAT_GOAL = 'UPDATE_FAT_GOAL';
+const UPDATE_USER_ID = "UPDATE_USER_ID"
 //goals
 const GET_GOALS = 'GET_GOALS';
 
@@ -153,6 +154,10 @@ export default function reducer(state = initialState, action) {
 
 
   switch (type) {
+    case UPDATE_USER_ID:
+      return {
+        user_id: payload
+      }
     case `${GET_SESSION}_FULFILLED`:
       return {
         ...state,
