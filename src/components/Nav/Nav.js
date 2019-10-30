@@ -71,7 +71,7 @@ class Nav extends Component{
                             variant="contained" 
                             color="secondary"
                             onClick={this.handleLogout}
-                            className = "Login-Button"
+                            id = "Logout-Button"
                         >Logout</Button>
                     </section>
                 </div>

@@ -34,7 +34,7 @@ export function deleteFood(nutrition_id) {
 
 export function deleteAllFood() {
     return {
-        type: DELETE_FOOD,
+        type: DELETE_ALL_FOOD,
         payload: axios.delete(`/api/food`)
     };
 }
