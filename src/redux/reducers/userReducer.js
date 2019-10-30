@@ -147,6 +147,13 @@ export function getGoals(){
   }
 }
 
+export function updateUserId(){
+  return{
+    type: UPDATE_USER_ID,
+    payload: {newUserId: 100}
+  }
+}
+
 //reducer
 export default function reducer(state = initialState, action) {
   const { type, payload } = action;
