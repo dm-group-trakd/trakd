@@ -45,10 +45,13 @@
   width: 120px;
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1600px) {
   #Arrows {
     display: none;
   }
+}
+
+@media (max-width: 1500px) {
   .dash-components {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
