@@ -68,5 +68,9 @@
   #Logo {
     width: 250px;
   }
+  #login-button {
+    height: 40px;
+    width: 100px;
+  }
 }
 /*# sourceMappingURL=Login.css.map */

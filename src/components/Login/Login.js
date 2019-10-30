@@ -78,7 +78,7 @@ class Login extends Component{
                             required
                         ></TextField>
                     </section>
-                    <section>
+                    <section className = 'login'>
                             <Button
                                 variant="contained" 
                                 color="primary"
