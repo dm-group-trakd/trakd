@@ -177,7 +177,7 @@ class Settings extends Component {
                                     color="primary"
                                     id = "updateUsername"
                                     onClick={this.handleUsernameUpdate}>
-                                    set
+                                    Update
                                 </Button>
                                 <Button
                                 variant="contained"
@@ -269,7 +269,7 @@ class Settings extends Component {
                                  }
                             </div>
 
-                            {/* phoneNumber */}
+                            {/* phoneNumber
                             <div className="settings-button-style">
                                 {this.state.editPhoneNumber === false?
                                 <>
@@ -307,7 +307,7 @@ class Settings extends Component {
                                     cancel</Button>
                                 </>
                                 }
-                            </div>
+                            </div> */}
                             {/* profilePicture */}
                             <div className="settings-button-style">
                                 {this.state.editProfilePic === false?

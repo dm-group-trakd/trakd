@@ -78,6 +78,10 @@
   border-radius: 50%;
 }
 
+#Logout-Button {
+  margin-top: 10px;
+}
+
 div.side-menu, .side-menu-open, .side-menu-close {
   height: 90vh;
   width: 100vw;
@@ -176,6 +180,12 @@ div.side-menu, .side-menu-open, .side-menu-close {
   }
 }
 
+@media (max-width: 1100px) {
+  #Logout-Button {
+    width: 50px;
+  }
+}
+
 @media (max-width: 800px) {
   .nav-container {
     display: -webkit-box;
@@ -232,8 +242,9 @@ div.side-menu, .side-menu-open, .side-menu-close {
     display: flex;
   }
   .avatar {
-    width: 40%;
+    width: 30%;
     border-radius: 50%;
+    margin-right: 10px;
   }
   .Login-Button {
     height: 25px;
