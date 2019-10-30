@@ -5,9 +5,6 @@ import configureMockStore from "redux-mock-store"
 import Fat from "../../../trakd/src/components/Fat/Fat"
 import ReactDOM from 'react-dom';
 import { act, Simulate } from 'react-dom/test-utils';
-
-// import ProteinChart from "../../../trakd/src/components/ProteinChart/ProteinChart"
-// import Login from "../../../trakd/src/components/Login/Login"
 import Adapter from "enzyme-adapter-react-16"
 import Register from "../../../trakd/src/components/Register/Register"
 import About from "../../../trakd/src/components/About/About"
@@ -113,7 +110,7 @@ afterEach(() => {
     container = null;
 })
 
-test("StudentQuestions should render properly", () => {
+test("First H1 in AddNutrition should render properly", () => {
     act(() => {
         ReactDOM.render(<AddNutrition.WrappedComponent />, container)
     })
