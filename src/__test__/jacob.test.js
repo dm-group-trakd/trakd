@@ -1,4 +1,4 @@
-import {updateWeightGoal, updateCarbGoal, updateCalorieGoal} from '../redux/reducers/userReducer';
+import {updateWeightGoal, updateCarbGoal, updateCalorieGoal, updateUserId} from '../redux/reducers/userReducer';
 import {deleteAllFood} from '../redux/reducers/foodReducer';
 
 
@@ -18,4 +18,8 @@ test('Test to see type of updateCalorieGoal == "UPDATE_CALORIE_GOAL" ', () => {
 
 test('Test to see type of deleteAllFood == "DELETE_ALL_FOOD" ', () => {
     expect(deleteAllFood().type).toBe("DELETE_ALL_FOOD")
+})
+
+test('Test to see type of updateUserId == "UPDATE_USER_ID" ', () => {
+    expect(updateUserId().type).toBe("UPDATE_USER_ID")
 })
