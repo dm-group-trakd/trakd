@@ -74,30 +74,7 @@ class Register extends Component {
                                     onChange={this.handleInput}
                                     required
                                 ></TextField>
-                                <TextField
-                                    id="outlined-username-input"
-                                    label="Username"
-                                    type="text"
-                                    name="username"
-                                    autoComplete="username"
-                                    margin="normal"
-                                    variant="outlined"
-                                    onChange={this.handleInput}
-                                    required
-                                ></TextField>
-                            </section>
-                            <section className = "second-row">
-                                <TextField
-                                    id="outlined-password-input"
-                                    label="Password"
-                                    type="password"
-                                    name="password"
-                                    autoComplete="password"
-                                    margin="normal"
-                                    variant="outlined"
-                                    onChange={this.handleInput}
-                                    required
-                                ></TextField>
+                           
                                 <TextField
                                     id="outlined-email-input"
                                     label="Email"
@@ -109,7 +86,32 @@ class Register extends Component {
                                     onChange={this.handleInput}
                                     required
                                 ></TextField>
+                            </section>
+                            <section className = "second-row">
+                            <TextField
+                                    id="outlined-username-input"
+                                    label="Username"
+                                    type="text"
+                                    name="username"
+                                    autoComplete="username"
+                                    margin="normal"
+                                    variant="outlined"
+                                    onChange={this.handleInput}
+                                    required
+                                ></TextField>
                                 <TextField
+                                    id="outlined-password-input"
+                                    label="Password"
+                                    type="password"
+                                    name="password"
+                                    autoComplete="password"
+                                    margin="normal"
+                                    variant="outlined"
+                                    onChange={this.handleInput}
+                                    required
+                                ></TextField>
+                                
+                                {/* <TextField
                                     id="outlined-phone_number-input"
                                     label="Phone Number"
                                     type="number"
@@ -119,7 +121,7 @@ class Register extends Component {
                                     variant="outlined"
                                     onChange={this.handleInput}
                                     required
-                                ></TextField>
+                                ></TextField> */}
                             </section>
                             </div>
                             <section className = 'register'>

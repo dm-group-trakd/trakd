@@ -9,6 +9,11 @@
 .tips{
     font-size:1vw;
 }
+@media(max-width:1500px){
+    .tips-main{
+        width: 48vw;
+    }
+}
 @media(max-width:1300px) {
     .tips{
         font-size: 2vw;
