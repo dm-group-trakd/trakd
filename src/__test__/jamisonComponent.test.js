@@ -63,24 +63,6 @@ describe("ProteinChart Component", () => {
         });
     });
 
-//     it('should be possible to activate button with click', () => {
-//         const component = mount(<Provider store={store}><Settings /></Provider>);
-//         component
-//             .find('button#update-weight-button')
-//             .simulate('click', null);
-//         expect(component).toMatchSnapshot();
-//         component.unmount();
-//     });
-//     it('setState of searchedFood when value ', () => {
-//         const component = mount(<Register.WrappedComponent />);
-//         component
-//             .find('input#outlined-Search-Food-input')
-//             .simulate('change', {target: {value: 'Test'}});
-//         expect.setState({searchedFood: 'Test'});
-//         component.unmount();
-//     });
-// });
-
 test(`Settings should render properly`, () => {
     act(() => {
         ReactDOM.render(
@@ -92,7 +74,6 @@ test(`Settings should render properly`, () => {
 
     const firstH2 = document.querySelector('h2:nth-child(1)');
     expect(firstH2.textContent).toBe('Settings');
-
 })
 
 test(`Goals should render properly`, () => {
