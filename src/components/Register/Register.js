@@ -48,7 +48,7 @@ class Register extends Component {
                                 {/* <img>Logo</img>
                                 */}
                                 <img  className = "img" src = 'https://i.imgur.com/2EJZHHT.png' alt =""/>
-                                <h1 className ="signUp">Sign Up</h1>
+                                <h1 className ="signUp" id="signup">Sign Up</h1>
                             </section>
                             <div className = "inputs">
                             <section className = "first-row">
@@ -130,13 +130,14 @@ class Register extends Component {
                                         variant="contained" 
                                         color="primary"
                                         onClick={this.handleSubmit}
+                                        id="Register-button"
                                     >Register</Button>
                                 <h1>Already have an account? Login <Link to="/">here!</Link></h1>
                             </section>
                             </div>
                         </CardContent>
                         </div>
-                 </Card>
+                </Card>
             </div>
         )
     }
