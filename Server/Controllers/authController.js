@@ -32,7 +32,7 @@ module.exports = {
         }
     },
     registerUser: async (req, res) => {
-        const {first_name, last_name, username, password, email, phone_number, avatar, weight} = req.body;
+        const {first_name, last_name, username, password, email, avatar, weight} = req.body;
         const db = req.app.get("db");
 
         const foundUser = await db.auth.checkForUsername(username);
@@ -42,7 +42,7 @@ module.exports = {
         } else {
             const salt = bcrypt.genSaltSync(10);
             const hash = bcrypt.hashSync(password, salt);
-            const newUser = await db.auth.register(first_name, last_name, username, hash, email, phone_number, avatar, weight);
+            const newUser = await db.auth.register(first_name, last_name, username, hash, email, avatar, weight);
             let mailOptions ={
                 from: '"TrakD.net"<trakdemail@gmail.com>',
                 to: email,
