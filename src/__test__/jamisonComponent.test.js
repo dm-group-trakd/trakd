@@ -74,7 +74,6 @@ test(`Settings should render properly`, () => {
 
     const firstH2 = document.querySelector('h2:nth-child(1)');
     expect(firstH2.textContent).toBe('Settings');
-
 })
 
 test(`Goals should render properly`, () => {
